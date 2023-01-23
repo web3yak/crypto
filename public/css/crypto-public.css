@@ -1,0 +1,31 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+ /* Notification */
+.crypto_alert-box {
+    color: #555;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 10px 36px;
+    margin: 10px;
+  }
+  
+  .crypto_error {
+    background: #ffecec url("../img/error.png") no-repeat 10px 50%;
+    border: 1px solid #f5aca6;
+  }
+  .crypto_success {
+    background: #e9ffd9 url("../img/success.png") no-repeat 10px 50%;
+    border: 1px solid #a6ca8a;
+  }
+  .crypto_warning {
+    background: #fff8c4 url("../img/warning.png") no-repeat 10px 50%;
+    border: 1px solid #f2c779;
+  }
+  .crypto_notice {
+    background: #e3f7fc url("../img/notice.png") no-repeat 10px 50%;
+    border: 1px solid #8ed9f6;
+  }
+  

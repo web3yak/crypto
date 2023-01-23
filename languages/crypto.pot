@@ -1,0 +1,928 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Crypto\n"
+"POT-Creation-Date: 2022-07-28 11:55+0545\n"
+"PO-Revision-Date: 2020-02-09 12:49+0545\n"
+"Last-Translator: \n"
+"Language-Team: navneet@odude.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: block/node_modules\n"
+"X-Poedit-SearchPathExcluded-1: includes/cmb2\n"
+"X-Poedit-SearchPathExcluded-2: public/js\n"
+
+#: admin/class-crypto-admin.php:113
+msgid "Crypto Settings"
+msgstr ""
+
+#: admin/class-crypto-admin.php:114 admin/partials/dashboard.php:2
+#: admin/partials/settings.php:29
+msgid "Crypto"
+msgstr ""
+
+#: admin/class-crypto-admin.php:124 admin/class-crypto-admin.php:125
+msgid "Dashboard"
+msgstr ""
+
+#: admin/partials/dashboard.php:2
+msgid "Welcome to"
+msgstr ""
+
+#: admin/partials/settings.php:29
+msgid "Plugin Settings"
+msgstr ""
+
+#: includes/class-crypto-access-domain.php:33
+msgid "Access Control"
+msgstr ""
+
+#: includes/class-crypto-access-domain.php:49
+#: includes/class-crypto-access-domain.php:114
+msgid "Web3Domain Access"
+msgstr ""
+
+#: includes/class-crypto-access-domain.php:50
+msgid "Restrict user to access certain part of the website based on Web3Domain availability. "
+msgstr ""
+
+#: includes/class-crypto-access-domain.php:65
+msgid "Access Control Settings"
+msgstr ""
+
+#: includes/class-crypto-access-domain.php:66
+msgid "You can use only one access control at a time. Select your preference."
+msgstr ""
+
+#: includes/class-crypto-access-domain.php:83
+msgid "Web3Domain Name"
+msgstr ""
+
+#: includes/class-crypto-access-domain.php:84
+msgid "Enter Web3Domain primary domain name. Access to page is available to user, only if sub-domain exist in wallet."
+msgstr ""
+
+#: includes/class-crypto-access-domain.php:91
+#: includes/class-crypto-access-nft.php:80
+msgid "Restrict Page"
+msgstr ""
+
+#: includes/class-crypto-access-domain.php:92
+#: includes/class-crypto-access-nft.php:81
+msgid "Page must contain shortcode as "
+msgstr ""
+
+#: includes/class-crypto-access-domain.php:110
+msgid "Select Access Control"
+msgstr ""
+
+#: includes/class-crypto-access-domain.php:115
+#: includes/class-crypto-access-nft.php:28
+msgid "NFT & Crypto Access"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:29
+msgid "Restrict user to access certain part of the website based on NFT token availability. "
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:46
+msgid "Blockchain Network"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:47
+msgid "Select your blockchain of contract address used"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:51
+msgid "Ethereum Mainnet"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:52
+msgid "Matic - Polygon Mainnet"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:53
+msgid "BNB Smart Chain"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:58
+msgid "NFT contract address"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:59
+msgid "Contract address of NFT starts with 0x..."
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:65
+msgid "NFT Name"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:66
+msgid "Name of the NFT Token for visitors"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:72
+msgid "NFT or Crypto count"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:73
+msgid "Enter the number of NFT/crypto must be available."
+msgstr ""
+
+#: includes/class-crypto-block.php:32
+msgid "You must have Web3Domain in your wallet"
+msgstr ""
+
+#: includes/class-crypto-block.php:37
+msgid "You must login to view content."
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:43
+msgid "Metamask Login"
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:44
+msgid "Login with Metamask without any 3rd party provider"
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:60
+#: includes/class-crypto-connect-moralis.php:169
+#: includes/class-crypto-connect-web3modal.php:201
+msgid "Select login provider"
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:64
+#: includes/class-crypto-connect-moralis.php:173
+msgid "Connect using Web3Modal"
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:65
+#: includes/class-crypto-connect-moralis.php:174
+#: includes/class-crypto-connect-web3modal.php:206
+msgid "Connect using moralis.io API - Metamask & WalletConnect"
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:66
+#: includes/class-crypto-connect-moralis.php:175
+#: includes/class-crypto-connect-web3modal.php:207
+msgid "Connect using Metamask without any provider"
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:88
+#: includes/class-crypto-connect-moralis.php:112
+#: includes/class-crypto-connect-web3modal.php:110
+msgid "Enable at Flexi"
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:89
+#: includes/class-crypto-connect-moralis.php:113
+#: includes/class-crypto-connect-web3modal.php:111
+msgid "Display connect button at Flexi login form."
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:96
+#: includes/class-crypto-connect-moralis.php:120
+#: includes/class-crypto-connect-web3modal.php:118
+msgid "Enable at WooCommerce"
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:97
+#: includes/class-crypto-connect-moralis.php:121
+#: includes/class-crypto-connect-web3modal.php:119
+msgid "Display connect button at WooCommmerce Login form"
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:104
+#: includes/class-crypto-connect-moralis.php:128
+msgid "Metamask button label"
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:105
+#: includes/class-crypto-connect-moralis.php:129
+msgid "Label to display at metamask connect button"
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:114
+#: includes/class-crypto-connect-moralis.php:144
+#: includes/class-crypto-connect-web3modal.php:135
+msgid "Connect button class rule"
+msgstr ""
+
+#: includes/class-crypto-connect-metamask.php:115
+#: includes/class-crypto-connect-moralis.php:145
+#: includes/class-crypto-connect-web3modal.php:136
+msgid "fl-button fl-is-info fl-is-rounded"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:58
+msgid "Moralis Crypto Login"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:59
+msgid "Let users to connect via Metamask or WalletConnect."
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:78
+msgid "Moralis URL"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:79
+msgid "Enter Moralis API Server URL"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:84
+msgid "Moralis appId"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:85
+msgid "Enter Moralis application Id"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:90
+#: includes/class-crypto-connect-web3modal.php:101
+msgid "Default Network Chain ID"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:91
+msgid "If specified, network wallet changes after connection. Eg. 0x89 for Matic & 0x38 for BSC"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:96
+msgid "Metamask Button"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:97
+msgid "Display Metamask Button"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:104
+msgid "WalletConnect Button"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:105
+msgid "Display WalletConnect Button"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:136
+msgid "Disconnect button label"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:137
+msgid "Label to display at Disconnect Wallet button"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:150
+msgid "Disconnect button class rule"
+msgstr ""
+
+#: includes/class-crypto-connect-moralis.php:151
+msgid "fl-button fl-is-danger fl-is-rounded"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:80
+msgid "Web3Modal Crypto Login"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:81
+msgid "Let users to connect via Metamask, WalletConnect & many more wallet"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:102
+msgid "If specified, network wallet changes notice displayed. Eg. 1 for Ethereum Mainnet & 137 for Matic"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:126
+msgid "Crypto Login button label"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:127
+msgid "Label to display at crypto connect button"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:145
+msgid "providerOptions Javascript Array"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:146
+msgid "Manual javascript array based on"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:152
+msgid "providerOptions Default Value"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:162
+msgid "WalletConnect"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:162
+#: includes/class-crypto-connect-web3modal.php:163
+#: includes/class-crypto-connect-web3modal.php:164
+#: includes/class-crypto-connect-web3modal.php:165
+#: includes/class-crypto-connect-web3modal.php:166
+#: includes/class-crypto-connect-web3modal.php:167
+#: includes/class-crypto-connect-web3modal.php:168
+#: includes/class-crypto-connect-web3modal.php:169
+#: includes/class-crypto-connect-web3modal.php:170
+#: includes/class-crypto-connect-web3modal.php:171
+#: includes/class-crypto-connect-web3modal.php:172
+#: includes/class-crypto-connect-web3modal.php:173
+#: includes/class-crypto-connect-web3modal.php:174
+msgid "Docs"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:163
+msgid "Fortmatic"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:164
+msgid "Torus"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:165
+msgid "Portis"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:166
+msgid "Authereum"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:167
+msgid "Frame"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:168
+msgid "Bitski"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:169
+msgid "Venly"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:170
+msgid "DCent"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:171
+msgid "BurnerConnect"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:172
+msgid "MEWConnect"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:173
+msgid "Binance Chain Wallet"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:174
+msgid "WalletLink"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:181
+msgid "Javascript function"
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:182
+msgid "Execute javascript function as soon as wallet connected. Eg. alert(\"Hello\"); "
+msgstr ""
+
+#: includes/class-crypto-connect-web3modal.php:205
+msgid "Connect using Web3Modal. Supports more then 10 wallet provider"
+msgstr ""
+
+#: includes/class-crypto-facebook.php:22
+msgid "Facebook Login"
+msgstr ""
+
+#: includes/class-crypto-facebook.php:23
+msgid "Let users to login via Facebook"
+msgstr ""
+
+#: includes/class-crypto-facebook.php:47
+msgid "Enable Facebook Login"
+msgstr ""
+
+#: includes/class-crypto-facebook.php:48
+msgid "Let users to connect via Facebook."
+msgstr ""
+
+#: includes/class-crypto-price.php:33
+msgid "Price"
+msgstr ""
+
+#: includes/class-crypto-price.php:49
+msgid "Crypto Price Box"
+msgstr ""
+
+#: includes/class-crypto-price.php:50
+msgid "Show latest price of your desired cryptocurrency."
+msgstr ""
+
+#: includes/class-crypto-price.php:66
+msgid "Currency"
+msgstr ""
+
+#: includes/class-crypto-price.php:67
+msgid "Select your primary currency"
+msgstr ""
+
+#: includes/class-crypto-price.php:70
+msgid "United States Dollar ($) USD"
+msgstr ""
+
+#: includes/class-crypto-price.php:71
+msgid "Albanian Lek (L)"
+msgstr ""
+
+#: includes/class-crypto-price.php:72
+msgid "Algerian Dinar (د.ج)\tDZD"
+msgstr ""
+
+#: includes/class-crypto-price.php:73
+msgid "Argentine Peso ($)\tARS"
+msgstr ""
+
+#: includes/class-crypto-price.php:74
+msgid "Armenian Dram (֏)\tAMD"
+msgstr ""
+
+#: includes/class-crypto-price.php:75
+msgid "Autralian Dollar ($)\tAUD"
+msgstr ""
+
+#: includes/class-crypto-price.php:76
+msgid "Azerbaijani Manat (₼)\tAZN"
+msgstr ""
+
+#: includes/class-crypto-price.php:77
+msgid "Bahraini Dinar (.د.ب)\tBHD"
+msgstr ""
+
+#: includes/class-crypto-price.php:78
+msgid "Bangladeshi Taka (৳)\tBDT"
+msgstr ""
+
+#: includes/class-crypto-price.php:79
+msgid "Belarusian Ruble (Br)\tBYN"
+msgstr ""
+
+#: includes/class-crypto-price.php:80
+msgid "Bermudan Dollar ($)\tBMD"
+msgstr ""
+
+#: includes/class-crypto-price.php:81
+msgid "Bolivian Boliviano (Bs.)\tBOB"
+msgstr ""
+
+#: includes/class-crypto-price.php:82
+msgid "Bosnia-Herzegovina Convertible Mark (KM)\tBAM"
+msgstr ""
+
+#: includes/class-crypto-price.php:83
+msgid "Brazilian Real (R$)\tBRL"
+msgstr ""
+
+#: includes/class-crypto-price.php:84
+msgid "Bulgarian Lev (лв)\tBGN"
+msgstr ""
+
+#: includes/class-crypto-price.php:85
+msgid "Cambodian Riel (៛)\tKHR"
+msgstr ""
+
+#: includes/class-crypto-price.php:86
+msgid "Canadian Dollar ($)\tCAD"
+msgstr ""
+
+#: includes/class-crypto-price.php:87
+msgid "Chilean Peso ($)\tCLP"
+msgstr ""
+
+#: includes/class-crypto-price.php:88
+msgid "Chinese Yuan (¥)\tCNY"
+msgstr ""
+
+#: includes/class-crypto-price.php:89
+msgid "Colombian Peso ($)\tCOP"
+msgstr ""
+
+#: includes/class-crypto-price.php:90
+msgid "Costa Rican Colón (₡)\tCRC"
+msgstr ""
+
+#: includes/class-crypto-price.php:91
+msgid "Croatian Kuna (kn)\tHRK"
+msgstr ""
+
+#: includes/class-crypto-price.php:92
+msgid "Cuban Peso ($)\tCUP"
+msgstr ""
+
+#: includes/class-crypto-price.php:93
+msgid "Czech Koruna (Kč)\tCZK"
+msgstr ""
+
+#: includes/class-crypto-price.php:94
+msgid "Danish Krone (kr)\tDKK"
+msgstr ""
+
+#: includes/class-crypto-price.php:95
+msgid "Dominican Peso ($)\tDOP"
+msgstr ""
+
+#: includes/class-crypto-price.php:96
+msgid "Egyptian Pound (£)\tEGP"
+msgstr ""
+
+#: includes/class-crypto-price.php:97
+msgid "Euro (€)\tEUR"
+msgstr ""
+
+#: includes/class-crypto-price.php:98
+msgid "Georgian Lari (₾)\tGEL"
+msgstr ""
+
+#: includes/class-crypto-price.php:99
+msgid "Ghanaian Cedi (₵)\tGHS"
+msgstr ""
+
+#: includes/class-crypto-price.php:100
+msgid "Guatemalan Quetzal (Q)\tGTQ"
+msgstr ""
+
+#: includes/class-crypto-price.php:101
+msgid "Honduran Lempira (L)\tHNL"
+msgstr ""
+
+#: includes/class-crypto-price.php:102
+msgid "Hong Kong Dollar ($)\tHKD"
+msgstr ""
+
+#: includes/class-crypto-price.php:103
+msgid "Hungarian Forint (Ft)\tHUF"
+msgstr ""
+
+#: includes/class-crypto-price.php:104
+msgid "Icelandic Króna (kr)\tISK"
+msgstr ""
+
+#: includes/class-crypto-price.php:105
+msgid "Indian Rupee (₹)\tINR"
+msgstr ""
+
+#: includes/class-crypto-price.php:106
+msgid "Indonesian Rupiah (Rp)\tIDR"
+msgstr ""
+
+#: includes/class-crypto-price.php:107
+msgid "Iranian Rial (﷼)\tIRR"
+msgstr ""
+
+#: includes/class-crypto-price.php:108
+msgid "Iraqi Dinar (ع.د)\tIQD"
+msgstr ""
+
+#: includes/class-crypto-price.php:109
+msgid "Israeli New Shekel (₪)\tILS"
+msgstr ""
+
+#: includes/class-crypto-price.php:110
+msgid "Jamaican Dollar ($)\tJMD"
+msgstr ""
+
+#: includes/class-crypto-price.php:111
+msgid "Japanese Yen (¥)\tJPY"
+msgstr ""
+
+#: includes/class-crypto-price.php:112
+msgid "Jordanian Dinar (د.ا)\tJOD"
+msgstr ""
+
+#: includes/class-crypto-price.php:113
+msgid "Kazakhstani Tenge (₸)\tKZT"
+msgstr ""
+
+#: includes/class-crypto-price.php:114
+msgid "Kenyan Shilling (Sh)\tKES"
+msgstr ""
+
+#: includes/class-crypto-price.php:115
+msgid "Kuwaiti Dinar (د.ك)\tKWD"
+msgstr ""
+
+#: includes/class-crypto-price.php:116
+msgid "Kyrgystani Som (с)\tKGS"
+msgstr ""
+
+#: includes/class-crypto-price.php:117
+msgid "Lebanese Pound (ل.ل)\tLBP"
+msgstr ""
+
+#: includes/class-crypto-price.php:118
+msgid "Macedonian Denar (ден)\tMKD"
+msgstr ""
+
+#: includes/class-crypto-price.php:119
+msgid "Malaysian Ringgit (RM)\tMYR"
+msgstr ""
+
+#: includes/class-crypto-price.php:120
+msgid "Mauritian Rupee (₨)\tMUR"
+msgstr ""
+
+#: includes/class-crypto-price.php:121
+msgid "Mexican Peso ($)\tMXN"
+msgstr ""
+
+#: includes/class-crypto-price.php:122
+msgid "Moldovan Leu (L)\tMDL"
+msgstr ""
+
+#: includes/class-crypto-price.php:123
+msgid "Mongolian Tugrik (₮)\tMNT"
+msgstr ""
+
+#: includes/class-crypto-price.php:124
+msgid "Moroccan Dirham (د.م.)\tMAD"
+msgstr ""
+
+#: includes/class-crypto-price.php:125
+msgid "Myanma Kyat (Ks)\tMMK"
+msgstr ""
+
+#: includes/class-crypto-price.php:126
+msgid "Namibian Dollar ($)\tNAD"
+msgstr ""
+
+#: includes/class-crypto-price.php:127
+msgid "Nepalese Rupee (₨)\tNPR"
+msgstr ""
+
+#: includes/class-crypto-price.php:128
+msgid "New Taiwan Dollar (NT$)\tTWD"
+msgstr ""
+
+#: includes/class-crypto-price.php:129
+msgid "New Zealand Dollar ($)\tNZD"
+msgstr ""
+
+#: includes/class-crypto-price.php:130
+msgid "Nicaraguan Córdoba (C$)\tNIO"
+msgstr ""
+
+#: includes/class-crypto-price.php:131
+msgid "Nigerian Naira (₦)\tNGN"
+msgstr ""
+
+#: includes/class-crypto-price.php:132
+msgid "Norwegian Krone (kr)\tNOK"
+msgstr ""
+
+#: includes/class-crypto-price.php:133
+msgid "Omani Rial (ر.ع.)\tOMR"
+msgstr ""
+
+#: includes/class-crypto-price.php:134
+msgid "Pakistani Rupee (₨)\tPKR"
+msgstr ""
+
+#: includes/class-crypto-price.php:135
+msgid "Panamanian Balboa (B/.)\tPAB"
+msgstr ""
+
+#: includes/class-crypto-price.php:136
+msgid "Peruvian Sol (S/.)\tPEN"
+msgstr ""
+
+#: includes/class-crypto-price.php:137
+msgid "Philippine Peso (₱)\tPHP"
+msgstr ""
+
+#: includes/class-crypto-price.php:138
+msgid "Polish Złoty (zł)\tPLN"
+msgstr ""
+
+#: includes/class-crypto-price.php:139
+msgid "Pound Sterling (£)\tGBP"
+msgstr ""
+
+#: includes/class-crypto-price.php:140
+msgid "Qatari Rial (ر.ق)\tQAR"
+msgstr ""
+
+#: includes/class-crypto-price.php:141
+msgid "Romanian Leu (lei)\tRON"
+msgstr ""
+
+#: includes/class-crypto-price.php:142
+msgid "Russian Ruble (₽)\tRUB"
+msgstr ""
+
+#: includes/class-crypto-price.php:143
+msgid "Saudi Riyal (ر.س)\tSAR"
+msgstr ""
+
+#: includes/class-crypto-price.php:144
+msgid "Serbian Dinar (дин.)\tRSD"
+msgstr ""
+
+#: includes/class-crypto-price.php:145
+msgid "Singapore Dollar (S$)\tSGD"
+msgstr ""
+
+#: includes/class-crypto-price.php:146
+msgid "South African Rand (R)\tZAR"
+msgstr ""
+
+#: includes/class-crypto-price.php:147
+msgid "South Korean Won (₩)\tKRW"
+msgstr ""
+
+#: includes/class-crypto-price.php:148
+msgid "South Sudanese Pound (£)\tSSP"
+msgstr ""
+
+#: includes/class-crypto-price.php:149
+msgid "Sovereign Bolivar (Bs.)\tVES"
+msgstr ""
+
+#: includes/class-crypto-price.php:150
+msgid "Sri Lankan Rupee (Rs)\tLKR"
+msgstr ""
+
+#: includes/class-crypto-price.php:151
+msgid "Swedish Krona ( kr)\tSEK"
+msgstr ""
+
+#: includes/class-crypto-price.php:152
+msgid "Swiss Franc (Fr)\tCHF"
+msgstr ""
+
+#: includes/class-crypto-price.php:153
+msgid "Thai Baht (฿)\tTHB"
+msgstr ""
+
+#: includes/class-crypto-price.php:154
+msgid "Trinidad and Tobago Dollar ($)\tTTD"
+msgstr ""
+
+#: includes/class-crypto-price.php:155
+msgid "Tunisian Dinar (د.ت)\tTND"
+msgstr ""
+
+#: includes/class-crypto-price.php:156
+msgid "Turkish Lira (₺)\tTRY"
+msgstr ""
+
+#: includes/class-crypto-price.php:157
+msgid "Ugandan Shilling (Sh)\tUGX"
+msgstr ""
+
+#: includes/class-crypto-price.php:158
+msgid "Ukrainian Hryvnia (₴)\tUAH"
+msgstr ""
+
+#: includes/class-crypto-price.php:159
+msgid "United Arab Emirates Dirham (د.إ)\tAED"
+msgstr ""
+
+#: includes/class-crypto-price.php:160
+msgid "Uruguayan Peso ($)\tUYU"
+msgstr ""
+
+#: includes/class-crypto-price.php:161
+msgid "Uzbekistan Som\tUZS"
+msgstr ""
+
+#: includes/class-crypto-price.php:162
+msgid "Vietnamese Dong (₫)\tVND"
+msgstr ""
+
+#: includes/class-crypto-price.php:168
+msgid "CoinMarketCap API"
+msgstr ""
+
+#: includes/class-crypto-price.php:169
+msgid "Get free API key from CoinMarketCap"
+msgstr ""
+
+#: includes/class-crypto-price.php:175
+msgid "Crypto Data Caching"
+msgstr ""
+
+#: includes/class-crypto-price.php:176
+msgid "Enter cache time for crypto data in seconds. It saves API limit and speed up results."
+msgstr ""
+
+#: includes/class-crypto-price.php:183
+msgid "Theme Style"
+msgstr ""
+
+#: includes/class-crypto-price.php:187
+msgid "None"
+msgstr ""
+
+#: includes/class-crypto-price.php:188
+msgid "Style 1"
+msgstr ""
+
+#: includes/class-crypto-price.php:194
+msgid "Theme Color"
+msgstr ""
+
+#: includes/class-crypto-price.php:198
+msgid "Default"
+msgstr ""
+
+#: includes/class-crypto-price.php:199
+msgid "Primary"
+msgstr ""
+
+#: includes/class-crypto-price.php:200
+msgid "Link"
+msgstr ""
+
+#: includes/class-crypto-price.php:201 includes/class-crypto-settings.php:223
+msgid "Information"
+msgstr ""
+
+#: includes/class-crypto-price.php:202
+msgid "Success"
+msgstr ""
+
+#: includes/class-crypto-price.php:203
+msgid "Warning"
+msgstr ""
+
+#: includes/class-crypto-price.php:204
+msgid "Danger"
+msgstr ""
+
+#: includes/class-crypto-settings.php:61
+msgid "crypto"
+msgstr ""
+
+#: includes/class-crypto-settings.php:61 includes/class-crypto-settings.php:62
+msgid "Settings"
+msgstr ""
+
+#: includes/class-crypto-settings.php:168
+msgid "General"
+msgstr ""
+
+#: includes/class-crypto-settings.php:169
+msgid "Login"
+msgstr ""
+
+#: includes/class-crypto-settings.php:187
+msgid "General settings"
+msgstr ""
+
+#: includes/class-crypto-settings.php:192
+msgid "Login settings"
+msgstr ""
+
+#: includes/class-crypto-settings.php:224
+msgid "Select appropriate tabs above & do check sub-tabs below them."
+msgstr ""
+
+#: includes/class-crypto-settings.php:554
+msgid "Choose File"
+msgstr ""
+
+#: includes/class-crypto-settings.php:606
+msgid "Select a page"
+msgstr ""
+
+#: includes/class-crypto-settings.php:629
+msgid "Select category"
+msgstr ""
+
+#: includes/widgets/donation/donation.php:9
+msgid "Crypto Donation"
+msgstr ""
+
+#: includes/widgets/donation/donation.php:10
+msgid "Get tips or donation in crypto"
+msgstr ""
+
+#: includes/widgets/login.php:9
+msgid "Crypto Login"
+msgstr ""
+
+#: includes/widgets/login.php:10
+msgid "Show Login with Crypto Button"
+msgstr ""
+
+#: public/class-crypto-public.php:113 public/class-crypto-public.php:123
+#: public/class-crypto-public.php:130
+msgid "Are you sure you want to delete?"
+msgstr ""
