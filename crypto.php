@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://odude.com/
- * @since             1.18
+ * @link              https://w3d.name/
+ * @since             2.0
  * @package           Crypto
  *
  * @wordpress-plugin
  * Plugin Name:       Crypto
- * Plugin URI:        http://odude.com
+ * Plugin URI:        http://w3d.name
  * Description:       Crypto - everyday use tools. 
  * Version:           1.8
  * Author:            ODude
- * Author URI:        https://odude.com/
+ * Author URI:        https://w3d.name/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       crypto
@@ -30,7 +30,7 @@ if (!defined('WPINC')) {
     die;
 }
 
-define('CRYPTO_VERSION', '1.18.1');
+define('CRYPTO_VERSION', '2.0');
 define('CRYPTO_FOLDER', dirname(plugin_basename(__FILE__)));
 define('CRYPTO_PLUGIN_URL', content_url('/plugins/' . CRYPTO_FOLDER));
 define('CRYPTO_BASE_DIR', WP_CONTENT_DIR . '/plugins/' . CRYPTO_FOLDER . '/');

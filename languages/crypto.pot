@@ -2,17 +2,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Crypto\n"
-"POT-Creation-Date: 2022-07-28 11:55+0545\n"
+"POT-Creation-Date: 2023-01-23 16:41+0545\n"
 "PO-Revision-Date: 2020-02-09 12:49+0545\n"
 "Last-Translator: \n"
 "Language-Team: navneet@odude.com\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
-"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html__\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: block/node_modules\n"
@@ -37,365 +37,263 @@ msgid "Welcome to"
 msgstr ""
 
 #: admin/partials/settings.php:29
-msgid "Plugin Settings"
+msgid "Plugin Configuration"
 msgstr ""
 
-#: includes/class-crypto-access-domain.php:33
+#: includes/class-crypto-access-domain.php:35
 msgid "Access Control"
 msgstr ""
 
-#: includes/class-crypto-access-domain.php:49
-#: includes/class-crypto-access-domain.php:114
+#: includes/class-crypto-access-domain.php:51
+#: includes/class-crypto-access-domain.php:116
 msgid "Web3Domain Access"
 msgstr ""
 
-#: includes/class-crypto-access-domain.php:50
-msgid "Restrict user to access certain part of the website based on Web3Domain availability. "
+#: includes/class-crypto-access-domain.php:52
+msgid "Limit access to specific areas of the website based on the availability of a Web3Domain."
 msgstr ""
 
-#: includes/class-crypto-access-domain.php:65
-msgid "Access Control Settings"
+#: includes/class-crypto-access-domain.php:67
+msgid "Access Control Configuration"
 msgstr ""
 
-#: includes/class-crypto-access-domain.php:66
-msgid "You can use only one access control at a time. Select your preference."
+#: includes/class-crypto-access-domain.php:68
+msgid "You can only use one access control setting at a time. Choose your preferred option."
 msgstr ""
 
-#: includes/class-crypto-access-domain.php:83
-msgid "Web3Domain Name"
+#: includes/class-crypto-access-domain.php:85
+msgid "TLD of the Web3Domain Name"
 msgstr ""
 
-#: includes/class-crypto-access-domain.php:84
-msgid "Enter Web3Domain primary domain name. Access to page is available to user, only if sub-domain exist in wallet."
+#: includes/class-crypto-access-domain.php:86
+msgid "Enter the primary Web3Domain name. Access to this page will only be granted to users who have a sub-domain of this name in their wallet."
 msgstr ""
 
-#: includes/class-crypto-access-domain.php:91
-#: includes/class-crypto-access-nft.php:80
-msgid "Restrict Page"
+#: includes/class-crypto-access-domain.php:93
+#: includes/class-crypto-access-nft.php:102
+msgid "Limit access to the page"
 msgstr ""
 
-#: includes/class-crypto-access-domain.php:92
-#: includes/class-crypto-access-nft.php:81
-msgid "Page must contain shortcode as "
+#: includes/class-crypto-access-domain.php:94
+msgid "To limit access to the entire page, add the shortcode [crypto-connect label=\"Connect Wallet\" class=\"fl-button fl-is-info fl-is-light\"] [crypto-access-domain]"
 msgstr ""
 
-#: includes/class-crypto-access-domain.php:110
-msgid "Select Access Control"
+#: includes/class-crypto-access-domain.php:112
+msgid "Choose Access Control"
 msgstr ""
 
-#: includes/class-crypto-access-domain.php:115
-#: includes/class-crypto-access-nft.php:28
-msgid "NFT & Crypto Access"
+#: includes/class-crypto-access-domain.php:117
+#: includes/class-crypto-access-nft.php:33
+msgid "Cryptocurrency & Non-Fungible Token (NFT) Access"
 msgstr ""
 
-#: includes/class-crypto-access-nft.php:29
-msgid "Restrict user to access certain part of the website based on NFT token availability. "
-msgstr ""
-
-#: includes/class-crypto-access-nft.php:46
-msgid "Blockchain Network"
-msgstr ""
-
-#: includes/class-crypto-access-nft.php:47
-msgid "Select your blockchain of contract address used"
+#: includes/class-crypto-access-nft.php:34
+msgid "Limit access to specific sections of the website based on the availability of NFT tokens."
 msgstr ""
 
 #: includes/class-crypto-access-nft.php:51
-msgid "Ethereum Mainnet"
+msgid "Blockchain Network"
 msgstr ""
 
 #: includes/class-crypto-access-nft.php:52
+msgid "Choose the blockchain on which the contract address is used."
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:56
+msgid "Ethereum Mainnet"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:57
 msgid "Matic - Polygon Mainnet"
 msgstr ""
 
-#: includes/class-crypto-access-nft.php:53
+#: includes/class-crypto-access-nft.php:58
 msgid "BNB Smart Chain"
 msgstr ""
 
-#: includes/class-crypto-access-nft.php:58
-msgid "NFT contract address"
+#: includes/class-crypto-access-nft.php:59
+#: includes/class-crypto-domain-search.php:77
+msgid "Mumbai Testnet"
 msgstr ""
 
-#: includes/class-crypto-access-nft.php:59
-msgid "Contract address of NFT starts with 0x..."
+#: includes/class-crypto-access-nft.php:64
+msgid "Contract address"
 msgstr ""
 
 #: includes/class-crypto-access-nft.php:65
-msgid "NFT Name"
+msgid "Enter the Contract address of the NFT or token, it should start with \"0x...\""
 msgstr ""
 
-#: includes/class-crypto-access-nft.php:66
-msgid "Name of the NFT Token for visitors"
+#: includes/class-crypto-access-nft.php:71
+msgid "Token Name"
 msgstr ""
 
 #: includes/class-crypto-access-nft.php:72
+msgid "Enter the name of the NFT or token."
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:78
 msgid "NFT or Crypto count"
 msgstr ""
 
-#: includes/class-crypto-access-nft.php:73
-msgid "Enter the number of NFT/crypto must be available."
+#: includes/class-crypto-access-nft.php:79
+msgid "Enter the number of NFTs/tokens that must be available for access to be granted."
 msgstr ""
 
-#: includes/class-crypto-block.php:32
+#: includes/class-crypto-access-nft.php:89
+msgid "Crypto Type"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:93
+msgid "Coin (Eg. ERC-20)"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:94
+msgid "NFT (Eg. ERC-721)"
+msgstr ""
+
+#: includes/class-crypto-access-nft.php:103
+msgid "To limit access to the entire page, add the shortcode [crypto-connect label=\"Connect Wallet\" class=\"fl-button fl-is-info fl-is-light\"] [crypto-access-nft]."
+msgstr ""
+
+#: includes/class-crypto-block.php:34
 msgid "You must have Web3Domain in your wallet"
 msgstr ""
 
-#: includes/class-crypto-block.php:37
+#: includes/class-crypto-block.php:39
 msgid "You must login to view content."
 msgstr ""
 
-#: includes/class-crypto-connect-metamask.php:43
+#: includes/class-crypto-connect-metamask.php:44
 msgid "Metamask Login"
 msgstr ""
 
-#: includes/class-crypto-connect-metamask.php:44
+#: includes/class-crypto-connect-metamask.php:45
 msgid "Login with Metamask without any 3rd party provider"
 msgstr ""
 
-#: includes/class-crypto-connect-metamask.php:60
-#: includes/class-crypto-connect-moralis.php:169
-#: includes/class-crypto-connect-web3modal.php:201
+#: includes/class-crypto-connect-metamask.php:61
 msgid "Select login provider"
 msgstr ""
 
-#: includes/class-crypto-connect-metamask.php:64
-#: includes/class-crypto-connect-moralis.php:173
-msgid "Connect using Web3Modal"
-msgstr ""
-
-#: includes/class-crypto-connect-metamask.php:65
-#: includes/class-crypto-connect-moralis.php:174
-#: includes/class-crypto-connect-web3modal.php:206
-msgid "Connect using moralis.io API - Metamask & WalletConnect"
-msgstr ""
-
-#: includes/class-crypto-connect-metamask.php:66
-#: includes/class-crypto-connect-moralis.php:175
-#: includes/class-crypto-connect-web3modal.php:207
+#: includes/class-crypto-connect-metamask.php:67
 msgid "Connect using Metamask without any provider"
 msgstr ""
 
 #: includes/class-crypto-connect-metamask.php:88
-#: includes/class-crypto-connect-moralis.php:112
-#: includes/class-crypto-connect-web3modal.php:110
-msgid "Enable at Flexi"
-msgstr ""
-
-#: includes/class-crypto-connect-metamask.php:89
-#: includes/class-crypto-connect-moralis.php:113
-#: includes/class-crypto-connect-web3modal.php:111
-msgid "Display connect button at Flexi login form."
-msgstr ""
-
-#: includes/class-crypto-connect-metamask.php:96
-#: includes/class-crypto-connect-moralis.php:120
-#: includes/class-crypto-connect-web3modal.php:118
-msgid "Enable at WooCommerce"
-msgstr ""
-
-#: includes/class-crypto-connect-metamask.php:97
-#: includes/class-crypto-connect-moralis.php:121
-#: includes/class-crypto-connect-web3modal.php:119
-msgid "Display connect button at WooCommmerce Login form"
-msgstr ""
-
-#: includes/class-crypto-connect-metamask.php:104
-#: includes/class-crypto-connect-moralis.php:128
-msgid "Metamask button label"
-msgstr ""
-
-#: includes/class-crypto-connect-metamask.php:105
-#: includes/class-crypto-connect-moralis.php:129
-msgid "Label to display at metamask connect button"
-msgstr ""
-
-#: includes/class-crypto-connect-metamask.php:114
-#: includes/class-crypto-connect-moralis.php:144
-#: includes/class-crypto-connect-web3modal.php:135
-msgid "Connect button class rule"
-msgstr ""
-
-#: includes/class-crypto-connect-metamask.php:115
-#: includes/class-crypto-connect-moralis.php:145
-#: includes/class-crypto-connect-web3modal.php:136
-msgid "fl-button fl-is-info fl-is-rounded"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:58
-msgid "Moralis Crypto Login"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:59
-msgid "Let users to connect via Metamask or WalletConnect."
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:78
-msgid "Moralis URL"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:79
-msgid "Enter Moralis API Server URL"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:84
-msgid "Moralis appId"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:85
-msgid "Enter Moralis application Id"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:90
-#: includes/class-crypto-connect-web3modal.php:101
 msgid "Default Network Chain ID"
 msgstr ""
 
-#: includes/class-crypto-connect-moralis.php:91
-msgid "If specified, network wallet changes after connection. Eg. 0x89 for Matic & 0x38 for BSC"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:96
-msgid "Metamask Button"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:97
-msgid "Display Metamask Button"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:104
-msgid "WalletConnect Button"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:105
-msgid "Display WalletConnect Button"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:136
-msgid "Disconnect button label"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:137
-msgid "Label to display at Disconnect Wallet button"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:150
-msgid "Disconnect button class rule"
-msgstr ""
-
-#: includes/class-crypto-connect-moralis.php:151
-msgid "fl-button fl-is-danger fl-is-rounded"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:80
-msgid "Web3Modal Crypto Login"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:81
-msgid "Let users to connect via Metamask, WalletConnect & many more wallet"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:102
+#: includes/class-crypto-connect-metamask.php:89
 msgid "If specified, network wallet changes notice displayed. Eg. 1 for Ethereum Mainnet & 137 for Matic"
 msgstr ""
 
-#: includes/class-crypto-connect-web3modal.php:126
-msgid "Crypto Login button label"
+#: includes/class-crypto-connect-metamask.php:97
+msgid "Enable at WooCommerce"
 msgstr ""
 
-#: includes/class-crypto-connect-web3modal.php:127
-msgid "Label to display at crypto connect button"
+#: includes/class-crypto-connect-metamask.php:98
+msgid "Display connect button at WooCommmerce Login form"
 msgstr ""
 
-#: includes/class-crypto-connect-web3modal.php:145
-msgid "providerOptions Javascript Array"
+#: includes/class-crypto-connect-metamask.php:105
+msgid "Metamask button label"
 msgstr ""
 
-#: includes/class-crypto-connect-web3modal.php:146
-msgid "Manual javascript array based on"
+#: includes/class-crypto-connect-metamask.php:106
+msgid "Label to display at metamask connect button"
 msgstr ""
 
-#: includes/class-crypto-connect-web3modal.php:152
-msgid "providerOptions Default Value"
+#: includes/class-crypto-connect-metamask.php:115
+msgid "Connect button class rule"
 msgstr ""
 
-#: includes/class-crypto-connect-web3modal.php:162
-msgid "WalletConnect"
+#: includes/class-crypto-connect-metamask.php:116
+msgid "fl-button fl-is-info fl-is-rounded"
 msgstr ""
 
-#: includes/class-crypto-connect-web3modal.php:162
-#: includes/class-crypto-connect-web3modal.php:163
-#: includes/class-crypto-connect-web3modal.php:164
-#: includes/class-crypto-connect-web3modal.php:165
-#: includes/class-crypto-connect-web3modal.php:166
-#: includes/class-crypto-connect-web3modal.php:167
-#: includes/class-crypto-connect-web3modal.php:168
-#: includes/class-crypto-connect-web3modal.php:169
-#: includes/class-crypto-connect-web3modal.php:170
-#: includes/class-crypto-connect-web3modal.php:171
-#: includes/class-crypto-connect-web3modal.php:172
-#: includes/class-crypto-connect-web3modal.php:173
-#: includes/class-crypto-connect-web3modal.php:174
-msgid "Docs"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:163
-msgid "Fortmatic"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:164
-msgid "Torus"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:165
-msgid "Portis"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:166
-msgid "Authereum"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:167
-msgid "Frame"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:168
-msgid "Bitski"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:169
-msgid "Venly"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:170
-msgid "DCent"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:171
-msgid "BurnerConnect"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:172
-msgid "MEWConnect"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:173
-msgid "Binance Chain Wallet"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:174
-msgid "WalletLink"
-msgstr ""
-
-#: includes/class-crypto-connect-web3modal.php:181
+#: includes/class-crypto-connect-metamask.php:122
 msgid "Javascript function"
 msgstr ""
 
-#: includes/class-crypto-connect-web3modal.php:182
+#: includes/class-crypto-connect-metamask.php:123
 msgid "Execute javascript function as soon as wallet connected. Eg. alert(\"Hello\"); "
 msgstr ""
 
-#: includes/class-crypto-connect-web3modal.php:205
-msgid "Connect using Web3Modal. Supports more then 10 wallet provider"
+#: includes/class-crypto-domain-search.php:38
+msgid "Marketplace"
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:54
+msgid "Sell Web3 Domain Names"
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:55
+msgid "Sell your own web3 domain names, such as ENS or Unstoppable."
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:71
+msgid "Select Network"
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:72
+msgid "The blockchain network where the primary top-level domain (TLD) is minted."
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:75
+msgid "Polygon - Matic"
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:76
+msgid "Filecoin - tFIL"
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:83
+msgid "Domain Search"
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:84
+msgid "Search and mint Web3Domains by using the [crypto-domain-search] shortcode on the designated page."
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:90
+msgid "My Domain"
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:91
+msgid "View a list of minted Web3Domains by using the [crypto-domain-market] shortcode on the designated page."
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:97
+msgid "Domain URL"
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:98
+msgid "Manage and redirect domains, such as \"http://yourwebsite/web3/web3domainname/\", by using the [crypto-domain-url] shortcode on a designated page."
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:104
+msgid "Domain Information"
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:105
+msgid "View information about domains that exist on the blockchain by using the [crypto-domain-info] shortcode on the designated page."
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:112
+msgid "Domain TLD"
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:113
+msgid "Enter the top-level domain name that you will be offering to your visitors."
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:121
+msgid "Price in Ether"
+msgstr ""
+
+#: includes/class-crypto-domain-search.php:122
+msgid "Enter the amount of ether required to mint the domain. It must be equal to or greater than the amount specified in the contract address of the primary domain."
 msgstr ""
 
 #: includes/class-crypto-facebook.php:22
@@ -891,7 +789,7 @@ msgid "Login settings"
 msgstr ""
 
 #: includes/class-crypto-settings.php:224
-msgid "Select appropriate tabs above & do check sub-tabs below them."
+msgid "Choose the relevant tabs above and review the sub-tabs within them."
 msgstr ""
 
 #: includes/class-crypto-settings.php:554
@@ -906,11 +804,11 @@ msgstr ""
 msgid "Select category"
 msgstr ""
 
-#: includes/widgets/donation/donation.php:9
+#: includes/widgets/donation/donation.php:12
 msgid "Crypto Donation"
 msgstr ""
 
-#: includes/widgets/donation/donation.php:10
+#: includes/widgets/donation/donation.php:13
 msgid "Get tips or donation in crypto"
 msgstr ""
 
@@ -922,7 +820,6 @@ msgstr ""
 msgid "Show Login with Crypto Button"
 msgstr ""
 
-#: public/class-crypto-public.php:113 public/class-crypto-public.php:123
-#: public/class-crypto-public.php:130
+#: public/class-crypto-public.php:117
 msgid "Are you sure you want to delete?"
 msgstr ""
