@@ -78,8 +78,8 @@ Become a Web3Domain provider on your own website by selling subdomains. We will 
 This section describes how to install the plugin and get it working.
 
 1. Upload `crypto.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Use shortcode [crypto-connect]
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Use shortcode [crypto-connect]
 
 == Frequently Asked Questions ==
 
