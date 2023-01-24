@@ -102,7 +102,6 @@ Web3Domain is a platform that allows you to register and sell your own web3 doma
 = 2.0 =
 All starts from scratch
 
-
 == Upgrade Notice ==
 
 = 2.0 =
