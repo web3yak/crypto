@@ -167,7 +167,7 @@ jQuery(document).ready(function() {
                             } else {
                                 //  console.log("Not authorized");
                                 jQuery('#json_container').html(
-                                    '<div class="crypto_alert-box crypto_warning"> Your are not owner of this domain name. Check your connected wallet address </div>'
+                                    '<div class="crypto_alert-box crypto_warning"> You are not the owner of this domain name. Please check the connected wallet address.t address. </div>'
                                 );
                                 jQuery("#crypto_manage_domain").hide();
 

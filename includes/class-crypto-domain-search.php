@@ -207,7 +207,7 @@ crypto_is_metamask_Connected().then(acc => {
                 console.log(domain_count);
                 if (domain_count == 0) {
                     var new_row =
-                        '<div class="fl-panel-block fl-is-active"><span class="fl-panel-icon"><i class="fas fa-book" aria-hidden="true"></i></span><b>No domain found in this : ' +
+                        '<div class="fl-panel-block fl-is-active"><span class="fl-panel-icon"><i class="fas fa-wallet" aria-hidden="true"></i></span><b>This wallet does not contain any Web3Domains : ' +
                         account + '</b></div>';
                     jQuery("[id=crypto_domain_result]").append(new_row).fadeIn("normal");
                     jQuery("#crypto_loading").hide();
@@ -388,6 +388,7 @@ crypto_is_metamask_Connected().then(acc => {
                     </div>
                 </div>
             </article>
+            <div id="json_container"></div>
 
 
 
@@ -413,7 +414,7 @@ jQuery(document).ready(function() {
 
         var str = jQuery("#crypto_search_domain").val();
         // var result = str.replace(".<?php echo   $this->primary_domain; ?>", "");
-        let result = str.includes("<?php echo $this->primary_domain; ?>");
+        let result = str.includes(".<?php echo $this->primary_domain; ?>");
         var final_domain = str + ".<?php echo $this->primary_domain; ?>";
         if (result) {
             final_domain = str;
@@ -422,7 +423,8 @@ jQuery(document).ready(function() {
         jQuery("[id=crypto_domain_name]").html(final_domain);
 
         if (crypto_is_valid_domain_name(final_domain)) {
-            crypto_check_w3d_name_json(final_domain);
+          //  crypto_check_w3d_name_json(final_domain);
+            crypto_check_before_search(final_domain);
         } else {
             console.log("Invalid domain");
             jQuery("#crypto_unavailable").show();
@@ -441,6 +443,119 @@ jQuery(document).ready(function() {
         // Print entered value in a div box
 
     });
+
+    function crypto_check_before_search(final_domain)
+    {
+        console.log("Search: "+final_domain);
+        crypto_is_metamask_Connected().then(acc => {
+            jQuery("#crypto_register_domain").hide();
+            jQuery("#crypto_domain_info_url").hide();
+            if (acc.addr == '') {
+                //console.log("Metamask is not connected. Please connect to it first.");
+                jQuery('#json_container').html(
+                    '<div class="crypto_alert-box crypto_error">Metamask is not connected. Please connect to it first.</div>'
+                );
+                jQuery("#crypto_loading").hide();
+
+            } else {
+                jQuery("#crypto_loading").show();
+                console.log("Connected to:" + acc.addr + "\n Network:" + acc.network);
+
+                if ((acc.network != '<?php echo $this->crypto_network; ?>')) {
+                    var msg =
+                        "Please change your network to Polygon (MATIC). Your currently connected network is " +
+                        acc.network;
+                    jQuery('#json_container').html(
+                        '<div class="crypto_alert-box crypto_error">' + msg + '</div>'
+                    );
+                    jQuery("#crypto_loading").hide();
+                    // jQuery("[id=crypto_msg_ul]").empty();
+                    //  jQuery("[id=crypto_msg_ul]").append(msg).fadeIn("normal");
+                } else {
+                    //  crypto_init();
+                    web3 = new Web3(window.ethereum);
+
+                    const connectWallet = async () => {
+                        const accounts = await ethereum.request({
+                            method: "eth_requestAccounts"
+                        });
+                        var persons = [];
+                        account = accounts[0];
+                        // console.log(`Connectedxxxxxxx account...........: ${account}`);
+
+                        jQuery("[id=crypto_wallet_address]").html(crypto_network_arr[acc
+                                .network])
+                            .fadeIn(
+                                "normal");
+
+                        // getBalance(account);
+                        await crypto_sleep(1000);
+                        var domain_id = await getId(final_domain);
+                        
+                        if (typeof domain_id !== 'undefined') {
+                            if (acc.network == '137') {
+                                jQuery("#crypto_blockchain_url").attr("href",
+                                    "<?php echo CRYPTO_POLYGON_URL; ?>" + domain_id);
+                            } else {
+                                jQuery("#crypto_blockchain_url").attr("href",
+                                    "<?php echo CRYPTO_FILECOIN_URL; ?>" + domain_id);
+                            }
+                            //console.log(domain_id);
+
+                            jQuery("#crypto_manage_domain").show();
+                            jQuery("#crypto_ipfs_domain").show();
+                            jQuery("#crypto_blockchain_url").show();
+
+                            var domain_owner = await getOwner(domain_id);
+                            console.log('Domain owner ' + domain_owner);
+                            jQuery("#crypto_unavailable").show();
+                            jQuery("#crypto_register_domain").hide();
+                    jQuery("#crypto_domain_info_url").show();
+                    jQuery("#crypto_manage_domain").show();
+                    jQuery("#crypto_ipfs_domain").show();
+                    jQuery("#crypto_manage_domain").attr("href",
+                        "<?php echo get_site_url(); ?>/web3/" + final_domain +
+                        "/?domain=manage");
+                    jQuery("#crypto_ipfs_domain").attr("href",
+                        "<?php echo get_site_url(); ?>/web3/" + final_domain +
+                        "/");
+
+                    var domain_info_url = new URL("<?php echo $this->info_page; ?>");
+                    //console.log(domain_info_url);
+                    domain_info_url.searchParams.append('domain', final_domain)
+                    jQuery("#crypto_domain_info_url").attr("href", domain_info_url);
+
+                    
+                            jQuery("#crypto_loading").hide();
+                        } else {
+                            //  console.log("Domain not minted yet");
+                            jQuery("#crypto_available").show();
+                            jQuery("#crypto_loading").hide();
+                            jQuery("#crypto_register_domain").attr("href",
+                        "<?php echo get_site_url(); ?>/web3/" + final_domain +
+                        "/?domain=manage");
+                    jQuery("#crypto_domain_info_url").hide();
+                    jQuery("#crypto_ipfs_domain").hide();
+                    jQuery("#crypto_register_domain").show();
+                       
+                        }
+
+                        // console.log(contract);
+
+                    };
+
+                    connectWallet();
+                    connectContract(contractAbi, contractAddress);
+
+
+
+
+                }
+            }
+        });
+
+
+    }
 
 
     function crypto_check_w3d_name_json(final_domain) {

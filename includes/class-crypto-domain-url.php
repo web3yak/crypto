@@ -222,7 +222,7 @@ class Crypto_Domain_URL
                                                     } else {
                                                         //  console.log("Not authorized");
                                                         jQuery('#json_container').html(
-                                                            '<div class="crypto_alert-box crypto_warning"> Your are not owner of this domain name. Check your connected wallet address </div>'
+                                                            '<div class="crypto_alert-box crypto_warning"> You are not the owner of this domain name. Please check the connected wallet address. </div>'
                                                         );
                                                         jQuery("#transfer_box").hide();
                                                         jQuery("#crypto_claim_box").hide();
