@@ -83,11 +83,11 @@ This section describes how to install the plugin and get it working.
 
 == Frequently Asked Questions ==
 
-= What is Metamask ? =
+= What is Metamask? =
 
 MetaMask is a software cryptocurrency wallet used to interact with the Ethereum blockchain. It allows users to access their Ethereum wallet through a browser extension or mobile app, which can then be used to interact with decentralized applications.
 
-= What is Web3Domain ? =
+= What is Web3Domain? =
 
 Web3Domain is a platform that allows you to register and sell your own web3 domain names, which are minted on a blockchain network. These domain names can be used to create subdomains, which can be sold to visitors. The Web3Domain platform also provides features such as connecting to a crypto wallet, automatic login, and the ability to earn money by selling subdomains. Additionally, all Web3Domains are Non-Fungible Tokens (NFTs) which can be sold on platforms such as opensea.io.
 
