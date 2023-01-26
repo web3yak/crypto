@@ -73,8 +73,8 @@ class Crypto_Domain_Search
                     'type' => 'select',
                     'options' => array(
                         '137' => __('Polygon - Matic', 'crypto'),
-                        '19' => __('Filecoin - tFIL', 'crypto'),
-                        '80001' => __('Mumbai Testnet', 'crypto'),
+                        //  '19' => __('Filecoin - tFIL', 'crypto'),
+                        //   '80001' => __('Mumbai Testnet', 'crypto'),
                     ),
                     'sanitize_callback' => 'sanitize_key',
                 ),
@@ -423,7 +423,7 @@ jQuery(document).ready(function() {
         jQuery("[id=crypto_domain_name]").html(final_domain);
 
         if (crypto_is_valid_domain_name(final_domain)) {
-          //  crypto_check_w3d_name_json(final_domain);
+            //  crypto_check_w3d_name_json(final_domain);
             crypto_check_before_search(final_domain);
         } else {
             console.log("Invalid domain");
@@ -444,9 +444,8 @@ jQuery(document).ready(function() {
 
     });
 
-    function crypto_check_before_search(final_domain)
-    {
-        console.log("Search: "+final_domain);
+    function crypto_check_before_search(final_domain) {
+        console.log("Search: " + final_domain);
         crypto_is_metamask_Connected().then(acc => {
             jQuery("#crypto_register_domain").hide();
             jQuery("#crypto_domain_info_url").hide();
@@ -491,7 +490,7 @@ jQuery(document).ready(function() {
                         // getBalance(account);
                         await crypto_sleep(1000);
                         var domain_id = await getId(final_domain);
-                        
+
                         if (typeof domain_id !== 'undefined') {
                             if (acc.network == '137') {
                                 jQuery("#crypto_blockchain_url").attr("href",
@@ -510,34 +509,34 @@ jQuery(document).ready(function() {
                             console.log('Domain owner ' + domain_owner);
                             jQuery("#crypto_unavailable").show();
                             jQuery("#crypto_register_domain").hide();
-                    jQuery("#crypto_domain_info_url").show();
-                    jQuery("#crypto_manage_domain").show();
-                    jQuery("#crypto_ipfs_domain").show();
-                    jQuery("#crypto_manage_domain").attr("href",
-                        "<?php echo get_site_url(); ?>/web3/" + final_domain +
-                        "/?domain=manage");
-                    jQuery("#crypto_ipfs_domain").attr("href",
-                        "<?php echo get_site_url(); ?>/web3/" + final_domain +
-                        "/");
+                            jQuery("#crypto_domain_info_url").show();
+                            jQuery("#crypto_manage_domain").show();
+                            jQuery("#crypto_ipfs_domain").show();
+                            jQuery("#crypto_manage_domain").attr("href",
+                                "<?php echo get_site_url(); ?>/web3/" + final_domain +
+                                "/?domain=manage");
+                            jQuery("#crypto_ipfs_domain").attr("href",
+                                "<?php echo get_site_url(); ?>/web3/" + final_domain +
+                                "/");
 
-                    var domain_info_url = new URL("<?php echo $this->info_page; ?>");
-                    //console.log(domain_info_url);
-                    domain_info_url.searchParams.append('domain', final_domain)
-                    jQuery("#crypto_domain_info_url").attr("href", domain_info_url);
+                            var domain_info_url = new URL("<?php echo $this->info_page; ?>");
+                            //console.log(domain_info_url);
+                            domain_info_url.searchParams.append('domain', final_domain)
+                            jQuery("#crypto_domain_info_url").attr("href", domain_info_url);
 
-                    
+
                             jQuery("#crypto_loading").hide();
                         } else {
                             //  console.log("Domain not minted yet");
                             jQuery("#crypto_available").show();
                             jQuery("#crypto_loading").hide();
                             jQuery("#crypto_register_domain").attr("href",
-                        "<?php echo get_site_url(); ?>/web3/" + final_domain +
-                        "/?domain=manage");
-                    jQuery("#crypto_domain_info_url").hide();
-                    jQuery("#crypto_ipfs_domain").hide();
-                    jQuery("#crypto_register_domain").show();
-                       
+                                "<?php echo get_site_url(); ?>/web3/" + final_domain +
+                                "/?domain=manage");
+                            jQuery("#crypto_domain_info_url").hide();
+                            jQuery("#crypto_ipfs_domain").hide();
+                            jQuery("#crypto_register_domain").show();
+
                         }
 
                         // console.log(contract);

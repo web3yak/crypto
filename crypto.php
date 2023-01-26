@@ -9,7 +9,7 @@
  * that starts the plugin.
  *
  * @link              https://w3d.name/
- * @since             2.0
+ * @since             2.1
  * @package           Crypto
  *
  * @wordpress-plugin
@@ -30,7 +30,7 @@ if (!defined('WPINC')) {
     die;
 }
 
-define('CRYPTO_VERSION', '2.0');
+define('CRYPTO_VERSION', '2.1');
 define('CRYPTO_FOLDER', dirname(plugin_basename(__FILE__)));
 define('CRYPTO_PLUGIN_URL', content_url('/plugins/' . CRYPTO_FOLDER));
 define('CRYPTO_BASE_DIR', WP_CONTENT_DIR . '/plugins/' . CRYPTO_FOLDER . '/');
