@@ -4,7 +4,7 @@ Donate link: https://w3d.name/
 Tags: crypto, login, metamask, NFT, Blockchain, Token
 Requires at least: 3.0.1
 Requires PHP: 5.5
-Tested up to: 6.0.1
+Tested up to: 6.1.1
 Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

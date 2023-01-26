@@ -16,7 +16,7 @@
  * Plugin Name:       Crypto
  * Plugin URI:        http://w3d.name
  * Description:       Crypto - everyday use tools. 
- * Version:           1.8
+ * Version:           2.1
  * Author:            ODude
  * Author URI:        https://w3d.name/
  * License:           GPL-2.0+
