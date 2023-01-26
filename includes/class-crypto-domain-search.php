@@ -73,8 +73,8 @@ class Crypto_Domain_Search
                     'type' => 'select',
                     'options' => array(
                         '137' => __('Polygon - Matic', 'crypto'),
-                        //  '19' => __('Filecoin - tFIL', 'crypto'),
-                        //   '80001' => __('Mumbai Testnet', 'crypto'),
+                        '19' => __('Filecoin - tFIL', 'crypto'),
+                        '80001' => __('Mumbai Testnet', 'crypto'),
                     ),
                     'sanitize_callback' => 'sanitize_key',
                 ),
