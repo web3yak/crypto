@@ -462,7 +462,9 @@ jQuery(document).ready(function() {
 
                 if ((acc.network != '<?php echo $this->crypto_network; ?>')) {
                     var msg =
-                        "Please change your network to Polygon (MATIC). Your currently connected network is " +
+                        "Please change your network to " + crypto_network_arr[
+                            '<?php echo $this->crypto_network; ?>'] +
+                        ". Your currently connected network is " +
                         acc.network;
                     jQuery('#json_container').html(
                         '<div class="crypto_alert-box crypto_error">' + msg + '</div>'

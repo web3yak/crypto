@@ -134,6 +134,7 @@ class Crypto_Activator
 		}
 		crypto_set_option('primary_domain', 'crypto_marketplace_settings', 'usa');
 		crypto_set_option('price_ether', 'crypto_marketplace_settings', '1');
+		crypto_set_option('chainid', 'crypto_login_metamask', '0');
 		flush_rewrite_rules();
 	}
 }
