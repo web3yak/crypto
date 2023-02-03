@@ -101,6 +101,8 @@ Web3Domain is a platform that allows you to register and sell your own web3 doma
 
 = 2.2 = 
 Updated languages
+Auto generate required pages
+Live demo links
 
 = 2.1 =
 All starts from scratch

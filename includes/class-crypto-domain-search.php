@@ -637,6 +637,9 @@ jQuery(document).ready(function() {
             <a class="button button-primary"
                 href="<?php echo admin_url('admin.php?page=crypto_settings&tab=marketplace&section=crypto_marketplace_settings'); ?>">Manage
                 Marketplace</a>
+            <a class="button button-primary" target="_blank" href="https://w3d.name/reseller/">Reseller Information</a>
+            <a class="button button-primary" target="_blank" href="https://w3d.name/reseller/domain-search/">Live
+                Demo</a>
             <hr>
             <h3>Benefits of Reselling Subdomains from Web3Domains</h3>
             <ul>

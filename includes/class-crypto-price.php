@@ -343,6 +343,8 @@ class Crypto_Price
             <br><br><a class="button button-primary"
                 href="<?php echo admin_url('admin.php?page=crypto_settings&tab=price&section=crypto_price_settings'); ?>">Price
                 Display Settings</a>
+            <a class="button button-primary" target="_blank" href="https://w3d.name/reseller/domain-search/">Live
+                Demo</a>
             <br><br>
             <b>Tips</b>
             <ul>
