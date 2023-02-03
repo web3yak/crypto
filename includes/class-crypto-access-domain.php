@@ -91,7 +91,7 @@ class Crypto_Access
                 array(
                     'name' => 'restrict_page',
                     'label' => __('Limit access to the page', 'crypto'),
-                    'description' => __('To limit access to the entire page, add the shortcode [crypto-connect label="Connect Wallet" class="fl-button fl-is-info fl-is-light"] [crypto-access-domain]', 'crypto'),
+                    'description' => __('Select a page with the [crypto-connect label="Connect Wallet" class="fl-button fl-is-info fl-is-light"] [crypto-access-domain] shortcode to determine a member\'s status based on the presence of a specified domain in their wallet.', 'crypto'),
                     'type' => 'pages',
                     'sanitize_callback' => 'sanitize_key',
                 ),
@@ -139,162 +139,164 @@ class Crypto_Access
                 $check->checknft(get_current_user_id(),  $saved_array);
 ?>
 
-                <script>
-                    crypto_is_metamask_Connected().then(acc => {
-                        if (acc.addr == '') {
-                            console.log("Metamask is not connected. Please connect to it first.");
-                        } else {
-                            console.log("Connected to:" + acc.addr + "\n Network:" + acc.network);
+<script>
+crypto_is_metamask_Connected().then(acc => {
+    if (acc.addr == '') {
+        console.log("Metamask is not connected. Please connect to it first.");
+    } else {
+        console.log("Connected to:" + acc.addr + "\n Network:" + acc.network);
 
-                            if ((acc.network != '<?php echo $this->crypto_network; ?>')) {
-                                var msg =
-                                    "Please change your network to Polygon (MATIC). Your currently connected network is " +
-                                    acc.network;
-                                jQuery("[id=crypto_msg_ul]").empty();
-                                jQuery("[id=crypto_msg_ul]").append(msg).fadeIn("normal");
-                            } else {
-                                //  crypto_init();
-                                web3 = new Web3(window.ethereum);
+        if ((acc.network != '<?php echo $this->crypto_network; ?>')) {
+            var msg =
+                "Please change your network to Polygon (MATIC). Your currently connected network is " +
+                acc.network;
+            jQuery("[id=crypto_msg_ul]").empty();
+            jQuery("[id=crypto_msg_ul]").append(msg).fadeIn("normal");
+        } else {
+            //  crypto_init();
+            web3 = new Web3(window.ethereum);
 
-                                const connectWallet = async () => {
-                                    const accounts = await ethereum.request({
-                                        method: "eth_requestAccounts"
-                                    });
-                                    var persons = [];
-                                    account = accounts[0];
-                                    //console.log(`Connectedxxxxxxx account...........: ${account}`);
-                                    // getBalance(account);
-                                    await crypto_sleep(1000);
-                                    var domain_count = await balanceOf(account);
-                                    console.log(domain_count);
-                                    crypto_process_domain_count(domain_count, account);
+            const connectWallet = async () => {
+                const accounts = await ethereum.request({
+                    method: "eth_requestAccounts"
+                });
+                var persons = [];
+                account = accounts[0];
+                //console.log(`Connectedxxxxxxx account...........: ${account}`);
+                // getBalance(account);
+                await crypto_sleep(1000);
+                var domain_count = await balanceOf(account);
+                console.log(domain_count);
+                crypto_process_domain_count(domain_count, account);
 
-                                    console.log(contract);
-                                    persons.length = 0;
-                                    for (let i = 0; i < domain_count; i++) {
-                                        try {
-                                            const nft = await contract.methods.tokenOfOwnerByIndex(account, i).call();
-                                            //console.log(nft);
-                                            var domain_name = await titleOf(nft);
-                                            console.log(nft + ' = ' + domain_name);
-                                            jQuery("[id=crypto_msg_ul]").append("<li>" + domain_name + "</li>").fadeIn(
-                                                "normal");
-                                            persons.push(domain_name);
-                                            // console.log(i + " *** " + domain_count);
-                                            if (i + 1 == domain_count) {
-                                                console.log(persons);
-                                                // console.log("sssss");
-                                                process_login_savenft(account, persons, domain_count);
-                                            }
-                                        } catch (error) {
-                                            console.log(error.message);
-                                        }
-                                    }
-                                };
-
-                                connectWallet();
-                                connectContract(contractAbi, contractAddress);
-
-                                function process_login_savenft(curr_user, persons, count) {
-
-
-                                    create_link_crypto_connect_login('<?php echo sanitize_key($nonce); ?>', '', 'savenft',
-                                        curr_user,
-                                        persons, count);
-                                    //  console.log(persons);
-                                    setTimeout(function() {
-                                        //alert("hi");
-                                        jQuery('#crypto_connect_ajax_process').trigger('click');
-                                    }, 1000);
-
-                                }
-
-                                function crypto_process_domain_count(count, account) {
-                                    if (count == 0) {
-                                        console.log("zero domain");
-                                        jQuery("[id=crypto_msg_ul]").append(
-                                                "<li>Your wallet do not have <?php echo "." . $this->domain_name; ?> Domain. <strong>Account restricted.</strong> </li>"
-                                            )
-                                            .fadeIn("normal");
-                                        create_link_crypto_connect_login('<?php echo sanitize_key($nonce); ?>', '', 'savenft',
-                                            account, '', count);
-
-                                        setTimeout(function() {
-                                            jQuery('#crypto_connect_ajax_process').trigger('click');
-                                        }, 1000);
-                                    }
-
-                                }
-
-
-                            }
+                console.log(contract);
+                persons.length = 0;
+                for (let i = 0; i < domain_count; i++) {
+                    try {
+                        const nft = await contract.methods.tokenOfOwnerByIndex(account, i).call();
+                        //console.log(nft);
+                        var domain_name = await titleOf(nft);
+                        console.log(nft + ' = ' + domain_name);
+                        jQuery("[id=crypto_msg_ul]").append("<li>" + domain_name + "</li>").fadeIn(
+                            "normal");
+                        persons.push(domain_name);
+                        // console.log(i + " *** " + domain_count);
+                        if (i + 1 == domain_count) {
+                            console.log(persons);
+                            // console.log("sssss");
+                            process_login_savenft(account, persons, domain_count);
                         }
-                    });
-                </script>
-                <?php
+                    } catch (error) {
+                        console.log(error.message);
+                    }
+                }
+            };
+
+            connectWallet();
+            connectContract(contractAbi, contractAddress);
+
+            function process_login_savenft(curr_user, persons, count) {
+
+
+                create_link_crypto_connect_login('<?php echo sanitize_key($nonce); ?>', '', 'savenft',
+                    curr_user,
+                    persons, count);
+                //  console.log(persons);
+                setTimeout(function() {
+                    //alert("hi");
+                    jQuery('#crypto_connect_ajax_process').trigger('click');
+                }, 1000);
+
+            }
+
+            function crypto_process_domain_count(count, account) {
+                if (count == 0) {
+                    console.log("zero domain");
+                    jQuery("[id=crypto_msg_ul]").append(
+                            "<li>Your wallet do not have <?php echo "." . $this->domain_name; ?> Domain. <strong>Account restricted.</strong> </li>"
+                        )
+                        .fadeIn("normal");
+                    create_link_crypto_connect_login('<?php echo sanitize_key($nonce); ?>', '', 'savenft',
+                        account, '', count);
+
+                    setTimeout(function() {
+                        jQuery('#crypto_connect_ajax_process').trigger('click');
+                    }, 1000);
+                }
+
+            }
+
+
+        }
+    }
+});
+</script>
+<?php
                 $check_access = new Crypto_Block();
                 $current_user = wp_get_current_user();
                 if ($check_access->crypto_can_user_view()) {
 
                 ?>
 
-                    <div class="fl-tags fl-has-addons">
-                        <span class="fl-tag">Account Status (<?php echo $current_user->user_login; ?>)</span>
-                        <span class="fl-tag fl-is-primary"><?php echo "." . $this->domain_name; ?> sub-domain holder</span>
-                    </div>
-                <?php
+<div class="fl-tags fl-has-addons">
+    <span class="fl-tag">Account Status (<?php echo $current_user->user_login; ?>)</span>
+    <span class="fl-tag fl-is-primary"><?php echo "." . $this->domain_name; ?> sub-domain holder</span>
+</div>
+<?php
                 } else {
                 ?>
 
-                    <div class="fl-tags fl-has-addons">
-                        <span class="fl-tag">Account Status (<?php echo $current_user->user_login; ?>)</span>
-                        <span class="fl-tag fl-is-danger"><?php echo "." . $this->domain_name; ?> sub-domain required</span>
-                    </div>
-                <?php
+<div class="fl-tags fl-has-addons">
+    <span class="fl-tag">Account Status (<?php echo $current_user->user_login; ?>)</span>
+    <span class="fl-tag fl-is-danger"><?php echo "." . $this->domain_name; ?> sub-domain required</span>
+</div>
+<?php
                 }
                 ?>
 
 
-                <div class="fl-message fl-is-dark">
-                    <div class="fl-message-body">
-                        Some content or pages on the site is accessible only to the selected member who owns
-                        <strong><?php echo "." . $this->domain_name; ?></strong>'s
-                        sub-domain from <a href="https://www.web3domain.org/" target="_blank">web3domain.org</a>
-                    </div>
-                </div>
+<div class="fl-message fl-is-dark">
+    <div class="fl-message-body">
 
-                <div class="fl-message" id="crypto_msg">
-                    <div class="fl-message-header">
-                        <p>Available domains into polygon address</p>
-                    </div>
-                    <div class="fl-message-body" id="crypto_msg_body">
-                        <ul id="crypto_msg_ul">
+        Some content or pages on the site are exclusively available to members who possess a sub-domain of the
+        <?php echo "." . $this->domain_name; ?> primary domain from <a href="https://www.web3domain.org/"
+            target="_blank">web3domain.org</a>.
 
-                        </ul>
-                    </div>
-                </div>
+    </div>
+</div>
 
-                <div>
-                    <a href="#" id="check_domain" onclick="location.reload();" class="fl-button fl-is-link fl-is-light">Check again for
-                        :
-                        <?php echo "." . $this->domain_name; ?> domain</a>
-                </div>
-            <?php
+<div class="fl-message" id="crypto_msg">
+    <div class="fl-message-header">
+        <p>Available domains into polygon address</p>
+    </div>
+    <div class="fl-message-body" id="crypto_msg_body">
+        <ul id="crypto_msg_ul">
+
+        </ul>
+    </div>
+</div>
+
+<div>
+    <a href="#" id="check_domain" onclick="location.reload();" class="fl-button fl-is-link fl-is-light">Verify the
+        presence of the
+        <?php echo "." . $this->domain_name; ?> Web3Domain in your wallet</a>
+</div>
+<?php
             } else {
                 echo '<div class="fl-message-body">Web3Domain access is disabled. Enable it from settings</div>';
             }
         } else {
             ?>
 
-            <div class="fl-message">
-                <div class="fl-message-header">
-                    <p>Please login</p>
+<div class="fl-message">
+    <div class="fl-message-header">
+        <p>Please login</p>
 
-                </div>
-                <div class="fl-message-body">
-                    After login you can check your wallet for eligibility.
-                </div>
-            </div>
+    </div>
+    <div class="fl-message-body">
+        After login you can check your wallet for eligibility.
+    </div>
+</div>
 <?php
         }
         $put = ob_get_clean();

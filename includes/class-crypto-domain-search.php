@@ -81,7 +81,7 @@ class Crypto_Domain_Search
                 array(
                     'name' => 'search_page',
                     'label' => __('Domain Search', 'crypto'),
-                    'description' => __('Search and mint Web3Domains by using the [crypto-domain-search] shortcode on the designated page.', 'crypto'),
+                    'description' => __('Search and mint Web3Domains by using the [crypto-domain-search] shortcode on the designated page. Link this page to primary menu.', 'crypto'),
                     'type' => 'pages',
                     'sanitize_callback' => 'sanitize_key',
                 ),
@@ -95,7 +95,7 @@ class Crypto_Domain_Search
                 array(
                     'name' => 'url_page',
                     'label' => __('Domain URL', 'crypto'),
-                    'description' => __('Manage and redirect domains, such as "http://yourwebsite/web3/web3domainname/", by using the [crypto-domain-url] shortcode on a designated page.', 'crypto'),
+                    'description' => __('Manage and redirect domains, such as "http://yourwebsite/web3/web3domain/", by using the [crypto-domain-url] shortcode on a designated page.', 'crypto'),
                     'type' => 'pages',
                     'sanitize_callback' => 'sanitize_key',
                 ),

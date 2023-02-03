@@ -31,7 +31,7 @@ class Crypto_Block
 				return $content;
 			} else {
 				$message = '<div class="message">';
-				$message .= __('You must have Web3Domain in your wallet', 'crypto') . " : <strong><a href='" . esc_url(get_page_link($this->restrict_page)) . "'>." . $this->domain_name . "</a></strong>";
+				$message .= __('Access to this content is limited as you do not possess Web3Domain in your wallet', 'crypto') . ": <strong><a href='" . esc_url(get_page_link($this->restrict_page)) . "'>." . $this->domain_name . "</a></strong>";
 				$message .= '</div>';
 			}
 		} else {

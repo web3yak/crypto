@@ -167,7 +167,7 @@ jQuery(document).ready(function() {
                             } else {
                                 //  console.log("Not authorized");
                                 jQuery('#json_container').html(
-                                    '<div class="crypto_alert-box crypto_warning"> You are not the owner of this domain name. Please check the connected wallet address.t address. </div>'
+                                    '<div class="crypto_alert-box crypto_warning"> You are not the owner of this domain name. Please check the connected wallet address. </div>'
                                 );
                                 jQuery("#crypto_manage_domain").hide();
 
@@ -233,8 +233,8 @@ jQuery(document).ready(function() {
             <article class="fl-message fl-is-primary" id="crypto_available">
                 <div class="fl-message-body">
                     <div class="fl-tags fl-has-addons">
-                        <span class="fl-tag fl-is-large" id="crypto_domain_name">Domain Name</span>
-                        <span class="fl-tag fl-is-primary fl-is-large" id="crypto_available_text">Available</span>
+                        <span class="fl-tag fl-is-medium" id="crypto_domain_name">Domain Name</span>
+                        <span class="fl-tag fl-is-primary fl-is-medium" id="crypto_available_text">Available</span>
 
                     </div>
                 </div>
