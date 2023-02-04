@@ -1,0 +1,6 @@
+/.vscode
+/.wordpress-org
+/.git
+/.github
+.distignore
+.gitignore
