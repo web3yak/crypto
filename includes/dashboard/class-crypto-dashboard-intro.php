@@ -48,6 +48,8 @@ class Crypto_Admin_Dashboard_Intro
                 Forum</a><br>
             <b>Telegram : </b> <a href="<?php echo esc_url('https://t.me/web3yak'); ?>">@Web3Yak</a><br>
             <b>Twitter: </b> <a href="<?php echo esc_url('https://twitter.com/web3yak'); ?>">@Web3Yak</a><br>
+            <b>Documentation: </b> <a
+                href="<?php echo esc_url('https://w3d.name/docs/wordpress-plugin/introduction/'); ?>">Instruction</a><br>
         </div>
     </div>
 </div>

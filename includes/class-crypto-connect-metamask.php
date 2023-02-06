@@ -86,7 +86,7 @@ class Crypto_Connect_Metamask
                 array(
                     'name' => 'chainid',
                     'label' => __('Default Network Chain ID', 'crypto'),
-                    'description' => __('If specified, network wallet changes notice displayed. Eg. 1 for Ethereum Mainnet & 137 for Matic', 'crypto'),
+                    'description' => __('If specified, network wallet changes notice displayed. Eg. 1 for Ethereum Mainnet & 137 for Matic, 0 for any network', 'crypto'),
                     'type' => 'number',
                     'size' => 'small',
                     'sanitize_callback' => 'intval',
