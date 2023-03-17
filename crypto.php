@@ -36,7 +36,7 @@ define('CRYPTO_PLUGIN_URL', content_url('/plugins/' . CRYPTO_FOLDER));
 define('CRYPTO_BASE_DIR', WP_CONTENT_DIR . '/plugins/' . CRYPTO_FOLDER . '/');
 define('CRYPTO_ROOT_URL', plugin_dir_url(__FILE__));
 define('CRYPTO_POLYGON_URL', 'https://polygonscan.com/token/0x7D853F9A29b3c317773A461ed87F54cdDa44B0e0?a=');
-define('CRYPTO_FILECOIN_URL', 'https://explorer.glif.io/address/0x57E34eaDd86A52bA2A13c2f530dBA37bC919F010/?network=wallaby&id=');
+define('CRYPTO_FILECOIN_URL', 'https://explorer.glif.io/address/0x57E34eaDd86A52bA2A13c2f530dBA37bC919F010/?');
 
 // Path to the plugin directory
 if (!defined('CRYPTO_PLUGIN_DIR')) {

@@ -110,7 +110,7 @@ class Crypto_Public
         } else if ($crypto_network == '80001') {
             $contract_addr = '0xf89F5492094b5169C82dfE1cD9C7Ce1C070ca902'; //mumbai test
         } else {
-            $contract_addr = '0x57E34eaDd86A52bA2A13c2f530dBA37bC919F010'; //hyperspace fil
+            $contract_addr = '0x57E34eaDd86A52bA2A13c2f530dBA37bC919F010'; //FIL
         }
 
         $translation_array = array(

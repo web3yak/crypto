@@ -52,7 +52,7 @@ const contractAddress = crypto_connectChainAjax.crypto_contract;
 
 var crypto_network_arr = new Array(); // OR var  arr  = [];
 crypto_network_arr["137"] = "Polygon - MATIC";
-crypto_network_arr["19"] = "Filecoin - tFIL";
+crypto_network_arr["314"] = "Filecoin - FIL";
 crypto_network_arr["0"] = "Global - EVM";
 crypto_network_arr["80001"] = "Mumbai - Testnet";
 
