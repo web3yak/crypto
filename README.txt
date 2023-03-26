@@ -58,7 +58,7 @@ example: `[crypto-connect label="Connect Wallet" class="fl-button fl-is-info fl-
 
 == Marketplace of Web3Domain ==
              
-Become a Web3Domain provider on your own website by selling subdomains. We will integrate the domain into our ecosystem, providing every domain user access to all of the features that Web3Domain offers.
+Become a Web3Domain (YAK ID) provider on your own website by selling subdomains. We will integrate the domain into our ecosystem, providing every domain user access to all of the features that Web3Domain offers.
 
 * It is best option to earn for membership by letting user to obtain subdomain of your web3 primary domain.
 * You earn as soon as domain minted.
