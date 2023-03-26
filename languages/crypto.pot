@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Crypto\n"
-"POT-Creation-Date: 2023-01-23 16:41+0545\n"
+"POT-Creation-Date: 2023-03-26 16:44+0545\n"
 "PO-Revision-Date: 2020-02-09 12:49+0545\n"
 "Last-Translator: \n"
 "Language-Team: navneet@odude.com\n"
@@ -46,7 +46,7 @@ msgstr ""
 
 #: includes/class-crypto-access-domain.php:51
 #: includes/class-crypto-access-domain.php:116
-msgid "Web3Domain Access"
+msgid "Web3Domain (YAK ID) Access"
 msgstr ""
 
 #: includes/class-crypto-access-domain.php:52
@@ -75,7 +75,7 @@ msgid "Limit access to the page"
 msgstr ""
 
 #: includes/class-crypto-access-domain.php:94
-msgid "To limit access to the entire page, add the shortcode [crypto-connect label=\"Connect Wallet\" class=\"fl-button fl-is-info fl-is-light\"] [crypto-access-domain]"
+msgid "Select a page with the [crypto-connect label=\"Connect Wallet\" class=\"fl-button fl-is-info fl-is-light\"] [crypto-access-domain] shortcode to determine a member's status based on the presence of a specified domain in their wallet."
 msgstr ""
 
 #: includes/class-crypto-access-domain.php:112
@@ -153,11 +153,29 @@ msgid "NFT (Eg. ERC-721)"
 msgstr ""
 
 #: includes/class-crypto-access-nft.php:103
-msgid "To limit access to the entire page, add the shortcode [crypto-connect label=\"Connect Wallet\" class=\"fl-button fl-is-info fl-is-light\"] [crypto-access-nft]."
+msgid "Select a page with the [crypto-connect label=\"Connect Wallet\" class=\"fl-button fl-is-info fl-is-light\"] [crypto-access-nft] shortcode to determine a member's status based on the presence of a specified domain in their wallet."
+msgstr ""
+
+#: includes/class-crypto-activator.php:42
+msgid "Search Domain"
+msgstr ""
+
+#: includes/class-crypto-activator.php:67
+#: includes/class-crypto-domain-search.php:90
+msgid "My Domain"
+msgstr ""
+
+#: includes/class-crypto-activator.php:92
+msgid "Domain Redirect"
+msgstr ""
+
+#: includes/class-crypto-activator.php:117
+#: includes/class-crypto-domain-search.php:104
+msgid "Domain Information"
 msgstr ""
 
 #: includes/class-crypto-block.php:34
-msgid "You must have Web3Domain in your wallet"
+msgid "Access to this content is limited as you do not possess Web3Domain in your wallet"
 msgstr ""
 
 #: includes/class-crypto-block.php:39
@@ -185,7 +203,7 @@ msgid "Default Network Chain ID"
 msgstr ""
 
 #: includes/class-crypto-connect-metamask.php:89
-msgid "If specified, network wallet changes notice displayed. Eg. 1 for Ethereum Mainnet & 137 for Matic"
+msgid "If specified, network wallet changes notice displayed. Eg. 1 for Ethereum Mainnet & 137 for Matic, 0 for any network"
 msgstr ""
 
 #: includes/class-crypto-connect-metamask.php:97
@@ -245,7 +263,7 @@ msgid "Polygon - Matic"
 msgstr ""
 
 #: includes/class-crypto-domain-search.php:76
-msgid "Filecoin - tFIL"
+msgid "Filecoin - FIL"
 msgstr ""
 
 #: includes/class-crypto-domain-search.php:83
@@ -253,11 +271,7 @@ msgid "Domain Search"
 msgstr ""
 
 #: includes/class-crypto-domain-search.php:84
-msgid "Search and mint Web3Domains by using the [crypto-domain-search] shortcode on the designated page."
-msgstr ""
-
-#: includes/class-crypto-domain-search.php:90
-msgid "My Domain"
+msgid "Search and mint Web3Domains by using the [crypto-domain-search] shortcode on the designated page. Link this page to primary menu."
 msgstr ""
 
 #: includes/class-crypto-domain-search.php:91
@@ -269,11 +283,7 @@ msgid "Domain URL"
 msgstr ""
 
 #: includes/class-crypto-domain-search.php:98
-msgid "Manage and redirect domains, such as \"http://yourwebsite/web3/web3domainname/\", by using the [crypto-domain-url] shortcode on a designated page."
-msgstr ""
-
-#: includes/class-crypto-domain-search.php:104
-msgid "Domain Information"
+msgid "Manage and redirect domains, such as \"http://yourwebsite/web3/web3domain/\", by using the [crypto-domain-url] shortcode on a designated page."
 msgstr ""
 
 #: includes/class-crypto-domain-search.php:105

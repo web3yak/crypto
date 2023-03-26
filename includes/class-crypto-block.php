@@ -8,7 +8,7 @@ class Crypto_Block
 
 	public function __construct()
 	{
-		$this->domain_name = crypto_get_option('domain_name', 'crypto_access_settings', 'web3');
+		$this->domain_name = crypto_get_option('domain_name', 'crypto_access_settings', 'yak');
 		$this->restrict_page = crypto_get_option('restrict_page', 'crypto_access_settings', 0);
 		add_shortcode('crypto-block', array($this, 'crypto_block'));
 		add_action('template_redirect', array($this, 'crypto_full_page'));
@@ -159,7 +159,7 @@ class Crypto_Block
 	{
 		foreach ($this->config['fields'] as $field) {
 	?><div class="components-base-control">
-    <div class="components-base-control__field"><?php
+	<div class="components-base-control__field"><?php
 												$this->label($field);
 												$this->field($field);
 												?></div>
@@ -266,32 +266,31 @@ class Crypto_Block
 		ob_start();
 		?>
 <div class="changelog section-getting-started">
-    <div class="feature-section">
-        <h2>Content/page access restrictions for members</h2>
-        <div class="wrap">
-            <b>Limit access to certain content/pages based on crypto/NFT holdings within a "crypto wallet".</b>
-            <br><br><a class="button button-primary"
-                href="<?php echo admin_url('admin.php?page=crypto_settings&tab=access&section=crypto_access_settings_start'); ?>">Restrict
-                User Settings</a>
-            <br><br>
-            <b>Tips</b>
-            <ul>
-                <li>* Ensure that you use the correct smart contract address, which should start with "0x..." </li>
-                <li>* The number of Crypto and NFTs is calculated using the "balanceOf" function in Ethereum. </li>
-            </ul>
-            <hr>
-            <b>Do you have knowledge about the benefits of Web3Domain for domain resellers?</b><br>
-            <ul>
-                <li>* Allowing users to acquire subdomains on your primary Web3 domain is a great way to earn revenue
-                    through membership.</li>
-                <li>* You will earn money as soon as the domain is minted.</li>
-                <li>* You can set the price for your subdomains yourself.</li>
-                <li>* You can also choose to not allow the public to mint subdomains, and only mint and transfer them
-                    yourself, thereby avoiding commission fees.</li>
-                <li>* All Web3Domains are NFTs which can be sold on opensea.io</li>
-            </ul>
-        </div>
-    </div>
+	<div class="feature-section">
+		<h2>Content/page access restrictions for members</h2>
+		<div class="wrap">
+			<b>Limit access to certain content/pages based on crypto/NFT holdings within a "crypto wallet".</b>
+			<br><br><a class="button button-primary" href="<?php echo admin_url('admin.php?page=crypto_settings&tab=access&section=crypto_access_settings_start'); ?>">Restrict
+				User Settings</a>
+			<br><br>
+			<b>Tips</b>
+			<ul>
+				<li>* Ensure that you use the correct smart contract address, which should start with "0x..." </li>
+				<li>* The number of Crypto and NFTs is calculated using the "balanceOf" function in Ethereum. </li>
+			</ul>
+			<hr>
+			<b>Do you have knowledge about the benefits of Web3Domain for domain resellers?</b><br>
+			<ul>
+				<li>* Allowing users to acquire subdomains on your primary Web3 domain is a great way to earn revenue
+					through membership.</li>
+				<li>* You will earn money as soon as the domain is minted.</li>
+				<li>* You can set the price for your subdomains yourself.</li>
+				<li>* You can also choose to not allow the public to mint subdomains, and only mint and transfer them
+					yourself, thereby avoiding commission fees.</li>
+				<li>* All Web3Domains are NFTs which can be sold on opensea.io</li>
+			</ul>
+		</div>
+	</div>
 </div>
 <?php
 		$content = ob_get_clean();

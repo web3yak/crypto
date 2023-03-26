@@ -1,11 +1,11 @@
 === Crypto ===
 Contributors: odude
-Donate link: https://w3d.name/
+Donate link: https://web3yak.com/
 Tags: crypto, login, metamask, NFT, Blockchain, Token
 Requires at least: 3.0.1
 Requires PHP: 5.5
 Tested up to: 6.1.1
-Stable tag: 2.2
+Stable tag: 2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,7 +47,7 @@ example: `[crypto-connect label="Connect Wallet" class="fl-button fl-is-info fl-
 * Example shortcode: `[crypto-block] Private article [/crypto-block]`
 
 = Option 1: Restrict by Web3Domain =
-* Users must have a specific NFT web3domain name from web3domain.org in their wallet.
+* Users must have a specific NFT web3domain name from web3yak.com in their wallet.
 * Use the shortcode `[crypto-access-domain]` to limit access to a page.
 
 = Option 2: Restrict by NFT or Cryptocurrency =
@@ -67,9 +67,9 @@ Become a Web3Domain provider on your own website by selling subdomains. We will 
 * All Web3Domains are NFTs. Which you can sell at opensea.io
 
 
-[Live Demo](https://web3domain.org/user-dashboard/)
+[Live Demo](https://web3yak.com/app/user-dashboard/)
 
-> If any suggestion, contact at admin@web3domain.org
+> If any suggestion, contact at hello@web3yak.com
 
 [GitHub](https://github.com/web3yak/crypto/)
 

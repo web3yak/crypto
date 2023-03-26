@@ -21,7 +21,7 @@ class Crypto_Domain_Search
         $this->info_page = crypto_get_option('info_page', 'crypto_marketplace_settings', 0);
         $this->market_page = crypto_get_option('market_page', 'crypto_marketplace_settings', 0);
         $this->url_page = crypto_get_option('url_page', 'crypto_marketplace_settings', 0);
-        $this->primary_domain = crypto_get_option('primary_domain', 'crypto_marketplace_settings', 'web3');
+        $this->primary_domain = crypto_get_option('primary_domain', 'crypto_marketplace_settings', 'yak');
         $this->price_ether = crypto_get_option('price_ether', 'crypto_marketplace_settings', '5');
         $this->crypto_network = crypto_get_option('crypto_network', 'crypto_marketplace_settings', '137');
 
@@ -624,7 +624,7 @@ class Crypto_Domain_Search
             <div class="feature-section">
                 <h2>Become a provider of Web3Domain Names</h2>
                 <div class="wrap">
-                    <b>Register your primary top-level domain (TLD) Web3 Domain Name on web3domain.org and begin selling
+                    <b>Register your primary top-level domain (TLD) Web3 Domain Name on Web3Yak.com and begin selling
                         subdomains of it.</b>
                     <hr>
                     <a class="button button-primary" href="<?php echo admin_url('admin.php?page=crypto_settings&tab=marketplace&section=crypto_marketplace_settings'); ?>">Manage

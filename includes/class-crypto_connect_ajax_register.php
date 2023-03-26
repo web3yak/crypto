@@ -197,7 +197,7 @@ class crypto_connect_ajax_process
         if ($default_access == 'web3domain') {
 
 
-            $check = crypto_get_option('domain_name', 'crypto_access_settings', 'web3');
+            $check = crypto_get_option('domain_name', 'crypto_access_settings', 'yak');
             //  crypto_log("Counting...");
             // crypto_log(get_user_meta(get_current_user_id(),  'domain_count'));
             // crypto_log($saved_array);
