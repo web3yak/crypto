@@ -16,11 +16,27 @@ jQuery(document).ready(function() {
 if (typeof window.ethereum !== 'undefined') {
     console.log('MetaMask is installed!');
     jQuery("[id=flexi_notification_box]").hide();
+
+
 } else {
     console.log("MetaMask is not installed");
     jQuery("[id=wallet_msg]").empty();
     jQuery("#flexi_notification_box").fadeIn("slow");
     jQuery("[id=wallet_msg]").append("Metamask not installed").fadeIn("normal");
+    jQuery.toast({
+        heading: 'Notice',
+        text: 'Metamask not installed',
+        icon: 'warning',
+        loader: true,
+        loaderBg: '#fff',
+        showHideTransition: 'fade',
+        hideAfter: 3000,
+        allowToastClose: false,
+        position: {
+            left: 100,
+            top: 30
+        }
+    });
 }
 
 async function login() {

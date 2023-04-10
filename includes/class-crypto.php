@@ -155,6 +155,9 @@ class Crypto
 		//Crypto Price
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-crypto-price.php';
 
+		//Add token from shortcode
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-crypto-add-token.php';
+
 		//Access controls
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-crypto-access-domain.php';
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-crypto-block.php';

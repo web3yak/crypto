@@ -140,7 +140,7 @@ class Crypto_Connect_Metamask
             if ($this->run_script()) {
                 wp_register_script('crypto_connect_ajax_process', plugin_dir_url(__DIR__) . 'public/js/crypto_connect_ajax_process.js', array('jquery'), CRYPTO_VERSION);
                 wp_enqueue_script('crypto_connect_ajax_process');
-                wp_enqueue_script('crypto_login', plugin_dir_url(__DIR__) . 'public/js/metamask/crypto_connect_login_metamask.js', array('jquery'), '', false);
+                wp_enqueue_script('crypto_login', plugin_dir_url(__DIR__) . 'public/js/metamask/crypto_connect_login_metamask.js', array('jquery'), '', true);
                 wp_enqueue_script('crypto_metamask_library', plugin_dir_url(__DIR__) . 'public/js/metamask/library.js', array('jquery'), '', false);
 
                 wp_enqueue_script('crypto_web3', plugin_dir_url(__DIR__) . 'public/js/web3.min.js', array('jquery'), '', false);
@@ -164,8 +164,9 @@ class Crypto_Connect_Metamask
 
 ?>
 <div>
-    <a href="#" id="btn-login"
-        class="<?php echo esc_attr($this->connect_class); ?>"><?php echo esc_attr($this->metamask); ?></a>
+    <a href="#" id="btn-login" class="<?php echo esc_attr($this->connect_class); ?>"><img width="20"
+            src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">&nbsp;
+        <?php echo esc_attr($this->metamask); ?></a>
     <div class="fl-notification fl-is-primary fl-is-light fl-mt-1" id="flexi_notification_box">
         <button class="fl-delete" id="delete_notification"></button>
         <div id="wallet_msg">&nbsp;</div>
