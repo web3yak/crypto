@@ -50,6 +50,20 @@ class Crypto_Add_Token
                     });
                 } catch (addError) {
                     console.error(addError);
+                    jQuery.toast({
+                        heading: 'Notice',
+                        text: addError.message,
+                        icon: 'warning',
+                        loader: true,
+                        loaderBg: '#fff',
+                        showHideTransition: 'fade',
+                        hideAfter: 10000,
+                        allowToastClose: false,
+                        position: {
+                            left: 100,
+                            top: 30
+                        }
+                    });
                 }
 
 
