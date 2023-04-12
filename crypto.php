@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://w3d.name/
- * @since             2.3
+ * @since             2.4
  * @package           Crypto
  *
  * @wordpress-plugin
  * Plugin Name:       Crypto
  * Plugin URI:        http://w3d.name
  * Description:       Crypto - everyday use tools. 
- * Version:           2.3
+ * Version:           2.4
  * Author:            ODude
  * Author URI:        https://w3d.name/
  * License:           GPL-2.0+
@@ -30,7 +30,7 @@ if (!defined('WPINC')) {
     die;
 }
 
-define('CRYPTO_VERSION', '2.3');
+define('CRYPTO_VERSION', '2.4');
 define('CRYPTO_FOLDER', dirname(plugin_basename(__FILE__)));
 define('CRYPTO_PLUGIN_URL', content_url('/plugins/' . CRYPTO_FOLDER));
 define('CRYPTO_BASE_DIR', WP_CONTENT_DIR . '/plugins/' . CRYPTO_FOLDER . '/');
