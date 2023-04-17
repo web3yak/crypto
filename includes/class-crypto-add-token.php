@@ -18,7 +18,35 @@ class Crypto_Add_Token
             'render_callback' => [$this, 'my_first_block_render'],
             'attributes' => array(
                 'title' => array(
-                    'default' => 'www',
+                    'default' => 'Add Matic Network',
+                    'type'    => 'string'
+                ),
+                'name' => array(
+                    'default' => 'Polygon Mainnet',
+                    'type'    => 'string'
+                ),
+                'chainid' => array(
+                    'default' => '137',
+                    'type'    => 'string'
+                ),
+                'currency' => array(
+                    'default' => 'MATIC',
+                    'type'    => 'string'
+                ),
+                'symbol' => array(
+                    'default' => 'MATIC',
+                    'type'    => 'string'
+                ),
+                'rpcurl' => array(
+                    'default' => 'https://polygon.llamarpc.com',
+                    'type'    => 'string'
+                ),
+                'explorer' => array(
+                    'default' => 'https://polygonscan.com',
+                    'type'    => 'string'
+                ),
+                'css' => array(
+                    'default' => 'fl-button fl-is-small',
                     'type'    => 'string'
                 )
             )
@@ -34,7 +62,9 @@ class Crypto_Add_Token
 
         // return $html;
         //flexi_log($attributes);
-        return "xxxxxxxxxxxxxxx " . $attributes['title'];
+        $short = '[crypto-add-network name="' . $attributes['name'] . '" chainid="' . $attributes['chainid'] . '" currency="' . $attributes['currency'] . '" symbol="' . $attributes['symbol'] . '" rpcurl="' . $attributes['rpcurl'] . '" explorer="' . $attributes['explorer'] . '" title="' . $attributes['title'] . '" class="' . $attributes['css'] . '"]';
+        // return do_shortcode($short);
+        return $short;
     }
 
     public function crypto_add_network($atts)

@@ -33,16 +33,52 @@ import './editor.scss';
  */
 export default function Edit(props) {
 
-	const { title } = props;
+	const { title, name, chainid, currency, symbol, rpcurl, explorer, css } = props;
 	return (
 		<Fragment>
 		<InspectorControls>
-			<PanelBody label={__('Einstellungen', 'sha')}>
+			<PanelBody label={__('Add Network', 'crypto')}>
 				<TextControl
-					label={__('berschrift', 'sha')}
+					label={__('Title', 'crypto')}
 					value={props.attributes.title}
 					onChange={title => props.setAttributes({ title })}
 				/>
+					<TextControl
+					label={__('Name', 'crypto')}
+					value={props.attributes.name}
+					onChange={name => props.setAttributes({ name })}
+				/>
+						<TextControl
+					label={__('chainid', 'crypto')}
+					value={props.attributes.chainid}
+					onChange={chainid => props.setAttributes({ chainid })}
+				/>
+						<TextControl
+					label={__('currency', 'crypto')}
+					value={props.attributes.currency}
+					onChange={currency => props.setAttributes({ currency })}
+				/>
+						<TextControl
+					label={__('symbol', 'crypto')}
+					value={props.attributes.symbol}
+					onChange={symbol => props.setAttributes({ symbol })}
+				/>
+						<TextControl
+					label={__('rpcurl', 'crypto')}
+					value={props.attributes.rpcurl}
+					onChange={rpcurl => props.setAttributes({ rpcurl })}
+				/>
+						<TextControl
+					label={__('explorer', 'crypto')}
+					value={props.attributes.explorer}
+					onChange={explorer => props.setAttributes({ explorer })}
+				/>
+							<TextControl
+					label={__('Class Name', 'crypto')}
+					value={props.attributes.css}
+					onChange={css => props.setAttributes({ css })}
+				/>
+
 			</PanelBody>
 		</InspectorControls>
 		<div { ...useBlockProps() }>
