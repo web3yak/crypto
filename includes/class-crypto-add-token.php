@@ -7,9 +7,35 @@ class Crypto_Add_Token
 
         add_shortcode('crypto-add-token', array($this, 'crypto_add_token'));
         add_shortcode('crypto-add-network', array($this, 'crypto_add_network'));
+        add_action('init', array($this, 'create_block_crypto_add_token'));
     }
 
 
+    //add block editor
+    public function create_block_crypto_add_token()
+    {
+        register_block_type(CRYPTO_BASE_DIR . 'block/build/add-token', array(
+            'render_callback' => [$this, 'my_first_block_render'],
+            'attributes' => array(
+                'title' => array(
+                    'default' => 'www',
+                    'type'    => 'string'
+                )
+            )
+        ));
+    }
+
+    public function my_first_block_render($attributes)
+    {
+        // Coming from RichText, each line is an array's element
+        //  $sum = $attributes['number1'][0] + $attributes['number2'][0];
+
+        // $html = "<h1>$sum</h1>";
+
+        // return $html;
+        //flexi_log($attributes);
+        return "xxxxxxxxxxxxxxx " . $attributes['title'];
+    }
 
     public function crypto_add_network($atts)
     {
