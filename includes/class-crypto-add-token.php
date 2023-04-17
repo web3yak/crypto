@@ -8,8 +8,32 @@ class Crypto_Add_Token
         add_shortcode('crypto-add-token', array($this, 'crypto_add_token'));
         add_shortcode('crypto-add-network', array($this, 'crypto_add_network'));
         add_action('init', array($this, 'create_block_crypto_add_token'));
+        // Hook the enqueue functions into the editor
+        add_action('enqueue_block_assets', array($this, 'my_block_plugin_editor_scripts'));
     }
 
+    /**
+     * Enqueue block JavaScript and CSS for the editor
+     */
+    function my_block_plugin_editor_scripts()
+    {
+        /*
+	
+    // Enqueue block editor JS
+    wp_enqueue_script(
+        'my-block-editor-js',
+        plugins_url( '/blocks/custom-block/index.js', __FILE__ ),
+        [ 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor' ],
+        filemtime( plugin_dir_path( __FILE__ ) . 'blocks/custom-block/index.js' )	
+    );
+    */
+
+        // Enqueue block editor styles
+        wp_enqueue_style(
+            'crypto-block-editor-css',
+            CRYPTO_PLUGIN_URL . '/public/css/flexi-public-min.css'
+        );
+    }
 
     //add block editor
     public function create_block_crypto_add_token()
@@ -63,8 +87,8 @@ class Crypto_Add_Token
         // return $html;
         //flexi_log($attributes);
         $short = '[crypto-add-network name="' . $attributes['name'] . '" chainid="' . $attributes['chainid'] . '" currency="' . $attributes['currency'] . '" symbol="' . $attributes['symbol'] . '" rpcurl="' . $attributes['rpcurl'] . '" explorer="' . $attributes['explorer'] . '" title="' . $attributes['title'] . '" class="' . $attributes['css'] . '"]';
-        // return do_shortcode($short);
-        return $short;
+        return do_shortcode($short);
+        //  return $short;
     }
 
     public function crypto_add_network($atts)

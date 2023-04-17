@@ -3,7 +3,7 @@
   "apiVersion": 2,
   "name": "create-block/add-token",
   "version": "0.1.0",
-  "title": "Add Token Button",
+  "title": "[Add Token] Shortcode",
   "category": "widgets",
   "icon": "smiley",
   "description": "Enables the addition of new or existing tokens to Metamask.",
