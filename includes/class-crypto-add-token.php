@@ -80,13 +80,7 @@ class Crypto_Add_Token
 
     public function add_token_render($attributes)
     {
-        // Coming from RichText, each line is an array's element
-        //  $sum = $attributes['number1'][0] + $attributes['number2'][0];
 
-        // $html = "<h1>$sum</h1>";
-
-        // return $html;
-        //flexi_log($attributes);
         $short = '[crypto-add-token contract="' . $attributes['contract'] . '" symbol="' . $attributes['symbol'] . '" image="' . $attributes['image'] . '" title="' . $attributes['title'] . '" class="' . $attributes['css'] . '" type="' . $attributes['type'] . '"]';
         return do_shortcode($short);
         //  return $short;
@@ -130,13 +124,7 @@ class Crypto_Add_Token
 
     public function add_network_render($attributes)
     {
-        // Coming from RichText, each line is an array's element
-        //  $sum = $attributes['number1'][0] + $attributes['number2'][0];
 
-        // $html = "<h1>$sum</h1>";
-
-        // return $html;
-        //flexi_log($attributes);
         $short = '[crypto-add-network name="' . $attributes['name'] . '" chainid="' . $attributes['chainid'] . '" currency="' . $attributes['currency'] . '" symbol="' . $attributes['symbol'] . '" rpcurl="' . $attributes['rpcurl'] . '" explorer="' . $attributes['explorer'] . '" title="' . $attributes['title'] . '" class="' . $attributes['css'] . '"]';
         return do_shortcode($short);
         //  return $short;
@@ -161,55 +149,55 @@ class Crypto_Add_Token
         ), $atts));
 
 ?>
-<script>
-async function crypto_add_network_<?php echo $chainid; ?>() {
-    web3 = new Web3(window.ethereum);
-    try {
-        await window.ethereum.request({
-            method: 'wallet_addEthereumChain',
-            params: [{
-                chainId: web3.utils.toHex('<?php echo $chainid; ?>'),
-                chainName: '<?php echo $name; ?>',
-                nativeCurrency: {
-                    name: '<?php echo $currency; ?>',
-                    symbol: '<?php echo $symbol; ?>', // 2-6 characters long
-                    decimals: 18
-                },
-                blockExplorerUrls: ['<?php echo $explorer; ?>'],
-                rpcUrls: ['<?php echo $rpcurl; ?>'],
-            }, ],
-        });
-    } catch (addError) {
-        console.error(addError);
-        jQuery.toast({
-            heading: 'Notice',
-            text: addError.message,
-            icon: 'warning',
-            loader: true,
-            loaderBg: '#fff',
-            showHideTransition: 'fade',
-            hideAfter: 10000,
-            allowToastClose: false,
-            position: {
-                left: 100,
-                top: 30
+        <script>
+            async function crypto_add_network_<?php echo $chainid; ?>() {
+                web3 = new Web3(window.ethereum);
+                try {
+                    await window.ethereum.request({
+                        method: 'wallet_addEthereumChain',
+                        params: [{
+                            chainId: web3.utils.toHex('<?php echo $chainid; ?>'),
+                            chainName: '<?php echo $name; ?>',
+                            nativeCurrency: {
+                                name: '<?php echo $currency; ?>',
+                                symbol: '<?php echo $symbol; ?>', // 2-6 characters long
+                                decimals: 18
+                            },
+                            blockExplorerUrls: ['<?php echo $explorer; ?>'],
+                            rpcUrls: ['<?php echo $rpcurl; ?>'],
+                        }, ],
+                    });
+                } catch (addError) {
+                    console.error(addError);
+                    jQuery.toast({
+                        heading: 'Notice',
+                        text: addError.message,
+                        icon: 'warning',
+                        loader: true,
+                        loaderBg: '#fff',
+                        showHideTransition: 'fade',
+                        hideAfter: 10000,
+                        allowToastClose: false,
+                        position: {
+                            left: 100,
+                            top: 30
+                        }
+                    });
+                }
+
+
+
             }
-        });
-    }
+        </script>
 
+        <span class="<?php echo $class; ?>" onclick="crypto_add_network_<?php echo $chainid; ?>()">
+            <span class="fl-icon fl-is-small">
+                <img src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">
+            </span>
+            <span><?php echo $title; ?></span>
+        </span>
 
-
-}
-</script>
-
-<span class="<?php echo $class; ?>" onclick="crypto_add_network_<?php echo $chainid; ?>()">
-    <span class="fl-icon fl-is-small">
-        <img src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">
-    </span>
-    <span><?php echo $title; ?></span>
-</span>
-
-<?php
+    <?php
         $put = ob_get_clean();
 
         return $put;
@@ -233,87 +221,87 @@ async function crypto_add_network_<?php echo $chainid; ?>() {
         ), $atts));
 
     ?>
-<script>
-async function addToken_<?php echo $symbol; ?>() {
+        <script>
+            async function addToken_<?php echo $symbol; ?>() {
 
-    try {
+                try {
 
-        const wasAdded = await ethereum.request({
-            method: 'wallet_watchAsset',
-            params: {
-                type: '<?php echo $type; ?>',
-                options: {
-                    address: '<?php echo $contract; ?>',
-                    symbol: '<?php echo $symbol; ?>',
-                    decimals: '18',
-                    image: '<?php echo $image; ?>',
-                },
-            },
-        });
+                    const wasAdded = await ethereum.request({
+                        method: 'wallet_watchAsset',
+                        params: {
+                            type: '<?php echo $type; ?>',
+                            options: {
+                                address: '<?php echo $contract; ?>',
+                                symbol: '<?php echo $symbol; ?>',
+                                decimals: '18',
+                                image: '<?php echo $image; ?>',
+                            },
+                        },
+                    });
 
-        if (wasAdded) {
+                    if (wasAdded) {
 
-            jQuery.toast({
-                heading: 'Success',
-                text: 'Added to Metamask',
-                icon: 'success',
-                loader: true,
-                loaderBg: '#fff',
-                showHideTransition: 'fade',
-                hideAfter: 3000,
-                allowToastClose: false,
-                position: {
-                    left: 100,
-                    top: 30
+                        jQuery.toast({
+                            heading: 'Success',
+                            text: 'Added to Metamask',
+                            icon: 'success',
+                            loader: true,
+                            loaderBg: '#fff',
+                            showHideTransition: 'fade',
+                            hideAfter: 3000,
+                            allowToastClose: false,
+                            position: {
+                                left: 100,
+                                top: 30
+                            }
+                        });
+                    } else {
+
+                        jQuery.toast({
+                            heading: 'Warning',
+                            text: 'Not added to Metamask',
+                            icon: 'warning',
+                            loader: true,
+                            loaderBg: '#fff',
+                            showHideTransition: 'fade',
+                            hideAfter: 3000,
+                            allowToastClose: false,
+                            position: {
+                                left: 100,
+                                top: 30
+                            }
+                        });
+                    }
+                } catch (error) {
+                    //  console.log(error);
+                    jQuery.toast({
+                        heading: 'Error',
+                        text: error.message,
+                        icon: 'error',
+                        loader: false,
+                        loaderBg: '#fff',
+                        showHideTransition: 'fade',
+                        hideAfter: false,
+                        allowToastClose: true,
+                        position: {
+                            left: 100,
+                            top: 30
+                        }
+                    });
                 }
-            });
-        } else {
 
-            jQuery.toast({
-                heading: 'Warning',
-                text: 'Not added to Metamask',
-                icon: 'warning',
-                loader: true,
-                loaderBg: '#fff',
-                showHideTransition: 'fade',
-                hideAfter: 3000,
-                allowToastClose: false,
-                position: {
-                    left: 100,
-                    top: 30
-                }
-            });
-        }
-    } catch (error) {
-        //  console.log(error);
-        jQuery.toast({
-            heading: 'Error',
-            text: error.message,
-            icon: 'error',
-            loader: false,
-            loaderBg: '#fff',
-            showHideTransition: 'fade',
-            hideAfter: false,
-            allowToastClose: true,
-            position: {
-                left: 100,
-                top: 30
+
+
+
             }
-        });
-    }
+        </script>
 
-
-
-
-}
-</script>
-
-<span class="<?php echo $class; ?>" onclick="addToken_<?php echo $symbol; ?>()">
-    <span class="fl-icon fl-is-small">
-        <img src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">
-    </span>
-    <span><?php echo $title; ?></span>
-</span>
+        <span class="<?php echo $class; ?>" onclick="addToken_<?php echo $symbol; ?>()">
+            <span class="fl-icon fl-is-small">
+                <img src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">
+            </span>
+            <span><?php echo $title; ?></span>
+        </span>
 
 <?php
 

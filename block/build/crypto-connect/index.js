@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/add-token/edit.js":
-/*!*******************************!*\
-  !*** ./src/add-token/edit.js ***!
-  \*******************************/
+/***/ "./src/crypto-connect/edit.js":
+/*!************************************!*\
+  !*** ./src/crypto-connect/edit.js ***!
+  \************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/add-token/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/crypto-connect/editor.scss");
 
 /**
  * Retrieves the translation of text.
@@ -64,40 +64,49 @@ function Edit(props) {
     image,
     title,
     css,
-    type
+    type,
+    color,
+    size,
+    theme
   } = props;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, ", siz", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add Token', 'crypto')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Contract Address', 'crypto'),
-    value: props.attributes.contract,
-    onChange: contract => props.setAttributes({
-      contract
-    })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('symbol', 'crypto'),
-    value: props.attributes.symbol,
-    onChange: symbol => props.setAttributes({
-      symbol
-    })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Image icon URL', 'crypto'),
-    value: props.attributes.image,
-    onChange: image => props.setAttributes({
-      image
-    })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Title', 'crypto'),
     value: props.attributes.title,
     onChange: title => props.setAttributes({
       title
     })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Blockchain Type', 'crypto'),
-    value: props.attributes.type,
-    onChange: type => props.setAttributes({
-      type
-    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
+    label: 'Color',
+    value: props.attributes.color,
+    options: [{
+      label: 'Blue',
+      value: 'fl-is-info'
+    }, {
+      label: 'Green',
+      value: 'fl-is-success'
+    }, {
+      label: 'Yellow',
+      value: 'fl-is-warning'
+    }, {
+      label: 'Red',
+      value: 'fl-is-danger'
+    }, {
+      label: 'Black',
+      value: 'fl-is-black'
+    }, {
+      label: 'White',
+      value: 'fl-is-white'
+    }, {
+      label: 'Clear',
+      value: ''
+    }],
+    onChange: function (color) {
+      props.setAttributes({
+        color
+      });
+    }
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Class Name', 'crypto'),
     value: props.attributes.css,
@@ -105,26 +114,26 @@ function Edit(props) {
       css
     })
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_3___default()), {
-    block: "create-block/add-token",
+    block: "create-block/crypto-connect",
     attributes: props.attributes
   })));
 }
 
 /***/ }),
 
-/***/ "./src/add-token/index.js":
-/*!********************************!*\
-  !*** ./src/add-token/index.js ***!
-  \********************************/
+/***/ "./src/crypto-connect/index.js":
+/*!*************************************!*\
+  !*** ./src/crypto-connect/index.js ***!
+  \*************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/add-token/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/add-token/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/add-token/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/add-token/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/crypto-connect/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/crypto-connect/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/crypto-connect/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/crypto-connect/block.json");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -166,10 +175,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/add-token/save.js":
-/*!*******************************!*\
-  !*** ./src/add-token/save.js ***!
-  \*******************************/
+/***/ "./src/crypto-connect/save.js":
+/*!************************************!*\
+  !*** ./src/crypto-connect/save.js ***!
+  \************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -201,10 +210,10 @@ function save(props) {
 
 /***/ }),
 
-/***/ "./src/add-token/editor.scss":
-/*!***********************************!*\
-  !*** ./src/add-token/editor.scss ***!
-  \***********************************/
+/***/ "./src/crypto-connect/editor.scss":
+/*!****************************************!*\
+  !*** ./src/crypto-connect/editor.scss ***!
+  \****************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -213,10 +222,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/add-token/style.scss":
-/*!**********************************!*\
-  !*** ./src/add-token/style.scss ***!
-  \**********************************/
+/***/ "./src/crypto-connect/style.scss":
+/*!***************************************!*\
+  !*** ./src/crypto-connect/style.scss ***!
+  \***************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -285,13 +294,13 @@ module.exports = window["wp"]["serverSideRender"];
 
 /***/ }),
 
-/***/ "./src/add-token/block.json":
-/*!**********************************!*\
-  !*** ./src/add-token/block.json ***!
-  \**********************************/
+/***/ "./src/crypto-connect/block.json":
+/*!***************************************!*\
+  !*** ./src/crypto-connect/block.json ***!
+  \***************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/add-token","version":"0.1.0","title":"Add Token Button","category":"widgets","icon":"smiley","description":"Enables the addition of new or existing tokens to Metamask.","supports":{"html":false},"textdomain":"add-token","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/crypto-connect","version":"0.1.0","title":"MetaMask Connect Button","category":"widgets","icon":"smiley","description":"Login button that connects to Metamask.","supports":{"html":false},"textdomain":"crypto-connect","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
@@ -407,8 +416,8 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"add-token/index": 0,
-/******/ 			"add-token/style-index": 0
+/******/ 			"crypto-connect/index": 0,
+/******/ 			"crypto-connect/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -460,7 +469,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["add-token/style-index"], function() { return __webpack_require__("./src/add-token/index.js"); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["crypto-connect/style-index"], function() { return __webpack_require__("./src/crypto-connect/index.js"); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

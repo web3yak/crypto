@@ -1,16 +1,16 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "create-block/add-token",
+	"name": "create-block/crypto-connect",
 	"version": "0.1.0",
-	"title": "Add Token Button",
+	"title": "MetaMask Connect Button",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Enables the addition of new or existing tokens to Metamask.",
+	"description": "Login button that connects to Metamask.",
 	"supports": {
 		"html": false
 	},
-	"textdomain": "add-token",
+	"textdomain": "crypto-connect",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

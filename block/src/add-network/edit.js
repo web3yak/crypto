@@ -83,7 +83,7 @@ export default function Edit(props) {
 		</InspectorControls>
 		<div { ...useBlockProps() }>
 			<ServerSideRender 
-				block="create-block/add-token" attributes={props.attributes}
+				block="create-block/add-network" attributes={props.attributes}
 			/>	
 		</div>
 		</Fragment>

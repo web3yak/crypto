@@ -13,8 +13,8 @@ import { __ } from '@wordpress/i18n';
  */
 import { InspectorControls, useBlockProps,  RichText, AlignmentToolbar,  BlockControls } from '@wordpress/block-editor';
 import ServerSideRender from '@wordpress/server-side-render';
-import { Fragment } from '@wordpress/element';
-import { PanelBody,TextControl } from '@wordpress/components';
+import { Fragment,useState } from '@wordpress/element';
+import { PanelBody,TextControl,SelectControl } from '@wordpress/components';
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -33,37 +33,35 @@ import './editor.scss';
  */
 export default function Edit(props) {
 
-	const { contract, symbol, image, title, css, type } = props;
+	const { contract, symbol, image, title, css, type, color, size, theme } = props;
+
 	return (
 		<Fragment>
-		<InspectorControls>
+		<InspectorControls>, siz
 			<PanelBody label={__('Add Token', 'crypto')}>
-				<TextControl
-					label={__('Contract Address', 'crypto')}
-					value={props.attributes.contract}
-					onChange={contract => props.setAttributes({ contract })}
-				/>
-				<TextControl
-					label={__('symbol', 'crypto')}
-					value={props.attributes.symbol}
-					onChange={symbol => props.setAttributes({ symbol })}
-				/>
-
-					<TextControl
-					label={__('Image icon URL', 'crypto')}
-					value={props.attributes.image}
-					onChange={image => props.setAttributes({ image })}
-				/>
+				
 						<TextControl
 					label={__('Button Title', 'crypto')}
 					value={props.attributes.title}
 					onChange={title => props.setAttributes({ title })}
 				/>
-						<TextControl
-					label={__('Blockchain Type', 'crypto')}
-					value={props.attributes.type}
-					onChange={type => props.setAttributes({ type })}
-				/>
+
+<SelectControl
+								label={ 'Color' }
+								value={ props.attributes.color }
+								options={ [
+									{ label: 'Blue', value: 'fl-is-info' },
+									{ label: 'Green', value: 'fl-is-success' },
+									{ label: 'Yellow', value: 'fl-is-warning' },
+									{ label: 'Red', value: 'fl-is-danger' },
+									{ label: 'Black', value: 'fl-is-black' },
+									{ label: 'White', value: 'fl-is-white' },
+									{ label: 'Clear', value: '' },
+								] }
+								onChange={ function( color ) {
+									props.setAttributes( { color } );
+								} }
+							/>
 				
 							<TextControl
 					label={__('Class Name', 'crypto')}
@@ -75,7 +73,7 @@ export default function Edit(props) {
 		</InspectorControls>
 		<div { ...useBlockProps() }>
 			<ServerSideRender 
-				block="create-block/add-token" attributes={props.attributes}
+				block="create-block/crypto-connect" attributes={props.attributes}
 			/>	
 		</div>
 		</Fragment>

@@ -3,7 +3,7 @@
 	"apiVersion": 2,
 	"name": "create-block/add-network",
 	"version": "0.1.0",
-	"title": "[Add Network] Shortcode",
+	"title": "Add Network Button",
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Enables the addition of new blockchain network to metamask",

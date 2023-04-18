@@ -119,7 +119,7 @@ function Edit(props) {
       css
     })
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_3___default()), {
-    block: "create-block/add-token",
+    block: "create-block/add-network",
     attributes: props.attributes
   })));
 }
@@ -305,7 +305,7 @@ module.exports = window["wp"]["serverSideRender"];
   \************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/add-network","version":"0.1.0","title":"[Add Network] Shortcode","category":"widgets","icon":"smiley","description":"Enables the addition of new blockchain network to metamask","supports":{"html":false},"textdomain":"add-network","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/add-network","version":"0.1.0","title":"Add Network Button","category":"widgets","icon":"smiley","description":"Enables the addition of new blockchain network to metamask","supports":{"html":false},"textdomain":"add-network","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
