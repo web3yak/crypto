@@ -33,46 +33,38 @@ import './editor.scss';
  */
 export default function Edit(props) {
 
-	const { title, name, chainid, currency, symbol, rpcurl, explorer, css } = props;
+	const { contract, symbol, image, title, css, type } = props;
 	return (
 		<Fragment>
 		<InspectorControls>
-			<PanelBody label={__('Add Network', 'crypto')}>
+			<PanelBody label={__('Add Token', 'crypto')}>
 				<TextControl
-					label={__('Title', 'crypto')}
-					value={props.attributes.title}
-					onChange={title => props.setAttributes({ title })}
+					label={__('Contract Address', 'crypto')}
+					value={props.attributes.contract}
+					onChange={contract => props.setAttributes({ contract })}
 				/>
-					<TextControl
-					label={__('Name', 'crypto')}
-					value={props.attributes.name}
-					onChange={name => props.setAttributes({ name })}
-				/>
-						<TextControl
-					label={__('chainid', 'crypto')}
-					value={props.attributes.chainid}
-					onChange={chainid => props.setAttributes({ chainid })}
-				/>
-						<TextControl
-					label={__('currency', 'crypto')}
-					value={props.attributes.currency}
-					onChange={currency => props.setAttributes({ currency })}
-				/>
-						<TextControl
+				<TextControl
 					label={__('symbol', 'crypto')}
 					value={props.attributes.symbol}
 					onChange={symbol => props.setAttributes({ symbol })}
 				/>
-						<TextControl
-					label={__('rpcurl', 'crypto')}
-					value={props.attributes.rpcurl}
-					onChange={rpcurl => props.setAttributes({ rpcurl })}
+
+					<TextControl
+					label={__('Image icon URL', 'crypto')}
+					value={props.attributes.image}
+					onChange={image => props.setAttributes({ image })}
 				/>
 						<TextControl
-					label={__('explorer', 'crypto')}
-					value={props.attributes.explorer}
-					onChange={explorer => props.setAttributes({ explorer })}
+					label={__('Button Title', 'crypto')}
+					value={props.attributes.title}
+					onChange={title => props.setAttributes({ title })}
 				/>
+						<TextControl
+					label={__('Blockchain Type', 'crypto')}
+					value={props.attributes.type}
+					onChange={type => props.setAttributes({ type })}
+				/>
+				
 							<TextControl
 					label={__('Class Name', 'crypto')}
 					value={props.attributes.css}
@@ -83,7 +75,7 @@ export default function Edit(props) {
 		</InspectorControls>
 		<div { ...useBlockProps() }>
 			<ServerSideRender 
-				block="create-block/add-token" attributes={props.attributes}
+				block="create-block/add-network" attributes={props.attributes}
 			/>	
 		</div>
 		</Fragment>

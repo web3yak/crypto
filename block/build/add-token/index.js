@@ -59,40 +59,20 @@ __webpack_require__.r(__webpack_exports__);
  */
 function Edit(props) {
   const {
-    title,
-    name,
-    chainid,
-    currency,
+    contract,
     symbol,
-    rpcurl,
-    explorer,
-    css
+    image,
+    title,
+    css,
+    type
   } = props;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add Network', 'crypto')
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add Token', 'crypto')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title', 'crypto'),
-    value: props.attributes.title,
-    onChange: title => props.setAttributes({
-      title
-    })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Name', 'crypto'),
-    value: props.attributes.name,
-    onChange: name => props.setAttributes({
-      name
-    })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('chainid', 'crypto'),
-    value: props.attributes.chainid,
-    onChange: chainid => props.setAttributes({
-      chainid
-    })
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('currency', 'crypto'),
-    value: props.attributes.currency,
-    onChange: currency => props.setAttributes({
-      currency
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Contract Address', 'crypto'),
+    value: props.attributes.contract,
+    onChange: contract => props.setAttributes({
+      contract
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('symbol', 'crypto'),
@@ -101,16 +81,22 @@ function Edit(props) {
       symbol
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('rpcurl', 'crypto'),
-    value: props.attributes.rpcurl,
-    onChange: rpcurl => props.setAttributes({
-      rpcurl
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Image icon URL', 'crypto'),
+    value: props.attributes.image,
+    onChange: image => props.setAttributes({
+      image
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('explorer', 'crypto'),
-    value: props.attributes.explorer,
-    onChange: explorer => props.setAttributes({
-      explorer
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Button Title', 'crypto'),
+    value: props.attributes.title,
+    onChange: title => props.setAttributes({
+      title
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Blockchain Type', 'crypto'),
+    value: props.attributes.type,
+    onChange: type => props.setAttributes({
+      type
     })
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Class Name', 'crypto'),
@@ -119,7 +105,7 @@ function Edit(props) {
       css
     })
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_3___default()), {
-    block: "create-block/add-token",
+    block: "create-block/add-network",
     attributes: props.attributes
   })));
 }
