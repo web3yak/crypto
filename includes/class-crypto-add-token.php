@@ -8,6 +8,7 @@ class Crypto_Add_Token
         add_shortcode('crypto-add-token', array($this, 'crypto_add_token'));
         add_shortcode('crypto-add-network', array($this, 'crypto_add_network'));
         add_action('init', array($this, 'create_block_crypto_add_token'));
+        add_action('init', array($this, 'create_block_crypto_add_network'));
         // Hook the enqueue functions into the editor
         add_action('enqueue_block_assets', array($this, 'my_block_plugin_editor_scripts'));
     }
@@ -39,7 +40,7 @@ class Crypto_Add_Token
     public function create_block_crypto_add_token()
     {
         register_block_type(CRYPTO_BASE_DIR . 'block/build/add-token', array(
-            'render_callback' => [$this, 'my_first_block_render'],
+            'render_callback' => [$this, 'add_network_render'],
             'attributes' => array(
                 'title' => array(
                     'default' => 'Add Matic Network',
@@ -77,7 +78,57 @@ class Crypto_Add_Token
         ));
     }
 
-    public function my_first_block_render($attributes)
+    public function add_token_render($attributes)
+    {
+        // Coming from RichText, each line is an array's element
+        //  $sum = $attributes['number1'][0] + $attributes['number2'][0];
+
+        // $html = "<h1>$sum</h1>";
+
+        // return $html;
+        //flexi_log($attributes);
+        $short = '[crypto-add-token contract="' . $attributes['contract'] . '" symbol="' . $attributes['symbol'] . '" image="' . $attributes['image'] . '" title="' . $attributes['title'] . '" class="' . $attributes['css'] . '" type="' . $attributes['type'] . '"]';
+        return do_shortcode($short);
+        //  return $short;
+    }
+
+
+
+    //add block editor
+    public function create_block_crypto_add_network()
+    {
+        register_block_type(CRYPTO_BASE_DIR . 'block/build/add-network', array(
+            'render_callback' => [$this, 'add_token_render'],
+            'attributes' => array(
+                'title' => array(
+                    'default' => 'Add Dogecoin',
+                    'type'    => 'string'
+                ),
+                'contract' => array(
+                    'default' => '0xba2ae424d960c26247dd6c32edc70b295c744c43',
+                    'type'    => 'string'
+                ),
+                'image' => array(
+                    'default' => 'https://s2.coinmarketcap.com/static/img/coins/64x64/74.png',
+                    'type'    => 'string'
+                ),
+                'symbol' => array(
+                    'default' => 'DOGE',
+                    'type'    => 'string'
+                ),
+                'type' => array(
+                    'default' => 'ERC20',
+                    'type'    => 'string'
+                ),
+                'css' => array(
+                    'default' => 'fl-button fl-is-small',
+                    'type'    => 'string'
+                )
+            )
+        ));
+    }
+
+    public function add_network_render($attributes)
     {
         // Coming from RichText, each line is an array's element
         //  $sum = $attributes['number1'][0] + $attributes['number2'][0];
