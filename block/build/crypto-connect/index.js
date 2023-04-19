@@ -148,7 +148,6 @@ function Edit(props) {
     symbol,
     image,
     title,
-    css,
     type,
     color,
     size,
@@ -231,12 +230,6 @@ function Edit(props) {
         theme
       });
     }
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Class Name', 'crypto'),
-    value: props.attributes.css,
-    onChange: css => props.setAttributes({
-      css
-    })
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: 'fl-button ' + props.attributes.color + ' ' + props.attributes.size + ' ' + props.attributes.theme
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {

@@ -66,10 +66,6 @@ class Crypto_Connect_Metamask
                     'default' => 'Metamask Connect',
                     'type'    => 'string'
                 ),
-                'css' => array(
-                    'default' => 'fl-button fl-is-small fl-is-light',
-                    'type'    => 'string'
-                ),
                 'color' => array(
                     'default' => '',
                     'type'    => 'string'
@@ -90,7 +86,7 @@ class Crypto_Connect_Metamask
     public function block_crypto_connect($attributes)
     {
         //flexi_log($attributes['color']);
-        $short = '[crypto-connect label="' . $attributes['title'] . '" class="fl-button"]';
+        $short = '[crypto-connect label="' . $attributes['title'] . '" class="fl-button ' . $attributes['color'] . ' ' . $attributes['size'] . ' ' . $attributes['theme'] . '"]';
         return do_shortcode($short);
         //  return $short;
     }
@@ -246,10 +242,13 @@ class Crypto_Connect_Metamask
                         isConnected();
                         crypto_state_check();
                     </script>
-
-                    <div class="fl-notification fl-is-primary fl-is-light fl-mt-1" id="flexi_notification_box">
-                        <button class="fl-delete" id="delete_notification"></button>
-                        <div id="wallet_msg">&nbsp;</div>
+                    <div>
+                        <a href="#" id="btn-login" class="<?php echo esc_attr($this->connect_class); ?>"><img width="20" src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">&nbsp;
+                            <?php echo esc_attr($this->metamask); ?></a>
+                        <div class="fl-notification fl-is-primary fl-is-light fl-mt-1" id="flexi_notification_box">
+                            <button class="fl-delete" id="delete_notification"></button>
+                            <div id="wallet_msg">&nbsp;</div>
+                        </div>
                     </div>
 
                     <div id="wallet_addr_box">
@@ -342,6 +341,7 @@ class Crypto_Connect_Metamask
                 } else {
                     console.log("Metamask is not connected");
                     jQuery("[id=wallet_addr_box]").hide();
+                    jQuery("[id=btn-login]").show();
                 }
             }
             jQuery(document).ready(function() {

@@ -33,7 +33,7 @@ import './editor.scss';
  */
 export default function Edit(props) {
 
-	const { contract, symbol, image, title, css, type, color, size, theme } = props;
+	const { contract, symbol, image, title, type, color, size, theme } = props;
 
 	return (
 		<Fragment>
@@ -89,11 +89,7 @@ export default function Edit(props) {
 								} }
 							/>
 				
-							<TextControl
-					label={__('Class Name', 'crypto')}
-					value={props.attributes.css}
-					onChange={css => props.setAttributes({ css })}
-				/>
+		
 
 			</PanelBody>
 		</InspectorControls>
