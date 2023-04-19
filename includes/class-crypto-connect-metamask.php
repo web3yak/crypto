@@ -73,6 +73,14 @@ class Crypto_Connect_Metamask
                 'color' => array(
                     'default' => '',
                     'type'    => 'string'
+                ),
+                'size' => array(
+                    'default' => '',
+                    'type'    => 'string'
+                ),
+                'theme' => array(
+                    'default' => '',
+                    'type'    => 'string'
                 )
             )
         ));
@@ -82,7 +90,7 @@ class Crypto_Connect_Metamask
     public function block_crypto_connect($attributes)
     {
         //flexi_log($attributes['color']);
-        $short = '[crypto-connect label="' . $attributes['title'] . '" class="fl-button ' . $attributes['color'] . '"]';
+        $short = '[crypto-connect label="' . $attributes['title'] . '" class="fl-button"]';
         return do_shortcode($short);
         //  return $short;
     }

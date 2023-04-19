@@ -4,7 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
-
+import metamask from "./metamask.svg"
 /**
  * React hook that is used to mark the block wrapper element.
  * It provides all the necessary props like the class name.
@@ -62,6 +62,32 @@ export default function Edit(props) {
 									props.setAttributes( { color } );
 								} }
 							/>
+
+<SelectControl
+								label={ 'Size' }
+								value={ props.attributes.size }
+								options={ [
+									{ label: 'Small', value: 'fl-is-small' },
+									{ label: 'Default', value: '' },
+									{ label: 'Medium', value: 'fl-is-medium' },
+									{ label: 'Large', value: 'fl-is-large' }
+								] }
+								onChange={ function( size ) {
+									props.setAttributes( { size } );
+								} }
+							/>
+							<SelectControl
+								label={ 'Theme' }
+								value={ props.attributes.theme }
+								options={ [
+									{ label: 'Dark', value: 'fl-is-dark' },
+									{ label: 'Default', value: '' },
+									{ label: 'Light', value: 'fl-is-light' }
+								] }
+								onChange={ function( theme ) {
+									props.setAttributes( { theme } );
+								} }
+							/>
 				
 							<TextControl
 					label={__('Class Name', 'crypto')}
@@ -71,11 +97,9 @@ export default function Edit(props) {
 
 			</PanelBody>
 		</InspectorControls>
-		<div { ...useBlockProps() }>
-			<ServerSideRender 
-				block="create-block/crypto-connect" attributes={props.attributes}
-			/>	
-		</div>
+		<p {...useBlockProps()}>
+		<div class={'fl-button '+props.attributes.color+' '+props.attributes.size+' '+props.attributes.theme}><img width="20" src={metamask}/>&nbsp;{props.attributes.title} </div>
+		</p>
 		</Fragment>
 	);
 }
