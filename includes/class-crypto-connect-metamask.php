@@ -213,8 +213,16 @@ class Crypto_Connect_Metamask
         }
     }
 
-    public function crypto_connect_Metamask()
+    public function crypto_connect_Metamask($atts)
     {
+
+        extract(shortcode_atts(array(
+            'class' => $this->connect_class,
+            'label' => $this->metamask,
+            'disconnect' => $this->disconnect
+        ), $atts));
+
+
         $enable_addon = crypto_get_option('enable_crypto_login', 'crypto_general_login', 'metamask');
         if ("metamask" == $enable_addon) {
 
@@ -228,8 +236,8 @@ class Crypto_Connect_Metamask
 
 ?>
                     <div>
-                        <a href="#" id="btn-login" class="<?php echo esc_attr($this->connect_class); ?>"><img width="20" src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">&nbsp;
-                            <?php echo esc_attr($this->metamask); ?></a>
+                        <a href="#" id="btn-login" class="<?php echo esc_attr($class); ?>"><img width="20" src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">&nbsp;
+                            <?php echo esc_attr($label); ?></a>
                         <div class="fl-notification fl-is-primary fl-is-light fl-mt-1" id="flexi_notification_box">
                             <button class="fl-delete" id="delete_notification"></button>
                             <div id="wallet_msg">&nbsp;</div>
@@ -243,8 +251,8 @@ class Crypto_Connect_Metamask
                         crypto_state_check();
                     </script>
                     <div>
-                        <a href="#" id="btn-login" class="<?php echo esc_attr($this->connect_class); ?>"><img width="20" src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">&nbsp;
-                            <?php echo esc_attr($this->metamask); ?></a>
+                        <a href="#" id="btn-login" class="<?php echo esc_attr($class); ?>"><img width="20" src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">&nbsp;
+                            <?php echo esc_attr($label); ?></a>
                         <div class="fl-notification fl-is-primary fl-is-light fl-mt-1" id="flexi_notification_box">
                             <button class="fl-delete" id="delete_notification"></button>
                             <div id="wallet_msg">&nbsp;</div>
@@ -354,6 +362,20 @@ class Crypto_Connect_Metamask
 
                     create_link_crypto_connect_login('<?php echo sanitize_key($nonce); ?>', '', 'logout', '', '',
                         '');
+                    jQuery.toast({
+                        heading: 'Logout',
+                        text: "Please Wait...",
+                        icon: 'success',
+                        loader: true,
+                        loaderBg: '#fff',
+                        showHideTransition: 'fade',
+                        hideAfter: 10000,
+                        allowToastClose: false,
+                        position: {
+                            left: 100,
+                            top: 30
+                        }
+                    });
                     //jQuery("#crypto_connect_ajax_process").click();
                     setTimeout(function() {
                         jQuery('#crypto_connect_ajax_process').trigger('click');
@@ -397,9 +419,23 @@ class Crypto_Connect_Metamask
                 console.log(crypto_network_arr[networkId]);
                 if ((chainId_new != networkId && chainId_new != 0)) {
                     var msg = "Change your network to:" + chainId_new;
-                    jQuery("[id=wallet_msg]").empty();
-                    jQuery("#flexi_notification_box").fadeIn("slow");
-                    jQuery("[id=wallet_msg]").append(msg).fadeIn("normal");
+                    //  jQuery("[id=wallet_msg]").empty();
+                    //  jQuery("#flexi_notification_box").fadeIn("slow");
+                    //   jQuery("[id=wallet_msg]").append(msg).fadeIn("normal");
+                    jQuery.toast({
+                        heading: 'Notice',
+                        text: msg,
+                        icon: 'warning',
+                        loader: true,
+                        loaderBg: '#fff',
+                        showHideTransition: 'fade',
+                        hideAfter: 10000,
+                        allowToastClose: false,
+                        position: {
+                            left: 100,
+                            top: 30
+                        }
+                    });
                     return false;
                 }
                 return true;
