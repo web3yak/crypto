@@ -114,6 +114,10 @@ Web3Domain is a platform that allows you to register and sell your own web3 doma
 3. Crypto Price
 
 == Changelog ==
+= 2.3 =
+* Block Editor for "Add New Token"
+* Block Editor for "Add or Switch Network"
+* Block Editor for "Crypto Connect Button"
 
 = 2.2 = 
 Updated languages
