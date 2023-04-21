@@ -65,7 +65,7 @@ function Edit(props) {
     size,
     theme
   } = props;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, ", siz", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Token Price', 'crypto')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Token Symbol', 'crypto'),
@@ -362,7 +362,7 @@ module.exports = window["wp"]["serverSideRender"];
   \************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/token-price","version":"0.1.0","title":"Token Latest Price","category":"widgets","icon":"smiley","description":"Display the latest price of a token in the selected currency.","supports":{"html":false},"textdomain":"token-price","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/token-price","version":"0.1.0","title":"Token Latest Price","category":"widgets","icon":"smiley","description":"Display the latest price of a token in the selected currency.You must set CoinMarketCap API at Crypto plugin settings.","supports":{"html":false},"textdomain":"token-price","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

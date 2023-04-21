@@ -32,10 +32,10 @@ import './editor.scss';
  */
 export default function Edit(props) {
 
-	const { symbol, currency, style,color, size, theme } = props;
+	const { symbol, currency, style, color, size, theme } = props;
 	return (
 		<Fragment>
-		<InspectorControls>, siz
+		<InspectorControls>
 			<PanelBody label={__('Token Price', 'crypto')}>
 				
 						<TextControl
