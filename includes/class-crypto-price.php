@@ -22,6 +22,7 @@ class Crypto_Price
 		add_filter('crypto_settings_fields', array($this, 'add_fields'));
 		add_filter('crypto_dashboard_tab', array($this, 'dashboard_add_tabs'));
 		add_action('crypto_dashboard_tab_content', array($this, 'dashboard_add_content'));
+		add_action('init', array($this, 'create_block_crypto_token_price'));
 	}
 
 
@@ -254,9 +255,14 @@ class Crypto_Price
 	{
 		$theme = '<div class="fl-column fl-is-narrow">';
 		if ($style == 'style1') {
-			$theme .= '<div class="fl-notification ' . $color . ' fl-is-light fl-pb-0">';
+			$theme .= '<div class="fl-notification ' . $color . ' fl-pb-0 fl-pt-0">';
 			$theme .= '<p class="fl-is-size-4 fl-has-text-centered fl-mb-1"><strong>' . $data . '</strong> </p>';
 			$theme .= '<p class="fl-is-size-6 fl-has-text-centered"> <img src="' . $img . '" width="16"> ' . $id . '/' . $curr . '</p>';
+			$theme .= "</div>";
+		} else if ($style == 'style2') {
+			$theme .= '<div class="fl-tag ' . $color . ' ">';
+			$theme .= '<img src="' . $img . '" width="16">&nbsp;';
+			$theme .= $data;
 			$theme .= "</div>";
 		} else {
 			$theme .= $id . ' <strong>' . $data . '</strong> ' . $curr;
@@ -335,32 +341,74 @@ class Crypto_Price
 	{
 		ob_start();
 ?>
-<div class="changelog section-getting-started">
-    <div class="feature-section">
-        <h2>Price Display</h2>
-        <div class="wrap">
-            <b>The "Crypto" plugin enables users to display current cryptocurrency prices in various currencies.</b>
-            <br><br><a class="button button-primary"
-                href="<?php echo admin_url('admin.php?page=crypto_settings&tab=price&section=crypto_price_settings'); ?>">Price
-                Display Settings</a>
-            <a class="button button-primary" target="_blank" href="https://w3d.name/reseller/domain-search/">Live
-                Demo</a>
-            <br><br>
-            <b>Tips</b>
-            <ul>
-                <li>* Obtain an API key from CoinMarketCap.com, which is free to acquire.</li>
-                <li>* Initially set the 'Crypto Data Caching' time to 1 second. Once it is working well, increase it as
-                    needed. This will save bandwidth and improve speed.</li>
-                <li>* To display prices within an article, use the 'none' style. This will not disrupt the paragraph's
-                    formatting.</li>
-            </ul>
+		<div class="changelog section-getting-started">
+			<div class="feature-section">
+				<h2>Price Display</h2>
+				<div class="wrap">
+					<b>The "Crypto" plugin enables users to display current cryptocurrency prices in various currencies.</b>
+					<br><br><a class="button button-primary" href="<?php echo admin_url('admin.php?page=crypto_settings&tab=price&section=crypto_price_settings'); ?>">Price
+						Display Settings</a>
+					<a class="button button-primary" target="_blank" href="https://w3d.name/reseller/domain-search/">Live
+						Demo</a>
+					<br><br>
+					<b>Tips</b>
+					<ul>
+						<li>* Obtain an API key from CoinMarketCap.com, which is free to acquire.</li>
+						<li>* Initially set the 'Crypto Data Caching' time to 1 second. Once it is working well, increase it as
+							needed. This will save bandwidth and improve speed.</li>
+						<li>* To display prices within an article, use the 'none' style. This will not disrupt the paragraph's
+							formatting.</li>
+					</ul>
 
-        </div>
-    </div>
-</div>
+				</div>
+			</div>
+		</div>
 <?php
 		$content = ob_get_clean();
 		return $content;
+	}
+
+	//Block editor
+	//add block editor
+	public function create_block_crypto_token_price()
+	{
+		register_block_type(CRYPTO_BASE_DIR . 'block/build/token-price', array(
+			'render_callback' => [$this, 'add_token_price'],
+			'attributes' => array(
+				'symbol' => array(
+					'default' => 'BTC',
+					'type'    => 'string'
+				),
+				'currency' => array(
+					'default' => 'USD',
+					'type'    => 'string'
+				),
+				'style' => array(
+					'default' => 'style1',
+					'type'    => 'string'
+				),
+				'color' => array(
+					'default' => '',
+					'type'    => 'string'
+				),
+				'size' => array(
+					'default' => '',
+					'type'    => 'string'
+				),
+				'theme' => array(
+					'default' => '',
+					'type'    => 'string'
+				)
+			)
+		));
+	}
+
+	public function add_token_price($attributes)
+	{
+
+		$short = '[crypto-price symbol="' . $attributes['symbol'] . '" style="' . $attributes['style'] . '" currency="' . $attributes['currency'] . '" color="' . $attributes['color'] . ' ' . $attributes['size'] . ' ' . $attributes['theme'] . '"]';
+		return do_shortcode($short);
+		//  return $short;
 	}
 }
 $price_page = new Crypto_Price();
