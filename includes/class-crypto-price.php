@@ -302,14 +302,18 @@ class Crypto_Price
 
 			foreach ($token_ids as $tid) {
 				$data = json_decode($this->crypto_price_info($tid, $curr));
-				if (isset($data->data->$tid->quote->$curr->price)) {
-					$data_result = round($data->data->$tid->quote->$curr->price, 2);
+				if ($data->status->error_code == '0') {
+					if (isset($data->data->$tid->quote->$curr->price)) {
+						$data_result = round($data->data->$tid->quote->$curr->price, 2);
+					} else {
+						$data_result = 'ERROR';
+						crypto_set_option('price_cache', 'crypto_price_settings', '1');
+					}
+					$img = 'https://s2.coinmarketcap.com/static/img/coins/64x64/' . $data->data->$tid->id . '.png';
+					$output .= $this->style($style, $data_result, $curr, $tid, $img, $color);
 				} else {
-					$data_result = 'ERROR';
-					crypto_set_option('price_cache', 'crypto_price_settings', '1');
+					$output = $data->status->error_message;
 				}
-				$img = 'https://s2.coinmarketcap.com/static/img/coins/64x64/' . $data->data->$tid->id . '.png';
-				$output .= $this->style($style, $data_result, $curr, $tid, $img, $color);
 			}
 			$output .= "</div>";
 			return $output;
@@ -341,28 +345,29 @@ class Crypto_Price
 	{
 		ob_start();
 ?>
-		<div class="changelog section-getting-started">
-			<div class="feature-section">
-				<h2>Price Display</h2>
-				<div class="wrap">
-					<b>The "Crypto" plugin enables users to display current cryptocurrency prices in various currencies.</b>
-					<br><br><a class="button button-primary" href="<?php echo admin_url('admin.php?page=crypto_settings&tab=price&section=crypto_price_settings'); ?>">Price
-						Display Settings</a>
-					<a class="button button-primary" target="_blank" href="https://w3d.name/reseller/domain-search/">Live
-						Demo</a>
-					<br><br>
-					<b>Tips</b>
-					<ul>
-						<li>* Obtain an API key from CoinMarketCap.com, which is free to acquire.</li>
-						<li>* Initially set the 'Crypto Data Caching' time to 1 second. Once it is working well, increase it as
-							needed. This will save bandwidth and improve speed.</li>
-						<li>* To display prices within an article, use the 'none' style. This will not disrupt the paragraph's
-							formatting.</li>
-					</ul>
+<div class="changelog section-getting-started">
+    <div class="feature-section">
+        <h2>Price Display</h2>
+        <div class="wrap">
+            <b>The "Crypto" plugin enables users to display current cryptocurrency prices in various currencies.</b>
+            <br><br><a class="button button-primary"
+                href="<?php echo admin_url('admin.php?page=crypto_settings&tab=price&section=crypto_price_settings'); ?>">Price
+                Display Settings</a>
+            <a class="button button-primary" target="_blank" href="https://w3d.name/reseller/domain-search/">Live
+                Demo</a>
+            <br><br>
+            <b>Tips</b>
+            <ul>
+                <li>* Obtain an API key from CoinMarketCap.com, which is free to acquire.</li>
+                <li>* Initially set the 'Crypto Data Caching' time to 1 second. Once it is working well, increase it as
+                    needed. This will save bandwidth and improve speed.</li>
+                <li>* To display prices within an article, use the 'none' style. This will not disrupt the paragraph's
+                    formatting.</li>
+            </ul>
 
-				</div>
-			</div>
-		</div>
+        </div>
+    </div>
+</div>
 <?php
 		$content = ob_get_clean();
 		return $content;
@@ -388,7 +393,7 @@ class Crypto_Price
 					'type'    => 'string'
 				),
 				'color' => array(
-					'default' => '',
+					'default' => 'fl-is-info',
 					'type'    => 'string'
 				),
 				'size' => array(
@@ -396,7 +401,7 @@ class Crypto_Price
 					'type'    => 'string'
 				),
 				'theme' => array(
-					'default' => '',
+					'default' => 'fl-is-light',
 					'type'    => 'string'
 				)
 			)

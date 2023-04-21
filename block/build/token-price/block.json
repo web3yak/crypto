@@ -6,7 +6,7 @@
   "title": "Token Latest Price",
   "category": "widgets",
   "icon": "smiley",
-  "description": "Display the latest price of a token in the selected currency.You must set CoinMarketCap API at Crypto plugin settings.",
+  "description": "Display the latest price of a token in the selected currency.You must set CoinMarketCap API key at Crypto plugin settings.",
   "supports": {
     "html": false
   },

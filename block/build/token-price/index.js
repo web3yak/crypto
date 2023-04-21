@@ -362,7 +362,7 @@ module.exports = window["wp"]["serverSideRender"];
   \************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/token-price","version":"0.1.0","title":"Token Latest Price","category":"widgets","icon":"smiley","description":"Display the latest price of a token in the selected currency.You must set CoinMarketCap API at Crypto plugin settings.","supports":{"html":false},"textdomain":"token-price","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/token-price","version":"0.1.0","title":"Token Latest Price","category":"widgets","icon":"smiley","description":"Display the latest price of a token in the selected currency.You must set CoinMarketCap API key at Crypto plugin settings.","supports":{"html":false},"textdomain":"token-price","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
