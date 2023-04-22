@@ -39,22 +39,15 @@ export default function Edit(props) {
 			<PanelBody label={__('Token Price', 'crypto')}>
 				
 						<TextControl
-					label={__('Token Symbol', 'crypto')}
+					label={__('Token Symbol Eg. BTC', 'crypto')}
 					value={props.attributes.symbol}
 					onChange={symbol => props.setAttributes({ symbol })}
 				/>
-
-<SelectControl
-								label={ 'Currency' }
-								value={ props.attributes.currency }
-								options={ [
-									{ label: 'US Dollar', value: 'USD' },
-									{ label: 'Indian Rupees', value: 'INR' }
-								] }
-								onChange={ function( currency ) {
-									props.setAttributes( { currency } );
-								} }
-							/>
+<TextControl
+					label={__('Currency Eg. USD', 'crypto')}
+					value={props.attributes.currency}
+					onChange={currency => props.setAttributes({ currency })}
+				/>
 
 <SelectControl
 								label={ 'Style' }
