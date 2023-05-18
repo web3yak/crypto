@@ -60,6 +60,16 @@ let web3; // Web3 instance
 let contract; // Contract instance
 let account; // Your account as will be reported by Metamask
 
+//Validate URLs
+function crypto_ValidURL(str) {
+  var regex = /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+  if(!regex .test(str)) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 
 
 //Toast/* file */
