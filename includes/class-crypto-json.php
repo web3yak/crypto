@@ -5,17 +5,47 @@ class Crypto_Generate_Json
 	public function __construct()
 	{
 
-		add_action('crypto_ipfs_upload', array($this, 'create_json'), 10, 1);
+		add_action('crypto_ipfs_upload', array($this, 'get_json_from_w3d'), 10, 1);
+	}
+
+	public function get_json_from_w3d($domain)
+	{
+		$url = 'https://w3d.name/api/v1/index.php?domain=' . $domain;
+
+		$uploaddir = wp_upload_dir();
+		$base_path =  $uploaddir['basedir'] . "/yak/" . $domain . '.json'; //upload dir.
+		//crypto_log($base_path);
+		//crypto_log($uploaddir['basedir']);
+		if (!is_dir($uploaddir['basedir'] . "/yak/")) {
+			mkdir($uploaddir['basedir'] . "/yak/");
+		}
+
+		// Use file_get_contents() function to get the file
+		// from url and use file_put_contents() function to
+		// save the file by using base name
+		if (file_put_contents($base_path, file_get_contents($url))) {
+
+			$decoded_json = json_decode(file_get_contents($base_path), false);
+			if (isset($decoded_json->error)) {
+				$this->create_json($domain);
+			}
+			// echo "File downloaded successfully";
+		} else {
+			//echo "File downloading failed.";
+			$this->create_json($domain);
+		}
 	}
 
 	public function create_json($domain)
 	{
 		$uploaddir = wp_upload_dir();
-		$base_path =  $uploaddir['path'] . "/w3d/"; //upload dir.
+		$base_path =  $uploaddir['basedir'] . "/yak/"; //upload dir.
 		//crypto_log($base_path);
+		//crypto_log($uploaddir['basedir']);
 		if (!is_dir($base_path)) {
 			mkdir($base_path);
 		}
+
 		$info = array();
 		$info['name'] = strtolower($domain);
 		$info['description'] = '';

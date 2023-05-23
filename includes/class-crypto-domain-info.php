@@ -124,7 +124,7 @@ jQuery(document).ready(function() {
                             jQuery('#crypto_available_text').html(domain_owner);
 
                             if (domain_owner.toLowerCase() === account.toLowerCase()) {
-                                console.log("Authorized");
+                                console.log("Authorized....");
                                 jQuery('#json_container').html('');
                                 jQuery("#transfer_box").show();
                                 jQuery("#crypto_claim_box").hide();
@@ -138,7 +138,7 @@ jQuery(document).ready(function() {
                                         // coin_toggle_loading("end");
                                         // jQuery('#json_container').html('Transfer cancel');
                                         jQuery('#json_container').html(
-                                            '<div class="crypto_alert-box crypto_warning">Transfer cancelled</div>'
+                                            '<div class="crypto_alert-box crypto_warning">Transfer cancelled....</div>'
                                         );
                                     } else {
                                         // alert(curr_user + " - " + transfer_to + " - " + claim_id);
