@@ -129,5 +129,10 @@ class Crypto_Public
         wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/crypto-public.js', array('jquery'), $this->version, false);
 
         wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/crypto_connect_login-public.js', array('jquery'), $this->version, false);
+
+
+        //Ajax record update
+        wp_register_script('crypto_ajax_record', plugin_dir_url(__FILE__) . 'js/crypto_ajax_record.js', array('jquery'), $this->version);
+        wp_enqueue_script('crypto_ajax_record');
     }
 }

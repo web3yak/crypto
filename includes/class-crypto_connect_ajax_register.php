@@ -242,6 +242,10 @@ class crypto_connect_ajax_process
         }
     }
 
+    public function save_update_json($id, $param1, $param2, $param3)
+    {
+        crypto_log($id . "-" . $param1 . "-" . $param2 . "-" . $param3);
+    }
 
     //Logout user
     public function logout($id, $param1, $param2, $param3)

@@ -17,6 +17,49 @@ class Crypto_Domain_URL
         $this->url_page = crypto_get_option('url_page', 'crypto_marketplace_settings', 0);
         $this->price_ether = crypto_get_option('price_ether', 'crypto_marketplace_settings', '5');
         $this->crypto_network = crypto_get_option('crypto_network', 'crypto_marketplace_settings', '137');
+
+
+        add_action('wp_ajax_crypto_ajax_record', array($this, 'crypto_ajax_record'));
+        add_action('wp_ajax_nopriv_crypto_ajax_record', array($this, 'crypto_my_must_login'));
+    }
+
+
+    //update primary image from edit screen
+    public function crypto_ajax_record()
+    {
+
+
+        if (
+            !isset($_POST['crypto-nonce'])
+            || !wp_verify_nonce($_POST['crypto-nonce'], 'crypto-nonce')
+        ) {
+            $response = array(
+                'error' => true,
+                'msg' => 'Invalid Form submission',
+            );
+            exit('The form is not valid');
+        }
+
+        // A default response holder, which will have data for sending back to our js file
+        $response = array(
+            'error' => false,
+            'msg' => 'No Message',
+        );
+
+
+        crypto_log($_POST);
+        // Don't forget to exit at the end of processing
+        crypto_log($response['msg']);
+        echo wp_json_encode($response);
+        die();
+    }
+
+    public function crypto_my_must_login()
+    {
+        crypto_log("logout....");
+        echo __('Login Please !', 'crypto');
+        die();
+        wp_die();
     }
 
     public function rw_query_vars($aVars)
@@ -104,7 +147,7 @@ class Crypto_Domain_URL
                     $subdomain = $wp_query->query_vars['web3domain'];
                     $subdomain = strtolower($subdomain);
                     if (isset($_GET['domain'])) {
-
+                        $nonce = wp_create_nonce('crypto_ajax');
                         $curr_url = $_SERVER['REQUEST_URI'];
 
                 ?>
@@ -130,6 +173,21 @@ class Crypto_Domain_URL
                                     //alert("claim");
                                     //coin_toggle_loading("start");
                                     crypto_claim();
+                                });
+
+                                jQuery("#crypto_save_record1").click(function() {
+                                    alert("save recrd");
+                                    //coin_toggle_loading("start");
+                                    //crypto_claim();
+
+                                    create_link_crypto_connect_login('<?php echo sanitize_key($nonce); ?>', 'xx',
+                                        'save_update_json',
+                                        'b', 'c', 'd');
+
+                                    setTimeout(function() {
+                                        jQuery('#crypto_connect_ajax_process').trigger('click');
+                                    }, 100);
+
                                 });
 
                             });
@@ -441,31 +499,70 @@ class Crypto_Domain_URL
                         </div>
 
 
+                        <form id="crypto-record-form" class="crypto_ajax_record" method="post" action="<?php echo admin_url("/admin-ajax.php"); ?>">
+                            <input type="hidden" name="action" value="crypto_ajax_record">
+                            <?php wp_nonce_field('crypto-nonce', 'crypto-nonce', false); ?>
+                            <div id="record_box">
+                                <div class="fl-column fl-is-full">
+                                    <div class="fl-box">
+                                        <div class="fl-field">
+                                            <label class="fl-label">Full Name</label>
+                                            <div class="fl-control fl-has-icons-left fl-has-icons-right">
+                                                <input class="fl-input" type="text" placeholder="Public display name" name="crypto_profile_name">
+                                                <span class="fl-icon fl-is-small is-left">
+                                                    <i class="fas fa-user"></i>
+                                                </span>
+                                            </div>
+                                        </div>
 
-                        <div id="record_box">
-                            <div class="fl-column fl-is-full">
-                                <div class="fl-box">
-                                    <div class="fl-field">
-                                        <label class="fl-label">Manage records of "<?php echo $subdomain; ?>" </label>
-                                        <div class="fl-control">
-                                            <input class="fl-input" id="to_add111" placeholder="e.g. 0xf11a4fac7b7839771da0a526145198e99d0575be">
+                                        <div class="fl-field">
+                                            <label class="fl-label">Web Site URL</label>
+                                            <div class="fl-control fl-has-icons-left fl-has-icons-right">
+                                                <input class="fl-input fl-is-success" type="text" placeholder="http://" name="crypto_website_url">
+                                                <span class="fl-icon fl-is-small is-left">
+                                                    <i class="fas fa-link"></i>
+                                                </span>
+
+                                            </div>
+                                            <p class="fl-help fl-is-success">Enter full website URL.</p>
+                                        </div>
+
+                                        <div class="fl-field">
+                                            <label class="fl-label">Email Address</label>
+                                            <div class="fl-control fl-has-icons-left fl-has-icons-right">
+                                                <input class="fl-input" type="email" value="" name="crypto_email">
+                                                <span class="fl-icon fl-is-small is-left">
+                                                    <i class="fas fa-envelope"></i>
+                                                </span>
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="fl-field">
+                                            <label class="fl-label">Description</label>
+                                            <div class="fl-control">
+                                                <textarea class="fl-textarea" placeholder="About yourself , Company, Bank details / Communication Address / Notice" name="crypto_desp"></textarea>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="fl-field fl-is-grouped">
+                                            <div class="fl-control">
+                                                <input type="submit" name="submit" value="Save Record" id="crypto_save_record" class="fl-button fl-is-link">
+
+                                            </div>
+                                            <div class="fl-control">
+                                                <button class="fl-button fl-is-link fl-is-light">Update to Blockchain</button>
+                                            </div>
                                         </div>
                                     </div>
-                                    <p class="fl-help fl-is-success">
-                                        This will transfer ownership of the current NFT domain to a new owner.<br>
-                                        Please ensure to enter the correct wallet address for the selected network.<br>
-                                        This transaction cannot be undone.
-                                        <br>
-                                    </p>
-
-
-
-
-
                                 </div>
                             </div>
-                        </div>
-
+                        </form>
 
 
                     <?php
