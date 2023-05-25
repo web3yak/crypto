@@ -46,10 +46,29 @@ class Crypto_Domain_URL
             'msg' => 'No Message',
         );
 
+        $crypto_profile_name = "";
+        $crypto_website_url = "";
+        $crypto_email = "";
+        $crypto_desp = "";
 
-        crypto_log($_POST);
+        if (isset($_POST['domain_name'])) {
+
+            if (isset($_POST['crypto_profile_name']) && $_POST['crypto_profile_name'] !== "") {
+                $crypto_profile_name = sanitize_text_field($_POST['crypto_profile_name']);
+            }
+
+            if (isset($_POST['crypto_desp'])) {
+                $crypto_desp = sanitize_text_field($_POST['crypto_desp']);
+            }
+            // crypto_log($_POST['crypto_desp']);
+
+            $gen_json = new Crypto_Generate_Json();
+            $gen_json->create_json(sanitize_text_field($_POST['domain_name']), $edit = true, $crypto_desp);
+        }
+
+        // crypto_log($_POST);
         // Don't forget to exit at the end of processing
-        crypto_log($response['msg']);
+        //  crypto_log($response['msg']);
         echo wp_json_encode($response);
         die();
     }
@@ -498,9 +517,15 @@ class Crypto_Domain_URL
                             </div>
                         </div>
 
+                        <?php
+
+                        $gen_json = new Crypto_Generate_Json();
+
+                        ?>
 
                         <form id="crypto-record-form" class="crypto_ajax_record" method="post" action="<?php echo admin_url("/admin-ajax.php"); ?>">
                             <input type="hidden" name="action" value="crypto_ajax_record">
+                            <input type="hidden" name="domain_name" value="<?php echo $subdomain; ?>">
                             <?php wp_nonce_field('crypto-nonce', 'crypto-nonce', false); ?>
                             <div id="record_box">
                                 <div class="fl-column fl-is-full">
@@ -508,7 +533,7 @@ class Crypto_Domain_URL
                                         <div class="fl-field">
                                             <label class="fl-label">Full Name</label>
                                             <div class="fl-control fl-has-icons-left fl-has-icons-right">
-                                                <input class="fl-input" type="text" placeholder="Public display name" name="crypto_profile_name">
+                                                <input class="fl-input" type="text" placeholder="Public display name" name="crypto_profile_name" value="<?php echo $gen_json->fetch($subdomain, 'name'); ?>">
                                                 <span class="fl-icon fl-is-small is-left">
                                                     <i class="fas fa-user"></i>
                                                 </span>
@@ -518,7 +543,7 @@ class Crypto_Domain_URL
                                         <div class="fl-field">
                                             <label class="fl-label">Web Site URL</label>
                                             <div class="fl-control fl-has-icons-left fl-has-icons-right">
-                                                <input class="fl-input fl-is-success" type="text" placeholder="http://" name="crypto_website_url">
+                                                <input class="fl-input fl-is-success" type="text" placeholder="http://" name="crypto_website_url" value="<?php echo $gen_json->fetch($subdomain, 'web_url'); ?>">
                                                 <span class="fl-icon fl-is-small is-left">
                                                     <i class="fas fa-link"></i>
                                                 </span>
@@ -530,7 +555,7 @@ class Crypto_Domain_URL
                                         <div class="fl-field">
                                             <label class="fl-label">Email Address</label>
                                             <div class="fl-control fl-has-icons-left fl-has-icons-right">
-                                                <input class="fl-input" type="email" value="" name="crypto_email">
+                                                <input class="fl-input" type="email" value="<?php echo $gen_json->fetch($subdomain, 'email'); ?>" name="crypto_email">
                                                 <span class="fl-icon fl-is-small is-left">
                                                     <i class="fas fa-envelope"></i>
                                                 </span>
@@ -543,7 +568,7 @@ class Crypto_Domain_URL
                                         <div class="fl-field">
                                             <label class="fl-label">Description</label>
                                             <div class="fl-control">
-                                                <textarea class="fl-textarea" placeholder="About yourself , Company, Bank details / Communication Address / Notice" name="crypto_desp"></textarea>
+                                                <textarea class="fl-textarea" placeholder="About yourself , Company, Bank details / Communication Address / Notice" name="crypto_desp"> <?php echo $gen_json->fetch($subdomain, 'notes'); ?></textarea>
                                             </div>
                                         </div>
 
