@@ -36,7 +36,7 @@ class Crypto_Generate_Json
 		}
 	}
 
-	public function create_json($domain, $edit = false, $notes = "")
+	public function create_json($domain, $edit = false, $crypto_profile_name = "", $crypto_email = "", $crypto_website_url = "", $crypto_desp = "")
 	{
 		$uploaddir = wp_upload_dir();
 		$base_path =  $uploaddir['basedir'] . "/yak/"; //upload dir.
@@ -46,9 +46,17 @@ class Crypto_Generate_Json
 			mkdir($base_path);
 		}
 
+		if ($crypto_website_url == "") {
+			$crypto_website_url = get_site_url();
+		}
+
+		if ($crypto_profile_name == "") {
+			$crypto_profile_name = $domain;
+		}
+
 		$info = array();
 		$info['name'] = strtolower($domain);
-		$info['description'] = $notes;
+		$info['description'] = '';
 		$info['image'] = '';
 		$info['attributes'][0]['trait_type'] = 'domain';
 		$info['attributes'][0]['value'] = $domain;
@@ -56,10 +64,16 @@ class Crypto_Generate_Json
 		$info['attributes'][1]['value'] = '2';
 		$info['attributes'][2]['trait_type'] = 'length';
 		$info['attributes'][2]['value'] = strlen($domain);
+		$info['records'][1]['type'] = 'name';
+		$info['records'][1]['value'] = $crypto_profile_name;
+		$info['records'][2]['type'] = 'email';
+		$info['records'][2]['value'] = $crypto_email;
+		$info['records'][3]['type'] = 'notes';
+		$info['records'][3]['value'] = $crypto_desp;
 		$info['records'][50]['type'] = 'web_url';
-		$info['records'][50]['value'] = get_site_url();
+		$info['records'][50]['value'] = '';
 		$info['records'][51]['type'] = 'web3_url';
-		$info['records'][51]['value'] = "";
+		$info['records'][51]['value'] = $crypto_website_url;
 
 
 		$primary = crypto_split_domain($domain, 'primary');
@@ -79,6 +93,7 @@ class Crypto_Generate_Json
 		$f = @fopen($save_path, "w") or die(print_r(error_get_last(), true)); //if json file doesn't gets saved, uncomment this to check for errors
 		fwrite($f, $data);
 		fclose($f);
+		return "success";
 	}
 
 
@@ -111,7 +126,8 @@ class Crypto_Generate_Json
 	{
 
 		$json = file_get_contents($this->get_lookup_file($domain_name));
-		//var_dump($json);
+
+		//crypto_log($json);
 		$json_data = json_decode($json, true);
 		//echo  $json_data['records']['50']['value'];
 		if (isset($json_data['error'])) {

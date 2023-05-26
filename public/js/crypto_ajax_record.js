@@ -17,15 +17,16 @@ jQuery(".crypto_ajax_record").on("submit", function (e) {
       data: formData,
       beforeSend: function () {
      console.log("before send");
+     jQuery('#crypto_save_record').addClass('fl-is-loading');
       },
 
       success: function (response) {
-        if (response.type == "success") {
- 
-       console.log(response);
+        if (response.msg == "success") {
+          jQuery("#crypto_publish_box").show("slow");
+      console.log(response);
         } else {
           console.log("Blank Response");
-
+          console.log(response);
         }
 
       },
@@ -33,7 +34,7 @@ jQuery(".crypto_ajax_record").on("submit", function (e) {
         // Hide image container
         console.log("Submission completed ");
         //console.log(data);
-
+        jQuery('#crypto_save_record').removeClass('fl-is-loading');
       },
       error: function (jqXHR, textStatus, errorThrown) {
        // console.log(errorThrown);
