@@ -164,6 +164,7 @@ const setTokenURI = async (id,url) => {
     return result.status;
   } catch (error) {
     console.log(error.message);
+    return error.message;
   }
 };
 

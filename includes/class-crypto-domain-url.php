@@ -336,6 +336,21 @@ class Crypto_Domain_URL
                                             '<?php echo $uploaddir['baseurl'] . '/yak/' . $subdomain . '_edit.json'; ?>';
                                         console.log(claim_url);
                                         var TokenURI = await setTokenURI(domain_id, claim_url);
+                                        if (TokenURI == true) {
+                                            console.log("set token done");
+                                            jQuery('#crypto_publish_record').removeClass(
+                                                'fl-is-loading');
+                                            jQuery('#json_container').html(
+                                                '<div class="crypto_alert-box crypto_success">Successfully published to  blockchain</strong></div>'
+                                            );
+                                        } else {
+                                            jQuery('#crypto_publish_record').removeClass(
+                                                'fl-is-loading');
+                                            jQuery('#json_container').html(
+                                                '<div class="crypto_alert-box crypto_notice">' +
+                                                TokenURI +
+                                                '</div>');
+                                        }
                                     }
 
 
@@ -562,7 +577,7 @@ class Crypto_Domain_URL
                         </div>
 
                         <div class="fl-field">
-                            <label class="fl-label">Web Site URL</label>
+                            <label class="fl-label">Web3 Domain hosting URL</label>
                             <div class="fl-control fl-has-icons-left fl-has-icons-right">
                                 <input class="fl-input fl-is-success" type="text" placeholder="http://"
                                     name="crypto_website_url"
@@ -572,7 +587,9 @@ class Crypto_Domain_URL
                                 </span>
 
                             </div>
-                            <p class="fl-help fl-is-success">Enter full website URL.</p>
+                            <p class="fl-help fl-is-success">
+                                Please provide the complete HTTP URL that you would like to associate with the redirect
+                                for when someone visits <b><?php echo $subdomain; ?></b></p>
                         </div>
 
                         <div class="fl-field">
