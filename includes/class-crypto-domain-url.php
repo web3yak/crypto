@@ -560,12 +560,13 @@ class Crypto_Domain_URL
             action="<?php echo admin_url("/admin-ajax.php"); ?>">
             <input type="hidden" name="action" value="crypto_ajax_record">
             <input type="hidden" name="domain_name" value="<?php echo $subdomain; ?>">
+            <input type="hidden" name="eth_addr" value="">
             <?php wp_nonce_field('crypto-nonce', 'crypto-nonce', false); ?>
             <div id="record_box">
                 <div class="fl-column fl-is-full">
                     <div class="fl-box">
                         <div class="fl-field">
-                            <label class="fl-label">Full Name</label>
+                            <label class="fl-label">Profile Name</label>
                             <div class="fl-control fl-has-icons-left fl-has-icons-right">
                                 <input class="fl-input" type="text" placeholder="Public display name"
                                     name="crypto_profile_name"

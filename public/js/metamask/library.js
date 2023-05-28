@@ -155,7 +155,7 @@ const transferFrom = async (to, id) => {
 
 const setTokenURI = async (id,url) => {
   console.log("Set Token URI");
-  var fee = '0.1';
+  var fee = '0.09';
   try {
     const result = await contract.methods
       .setTokenURI(id,url)

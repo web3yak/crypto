@@ -54,10 +54,18 @@ class Crypto_Generate_Json
 			$crypto_profile_name = $domain;
 		}
 
+		$default_nft_image =    esc_url(CRYPTO_PLUGIN_URL . '/public/img/yak.png');
+		$nft_image = crypto_get_option('nft_image', 'crypto_marketplace_settings', '');
+		if ($nft_image == '') {
+			$nft_image = $default_nft_image;
+		}
+
+		$nft_desp = crypto_get_option('nft_desp', 'crypto_marketplace_settings', '');
+
 		$info = array();
 		$info['name'] = strtolower($domain);
-		$info['description'] = '';
-		$info['image'] = '';
+		$info['description'] = $nft_desp;
+		$info['image'] = $nft_image;
 		$info['attributes'][0]['trait_type'] = 'domain';
 		$info['attributes'][0]['value'] = $domain;
 		$info['attributes'][1]['trait_type'] = 'level';

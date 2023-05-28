@@ -8,9 +8,12 @@ class Crypto_Domain_Search
     private $price_ether;
     private $info_page;
     private $crypto_network;
+    private $nft_image;
+    private $nft_desp;
 
     function __construct()
     {
+
 
         add_shortcode('crypto-domain-search', array($this, 'search'));
         add_shortcode('crypto-domain-market', array($this, 'market'));
@@ -25,6 +28,10 @@ class Crypto_Domain_Search
         $this->price_ether = crypto_get_option('price_ether', 'crypto_marketplace_settings', '5');
         $this->crypto_network = crypto_get_option('crypto_network', 'crypto_marketplace_settings', '137');
 
+        $default_nft_image =    esc_url(CRYPTO_PLUGIN_URL . '/public/img/yak.png');
+        $this->nft_image = crypto_get_option('nft_image', 'crypto_marketplace_settings', $default_nft_image);
+
+        $this->nft_desp = crypto_get_option('nft_desp', 'crypto_marketplace_settings', '');
 
         add_filter('crypto_dashboard_tab', array($this, 'dashboard_add_tabs'));
         add_action('crypto_dashboard_tab_content', array($this, 'dashboard_add_content'));
@@ -122,6 +129,24 @@ class Crypto_Domain_Search
                     'description' => __('Enter the amount of ether required to mint the domain. It must be equal to or greater than the amount specified in the contract address of the primary domain.', 'crypto'),
                     'type' => 'text',
                     'size' => 'small',
+                    'sanitize_callback' => 'sanitize_text_field',
+                ),
+
+                array(
+                    'name' => 'nft_image',
+                    'label' => __('NFT Image URL', 'crypto'),
+                    'description' => __('This image is associated with every sub-domain gets minted on this website.', 'crypto'),
+                    'size' => 'medium',
+                    'type' => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
+                ),
+
+                array(
+                    'name' => 'nft_desp',
+                    'label' => __('NFT Domain description', 'crypto'),
+                    'description' => __('Description of the domain visible at opensea.io or other marketplace.', 'crypto'),
+                    'size' => 'medium',
+                    'type' => 'text',
                     'sanitize_callback' => 'sanitize_text_field',
                 ),
 
