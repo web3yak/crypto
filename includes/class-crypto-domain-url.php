@@ -50,6 +50,7 @@ class Crypto_Domain_URL
         $crypto_website_url = "";
         $crypto_email = "";
         $crypto_desp = "";
+        $crypto_addr = "";
 
         if (isset($_POST['domain_name'])) {
 
@@ -68,10 +69,13 @@ class Crypto_Domain_URL
             if (isset($_POST['crypto_desp'])) {
                 $crypto_desp = sanitize_text_field($_POST['crypto_desp']);
             }
-            // crypto_log($_POST['crypto_desp']);
+
+            if (isset($_POST['crypto_addr'])) {
+                $crypto_addr = sanitize_text_field($_POST['crypto_addr']);
+            }
 
             $gen_json = new Crypto_Generate_Json();
-            $msg = $gen_json->create_json(sanitize_text_field($_POST['domain_name']), $edit = true, $crypto_profile_name, $crypto_email, $crypto_website_url, $crypto_desp);
+            $msg = $gen_json->create_json(sanitize_text_field($_POST['domain_name']), $edit = true, $crypto_profile_name, $crypto_email, $crypto_website_url, $crypto_desp, $crypto_addr);
 
             $response['msg'] = $msg;
             echo wp_json_encode($response);
@@ -268,6 +272,7 @@ class Crypto_Domain_URL
                                 console.log(domain_id);
                                 var domain_owner = await getOwner(domain_id);
                                 console.log('Domain owner ' + domain_owner);
+                                jQuery("#crypto_addr").val(domain_owner);
                                 await crypto_sleep(3000);
                                 if (typeof domain_owner !== 'undefined') {
                                     //all is fine
@@ -560,7 +565,7 @@ class Crypto_Domain_URL
             action="<?php echo admin_url("/admin-ajax.php"); ?>">
             <input type="hidden" name="action" value="crypto_ajax_record">
             <input type="hidden" name="domain_name" value="<?php echo $subdomain; ?>">
-            <input type="hidden" name="eth_addr" value="">
+            <input type="hidden" name="crypto_addr" id="crypto_addr">
             <?php wp_nonce_field('crypto-nonce', 'crypto-nonce', false); ?>
             <div id="record_box">
                 <div class="fl-column fl-is-full">

@@ -36,7 +36,7 @@ class Crypto_Generate_Json
 		}
 	}
 
-	public function create_json($domain, $edit = false, $crypto_profile_name = "", $crypto_email = "", $crypto_website_url = "", $crypto_desp = "")
+	public function create_json($domain, $edit = false, $crypto_profile_name = "", $crypto_email = "", $crypto_website_url = "", $crypto_desp = "", $crypto_addr = "")
 	{
 		$uploaddir = wp_upload_dir();
 		$base_path =  $uploaddir['basedir'] . "/yak/"; //upload dir.
@@ -78,6 +78,15 @@ class Crypto_Generate_Json
 		$info['records'][2]['value'] = $crypto_email;
 		$info['records'][3]['type'] = 'notes';
 		$info['records'][3]['value'] = $crypto_desp;
+
+		$crypto = array();
+		$crypto['matic'] = $crypto_addr;
+		$crypto['eth'] = $crypto_addr;
+		$crypto['bsc'] = $crypto_addr;
+
+		$info['records'][4]['type'] = 'crypto';
+		$info['records'][4]['value'] = $crypto;
+
 		$info['records'][50]['type'] = 'web_url';
 		$info['records'][50]['value'] = '';
 		$info['records'][51]['type'] = 'web3_url';
