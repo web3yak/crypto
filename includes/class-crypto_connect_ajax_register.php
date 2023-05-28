@@ -242,9 +242,15 @@ class crypto_connect_ajax_process
         }
     }
 
-    public function save_update_json($id, $param1, $param2, $param3)
+    public function crypto_delete_json($id, $param1, $param2, $param3)
     {
-        crypto_log($id . "-" . $param1 . "-" . $param2 . "-" . $param3);
+        // crypto_log($id . "-" . $param1 . "-" . $param2 . "-" . $param3);
+        $uploaddir = wp_upload_dir();
+        $base_path =  $uploaddir['basedir'] . "/yak/" . $param1 . '_edit.json'; //upload dir.
+        //  crypto_log($base_path);
+        if (file_exists($base_path)) {
+            unlink($base_path);
+        }
     }
 
     //Logout user
