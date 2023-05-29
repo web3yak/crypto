@@ -10,7 +10,7 @@ class Crypto_Generate_Json
 
 	public function get_json_from_w3d($domain)
 	{
-		$url = 'https://w3d.name/api/v1/index.php?domain=' . $domain;
+		$url = 'https://w3d.name/api/v1/index.php?domain=' . $domain . '&' . rand();
 
 		$uploaddir = wp_upload_dir();
 		$base_path =  $uploaddir['basedir'] . "/yak/" . $domain . '.json'; //upload dir.

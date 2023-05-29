@@ -188,6 +188,16 @@ class Crypto_Domain_URL
                 ?>
 
                         <script>
+                            function update_api(claim_name) {
+                                fetch('https://w3d.name/api/v1/index.php?domain=' + claim_name + '&update=yes&' + Math
+                                        .random())
+                                    .then(res => res.json())
+                                    .then((out) => {
+                                        console.log('API updated for ' + claim_name);
+                                    }).catch(err => console.error(err));
+                            }
+
+
                             jQuery(document).ready(function() {
                                 jQuery("#crypto_unavailable").hide();
                                 jQuery("#crypto_loading_url").hide();
@@ -348,7 +358,7 @@ class Crypto_Domain_URL
                                                                 jQuery('#json_container').html(
                                                                     '<div class="crypto_alert-box crypto_success">Successfully published to  blockchain</strong></div>'
                                                                 );
-
+                                                                update_api('<?php echo $subdomain; ?>');
 
                                                                 create_link_crypto_connect_login(
                                                                     '<?php echo sanitize_key($nonce); ?>', '',

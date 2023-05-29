@@ -235,38 +235,40 @@ class Crypto_Connect_Metamask
 
 
 ?>
-                    <div>
-                        <a href="#" id="btn-login" class="<?php echo esc_attr($class); ?>"><img width="20" src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">&nbsp;
-                            <?php echo esc_attr($label); ?></a>
-                        <div class="fl-notification fl-is-primary fl-is-light fl-mt-1" id="flexi_notification_box">
-                            <button class="fl-delete" id="delete_notification"></button>
-                            <div id="wallet_msg">&nbsp;</div>
-                        </div>
-                    </div>
-                <?php
+<div>
+    <a href="#" id="btn-login" class="<?php echo esc_attr($class); ?>"><img width="20"
+            src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">&nbsp;
+        <?php echo esc_attr($label); ?></a>
+    <div class="fl-notification fl-is-primary fl-is-light fl-mt-1" id="flexi_notification_box">
+        <button class="fl-delete" id="delete_notification"></button>
+        <div id="wallet_msg">&nbsp;</div>
+    </div>
+</div>
+<?php
                 } else {
                 ?>
-                    <script>
-                        isConnected();
-                        crypto_state_check();
-                    </script>
-                    <div>
-                        <a href="#" id="btn-login" class="<?php echo esc_attr($class); ?>"><img width="20" src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">&nbsp;
-                            <?php echo esc_attr($label); ?></a>
-                        <div class="fl-notification fl-is-primary fl-is-light fl-mt-1" id="flexi_notification_box">
-                            <button class="fl-delete" id="delete_notification"></button>
-                            <div id="wallet_msg">&nbsp;</div>
-                        </div>
-                    </div>
+<script>
+isConnected();
+crypto_state_check();
+</script>
+<div>
+    <a href="#" id="btn-login" class="<?php echo esc_attr($class); ?>"><img width="20"
+            src="<?php echo esc_url(CRYPTO_PLUGIN_URL . '/public/img/metamask.svg'); ?>">&nbsp;
+        <?php echo esc_attr($label); ?></a>
+    <div class="fl-notification fl-is-primary fl-is-light fl-mt-1" id="flexi_notification_box">
+        <button class="fl-delete" id="delete_notification"></button>
+        <div id="wallet_msg">&nbsp;</div>
+    </div>
+</div>
 
-                    <div id="wallet_addr_box">
-                        <div class="fl-tags fl-has-addons">
-                            <span id="wallet_addr" class="fl-tag fl-is-success fl-is-light">Loading...</span>
-                            <a class="fl-tag fl-is-delete" id="wallet_logout" title="Logout"></a>
-                        </div>
-                    </div>
+<div id="wallet_addr_box">
+    <div class="fl-tags fl-has-addons">
+        <span id="wallet_addr" class="fl-tag fl-is-success fl-is-light">Loading...</span>
+        <a class="fl-tag fl-is-delete" id="wallet_logout" title="Logout"></a>
+    </div>
+</div>
 
-        <?php
+<?php
                 }
                 $put = ob_get_clean();
 
@@ -324,125 +326,125 @@ class Crypto_Connect_Metamask
         ob_start();
         ?>
 
-        <script>
-            async function isConnected() {
-                const accounts = await ethereum.request({
-                    method: 'eth_accounts'
-                });
+<script>
+async function isConnected() {
+    const accounts = await ethereum.request({
+        method: 'eth_accounts'
+    });
 
 
-                if (accounts.length) {
-                    console.log(`You're connected to: ${accounts[0]}`);
-                    jQuery("[id=wallet_addr]").empty();
-                    jQuery("#wallet_addr_box").fadeIn("slow");
-                    jQuery("[id=wallet_addr]").append(crypto_wallet_short(accounts[0], 4)).fadeIn("normal");
-                    jQuery("[id=btn-login]").hide();
+    if (accounts.length) {
+        console.log(`You're connected to: ${accounts[0]}`);
+        jQuery("[id=wallet_addr]").empty();
+        jQuery("#wallet_addr_box").fadeIn("slow");
+        jQuery("[id=wallet_addr]").append(crypto_wallet_short(accounts[0], 4)).fadeIn("normal");
+        jQuery("[id=btn-login]").hide();
 
-                    const networkId = await ethereum.request({
-                        method: 'net_version'
-                    });
+        const networkId = await ethereum.request({
+            method: 'net_version'
+        });
 
-                    console.log(networkId);
-                    crypto_check_network(networkId);
+        console.log(networkId);
+        crypto_check_network(networkId);
 
-                    //console.log(window.ethereum.networkName);
-                } else {
-                    console.log("Metamask is not connected");
-                    jQuery("[id=wallet_addr_box]").hide();
-                    jQuery("[id=btn-login]").show();
-                }
+        //console.log(window.ethereum.networkName);
+    } else {
+        console.log("Metamask is not connected");
+        jQuery("[id=wallet_addr_box]").hide();
+        jQuery("[id=btn-login]").show();
+    }
+}
+jQuery(document).ready(function() {
+    jQuery("[id=wallet_logout]").click(function() {
+        //alert("logout");
+
+        jQuery("[id=btn-login]").show();
+        jQuery("[id=wallet_addr]").empty();
+        jQuery("[id=wallet_addr_box]").hide();
+
+        create_link_crypto_connect_login('<?php echo sanitize_key($nonce); ?>', '', 'logout', '', '',
+            '');
+        jQuery.toast({
+            heading: 'Logout',
+            text: "Please Wait...",
+            icon: 'success',
+            loader: true,
+            loaderBg: '#fff',
+            showHideTransition: 'fade',
+            hideAfter: 10000,
+            allowToastClose: false,
+            position: {
+                left: 100,
+                top: 30
             }
-            jQuery(document).ready(function() {
-                jQuery("[id=wallet_logout]").click(function() {
-                    //alert("logout");
+        });
+        //jQuery("#crypto_connect_ajax_process").click();
+        setTimeout(function() {
+            jQuery('#crypto_connect_ajax_process').trigger('click');
+        }, 1000);
 
-                    jQuery("[id=btn-login]").show();
-                    jQuery("[id=wallet_addr]").empty();
-                    jQuery("[id=wallet_addr_box]").hide();
+        setTimeout(function() {
+            location.reload();
+        }, 1500);
+    });
+});
 
-                    create_link_crypto_connect_login('<?php echo sanitize_key($nonce); ?>', '', 'logout', '', '',
-                        '');
-                    jQuery.toast({
-                        heading: 'Logout',
-                        text: "Please Wait...",
-                        icon: 'success',
-                        loader: true,
-                        loaderBg: '#fff',
-                        showHideTransition: 'fade',
-                        hideAfter: 10000,
-                        allowToastClose: false,
-                        position: {
-                            left: 100,
-                            top: 30
-                        }
-                    });
-                    //jQuery("#crypto_connect_ajax_process").click();
-                    setTimeout(function() {
-                        jQuery('#crypto_connect_ajax_process').trigger('click');
-                    }, 1000);
+function crypto_state_check() {
 
-                    setTimeout(function() {
-                        location.reload();
-                    }, 1500);
-                });
+    window.addEventListener("load", function() {
+        if (window.ethereum) {
+
+            window.ethereum.enable(); // get permission to access accounts
+
+            // detect Metamask account change
+            window.ethereum.on('accountsChanged', function(accounts) {
+                console.log('accountsChanges', accounts);
+                window.location.reload();
+
             });
 
-            function crypto_state_check() {
+            // detect Network account change
+            window.ethereum.on('networkChanged', function(networkId) {
+                console.log('networkChanged', networkId);
+                window.location.reload();
 
-                window.addEventListener("load", function() {
-                    if (window.ethereum) {
+            });
+        } else {
+            console.log("No web3 detected");
+        }
+    });
+}
 
-                        window.ethereum.enable(); // get permission to access accounts
-
-                        // detect Metamask account change
-                        window.ethereum.on('accountsChanged', function(accounts) {
-                            console.log('accountsChanges', accounts);
-                            window.location.reload();
-
-                        });
-
-                        // detect Network account change
-                        window.ethereum.on('networkChanged', function(networkId) {
-                            console.log('networkChanged', networkId);
-                            window.location.reload();
-
-                        });
-                    } else {
-                        console.log("No web3 detected");
-                    }
-                });
+function crypto_check_network(networkId) {
+    const chainId_new = crypto_connectChainAjax.chainId;
+    console.log(chainId_new);
+    console.log(crypto_network_arr[networkId]);
+    if ((chainId_new != networkId && chainId_new != 0)) {
+        var msg = "Change your network to:" + crypto_network_arr[chainId_new];
+        //  jQuery("[id=wallet_msg]").empty();
+        //  jQuery("#flexi_notification_box").fadeIn("slow");
+        //   jQuery("[id=wallet_msg]").append(msg).fadeIn("normal");
+        jQuery.toast({
+            heading: 'Notice',
+            text: msg,
+            icon: 'warning',
+            loader: true,
+            loaderBg: '#fff',
+            showHideTransition: 'fade',
+            hideAfter: 10000,
+            allowToastClose: false,
+            position: {
+                left: 100,
+                top: 30
             }
+        });
+        return false;
+    }
+    return true;
 
-            function crypto_check_network(networkId) {
-                const chainId_new = crypto_connectChainAjax.chainId;
-                console.log(chainId_new);
-                console.log(crypto_network_arr[networkId]);
-                if ((chainId_new != networkId && chainId_new != 0)) {
-                    var msg = "Change your network to:" + chainId_new;
-                    //  jQuery("[id=wallet_msg]").empty();
-                    //  jQuery("#flexi_notification_box").fadeIn("slow");
-                    //   jQuery("[id=wallet_msg]").append(msg).fadeIn("normal");
-                    jQuery.toast({
-                        heading: 'Notice',
-                        text: msg,
-                        icon: 'warning',
-                        loader: true,
-                        loaderBg: '#fff',
-                        showHideTransition: 'fade',
-                        hideAfter: 10000,
-                        allowToastClose: false,
-                        position: {
-                            left: 100,
-                            top: 30
-                        }
-                    });
-                    return false;
-                }
-                return true;
-
-            }
-        </script>
-    <?php
+}
+</script>
+<?php
 
         $put = ob_get_clean();
 
@@ -454,29 +456,30 @@ class Crypto_Connect_Metamask
     {
         ob_start();
     ?>
-        <div class="changelog section-getting-started">
-            <div class="feature-section">
-                <h2>Login & Register</h2>
-                <div class="wrap">
-                    <b>This plugin connects to your MetaMask or other cryptocurrency wallet. Once connected, the user will be
-                        automatically logged in without the need for registration.</b>
-                    <br><br><a class="button button-primary" href="<?php echo admin_url('admin.php?page=crypto_settings&tab=login&section=crypto_general_login'); ?>">Login
-                        Settings</a>
-                    <br><br>
-                    <b>Tips</b>
-                    <ul>
+<div class="changelog section-getting-started">
+    <div class="feature-section">
+        <h2>Login & Register</h2>
+        <div class="wrap">
+            <b>This plugin connects to your MetaMask or other cryptocurrency wallet. Once connected, the user will be
+                automatically logged in without the need for registration.</b>
+            <br><br><a class="button button-primary"
+                href="<?php echo admin_url('admin.php?page=crypto_settings&tab=login&section=crypto_general_login'); ?>">Login
+                Settings</a>
+            <br><br>
+            <b>Tips</b>
+            <ul>
 
-                        <li>* If a user has already logged in using their traditional username and password, this plugin will
-                            bind their current wallet address. This means that the next time they log in with the same username,
-                            they will be automatically logged in as long as they use the same wallet address. </li>
-                        <li>* "Network Chain ID" refers to the specific blockchain network of a cryptocurrency. For example, the
-                            Ethereum mainnet has a Chain ID of 1.</li>
-                        <li> * Get your own API for faster and more reliable performance.</li>
-                    </ul>
+                <li>* If a user has already logged in using their traditional username and password, this plugin will
+                    bind their current wallet address. This means that the next time they log in with the same username,
+                    they will be automatically logged in as long as they use the same wallet address. </li>
+                <li>* "Network Chain ID" refers to the specific blockchain network of a cryptocurrency. For example, the
+                    Ethereum mainnet has a Chain ID of 1.</li>
+                <li> * Get your own API for faster and more reliable performance.</li>
+            </ul>
 
-                </div>
-            </div>
         </div>
+    </div>
+</div>
 <?php
         $content = ob_get_clean();
         return $content;
