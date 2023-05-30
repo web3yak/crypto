@@ -5,7 +5,7 @@ Tags: crypto, login, metamask, NFT, Blockchain, Token
 Requires at least: 3.0.1
 Requires PHP: 5.5
 Tested up to: 6.1.1
-Stable tag: 2.5
+Stable tag: 2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,16 +55,6 @@ example: `[crypto-connect label="Connect Wallet" class="fl-button fl-is-info fl-
 * Select the network chain (Ethereum Mainnet, Binance BNB Chain, Polygon Chain)
 * Compatible with any smart contract address.
 * Use the shortcode [crypto-access-nft] to limit access to a page.
-
-== Marketplace of Web3Domain ==
-             
-Become a Web3Domain (YAK ID) provider on your own website by selling subdomains. We will integrate the domain into our ecosystem, providing every domain user access to all of the features that Web3Domain offers.
-
-* It is best option to earn for membership by letting user to obtain subdomain of your web3 primary domain.
-* You earn as soon as domain minted.
-* You can set the price for your subdomain yourself.
-* You can also restrict not to be minted by public. Only you can mint it and transfer. Hence you can save commission fees too. 
-* All Web3Domains are NFTs. Which you can sell at opensea.io
 
 == Add new token button ==
 By utilizing a shortcode, it is possible to insert a Metamask button that enables the addition of new or existing tokens to Metamask. An illustration of this is the "Add Dogecoin" button displayed on the BNB smart chain.
