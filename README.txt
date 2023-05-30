@@ -1,6 +1,6 @@
 === Crypto ===
 Contributors: odude
-Donate link: https://web3yak.com/
+Donate link: https://odude.com/
 Tags: crypto, login, metamask, NFT, Blockchain, Token
 Requires at least: 3.0.1
 Requires PHP: 5.5
@@ -76,8 +76,6 @@ Here is an example shortcode:
 [Live Demo](https://web3yak.com/app/user-dashboard/)
 
 > If any suggestion, contact at hello@web3yak.com
-
-[GitHub](https://github.com/web3yak/crypto/)
 
 == Installation ==
 
