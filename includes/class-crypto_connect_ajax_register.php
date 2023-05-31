@@ -246,7 +246,7 @@ class crypto_connect_ajax_process
     {
         // crypto_log($id . "-" . $param1 . "-" . $param2 . "-" . $param3);
         $uploaddir = wp_upload_dir();
-        $base_path =  $uploaddir['basedir'] . "/yak/" . $param1 . '_edit.json'; //upload dir.
+        $base_path =  $uploaddir['basedir'] . "/yak/" . $param1 . '_pending.json'; //upload dir.
         //  crypto_log($base_path);
         if (file_exists($base_path)) {
             unlink($base_path);

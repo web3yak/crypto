@@ -104,6 +104,12 @@ class Crypto_Generate_Json
 		$file_name = strtolower($domain) . '.json';
 		if ($edit) {
 			$file_name = strtolower($domain) . '_edit.json';
+
+			$file_name_pending = strtolower($domain) . '_pending.json';
+			$save_path = $base_path . '/' . $file_name_pending;
+			$f = @fopen($save_path, "w") or die(print_r(error_get_last(), true)); //if json file doesn't gets saved, uncomment this to check for errors
+			fwrite($f, 'ipfs_hashcode');
+			fclose($f);
 		}
 
 		$save_path = $base_path . '/' . $file_name;
