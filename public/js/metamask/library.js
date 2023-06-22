@@ -81,7 +81,7 @@ const getId = async (name) => {
 const titleOf = async (id) => {
   try {
     const did = await contract.methods.titleOf(id).call();
-    console.log("Title of " + id + " - Domain: " + did);
+   // console.log("Title of " + id + " - Domain: " + did);
     return did;
   } catch (error) {
     console.log(error.message);

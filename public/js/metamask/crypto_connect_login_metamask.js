@@ -23,6 +23,7 @@ if (typeof window.ethereum !== 'undefined') {
     jQuery("[id=wallet_msg]").empty();
    // jQuery("#flexi_notification_box").fadeIn("slow");
  //   jQuery("[id=wallet_msg]").append("Metamask not installed").fadeIn("normal");
+ /*
     jQuery.toast({
         heading: 'Notice',
         text: 'Metamask not installed',
@@ -37,6 +38,7 @@ if (typeof window.ethereum !== 'undefined') {
             top: 30
         }
     });
+    */
 }
 
 async function login() {
@@ -76,6 +78,8 @@ async function login() {
         jQuery("[id=wallet_msg]").empty();
        // jQuery("#flexi_notification_box").fadeIn("slow");
        // jQuery("[id=wallet_msg]").append("Metamask not installed").fadeIn("normal");
+       console.log("Metamask not installed...");
+       /*
         jQuery.toast({
             heading: 'Notice',
             text: 'Metamask not installed',
@@ -90,6 +94,7 @@ async function login() {
                 top: 30
             }
         });
+        */
     }
 }
 async function onInit() {

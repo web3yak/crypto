@@ -116,9 +116,87 @@ class Crypto_Generate_Json
 		$f = @fopen($save_path, "w") or die(print_r(error_get_last(), true)); //if json file doesn't gets saved, uncomment this to check for errors
 		fwrite($f, $data);
 		fclose($f);
+
+		//Link to IPFS
+		$nft_storage_api = crypto_get_option('nft_storage_api', 'crypto_marketplace_settings', '');
+		if ($nft_storage_api != '') {
+			$file_local_full = $base_path . '/' . $domain . '_edit.json';
+			if (file_exists($file_local_full)) {
+				$this->upload_ipfs(strtolower($domain), '');
+			}
+		}
+
+
 		return "success";
 	}
 
+	//Upload to NFT.Storage
+	public function upload_ipfs($filename, $location)
+	{
+		$uploaddir = wp_upload_dir();
+		$base_path =  $uploaddir['basedir'] . "/yak/"; //upload dir.
+		if ($location != '') {
+			$file_local_full = $location; //upload dir.
+		} else {
+			$file_local_full = $base_path . '/' . $filename . '_edit.json';
+		}
+		// flexi_log("--" . $file_local_full);
+		$content_type = mime_content_type($file_local_full);
+
+		$headers = array(
+			"Content-Type: $content_type", // or whatever you want
+		);
+
+
+		$filesize = filesize($file_local_full);
+		$stream = fopen($file_local_full, 'r');
+		$nft_storage_api = crypto_get_option('nft_storage_api', 'crypto_marketplace_settings', '');
+		$curl_opts = array(
+			CURLOPT_URL => "https://api.nft.storage/upload",
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_PUT => true,
+			CURLOPT_CUSTOMREQUEST => "POST",
+			CURLOPT_HTTPHEADER => $headers,
+			CURLOPT_INFILE => $stream,
+			CURLOPT_INFILESIZE => $filesize,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_HTTPHEADER => array(
+				"Authorization: Bearer " . $nft_storage_api,
+			),
+		);
+
+		$curl = curl_init();
+		curl_setopt_array($curl, $curl_opts);
+
+		$response = curl_exec($curl);
+		$httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+		if ($httpCode == 200) {
+
+			$data = json_decode($response, true);
+
+			// print_r($data);
+			//crypto_log($data);
+			fclose($stream);
+
+			if (curl_errno($curl)) {
+				$error_msg = curl_error($curl);
+				throw new \Exception($error_msg);
+			}
+
+			curl_close($curl);
+
+			if (isset($data['value']['cid'])) {
+				$cid = $data['value']['cid'];
+				$file_name_cid = $base_path . '/' . $filename . '_cid.txt';
+				$f = @fopen($file_name_cid, "w") or die(print_r(error_get_last(), true)); //if json file doesn't gets saved, uncomment this to check for errors
+				fwrite($f, $cid);
+				fclose($f);
+				//crypto_log("xx = " . $cid);
+				return $cid;
+			}
+		}
+		return '';
+	}
 
 	public function get_lookup_file($domain)
 	{

@@ -112,6 +112,19 @@ class Crypto_Domain_URL
         );
     }
 
+    public function get_cid_domain($domain)
+    {
+        $uploaddir = wp_upload_dir();
+        $base_path =  $uploaddir['basedir'] . "/yak/"; //upload dir.
+        $file_name_cid = $base_path . '/' . $domain . '_cid.txt';
+        if (file_exists($file_name_cid)) {
+            return 'ipfs://' . file_get_contents($file_name_cid, true);
+        } else {
+            return $uploaddir['baseurl'] . '/yak/' . $domain . '_edit.json';
+        }
+    }
+
+
     public function start()
     {
         ob_start();
@@ -347,8 +360,9 @@ class Crypto_Domain_URL
                                                         if (method == 'crypto_record') {
 
                                                             console.log('Ready to publish');
+
                                                             var claim_url =
-                                                                '<?php echo $uploaddir['baseurl'] . '/yak/' . $subdomain . '_edit.json'; ?>';
+                                                                '<?php echo $this->get_cid_domain(strtolower($subdomain)); ?>';
                                                             console.log(claim_url);
                                                             var TokenURI = await setTokenURI(domain_id, claim_url);
                                                             if (TokenURI == true) {
@@ -654,8 +668,7 @@ class Crypto_Domain_URL
                                             }
                                             ?>
                                             <div class="fl-control" id="crypto_publish_box">
-                                                <button type="button" class="fl-button fl-is-success" id="crypto_publish_record">Publish
-                                                    to
+                                                <button type="button" class="fl-button fl-is-success" id="crypto_publish_record">Update
                                                     Blockchain</button>
                                             </div>
                                         </div>
