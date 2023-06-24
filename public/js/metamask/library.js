@@ -3,7 +3,22 @@ async function crypto_is_metamask_Connected() {
 
 
   if (typeof ethereum == 'undefined') {
-    alert("MetaMask is not installed");
+   // alert("MetaMask is not installed");
+
+   jQuery.toast({
+    heading: 'Notice',
+    text: 'Metamask not installed',
+    icon: 'warning',
+    loader: true,
+    loaderBg: '#fff',
+    showHideTransition: 'fade',
+    hideAfter: 3000,
+    allowToastClose: false,
+    position: {
+        left: 100,
+        top: 30
+    }
+});
     return result;
   }
   const accounts = await ethereum.request({

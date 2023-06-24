@@ -79,7 +79,7 @@ async function login() {
        // jQuery("#flexi_notification_box").fadeIn("slow");
        // jQuery("[id=wallet_msg]").append("Metamask not installed").fadeIn("normal");
        console.log("Metamask not installed...");
-       /*
+       
         jQuery.toast({
             heading: 'Notice',
             text: 'Metamask not installed',
@@ -94,7 +94,7 @@ async function login() {
                 top: 30
             }
         });
-        */
+        
     }
 }
 async function onInit() {
