@@ -1,11 +1,11 @@
 === Crypto ===
 Contributors: odude
-Donate link: https://odude.com/
+Donate link: https://web3yak.com
 Tags: crypto, login, metamask, NFT, Blockchain, Token
 Requires at least: 3.0.1
 Requires PHP: 5.5
 Tested up to: 6.1.1
-Stable tag: 2.7
+Stable tag: 2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,18 @@ Here is an example shortcode:
 `[crypto-add-network name="Arbitrum One" chainid="42161" currency="ETH" symbol="ETH" rpcurl="https://arb1.arbitrum.io/rpc" explorer="https://explorer.arbitrum.io" title="Add Arbitrum Network" class="fl-button"]`
 
 
+== Marketplace of Web3Domain ==
+             
+Become a Web3Domain provider on your own website by selling subdomains. We will integrate the domain into our ecosystem, providing every domain user access to all of the features that Web3Domain offers.
+
+* It is best option to earn for membership by letting user to obtain subdomain of your web3 primary domain.
+* You earn as soon as domain minted.
+* You can set the price, image, description for your subdomain yourself.
+* You can also restrict not to be minted by public. Only you can mint it and transfer. Hence you can save commission fees too. 
+* All Web3Domains are NFTs. Which you can sell at opensea.io
+
+
+
 [Live Demo](https://web3yak.com/app/user-dashboard/)
 
 > If any suggestion, contact at hello@web3yak.com
@@ -102,6 +114,9 @@ Web3Domain is a platform that allows you to register and sell your own web3 doma
 3. Crypto Price
 
 == Changelog ==
+= 2.8 =
+* Added Web3Domain Marketplace with Nft.Storage API decentralized Upload
+
 = 2.5 = 
 * Fixed "Visit Site" link for Web3 Domain Name
 
