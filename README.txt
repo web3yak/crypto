@@ -59,19 +59,23 @@ example: `[crypto-connect label="Connect Wallet" class="fl-button fl-is-info fl-
 == Add new token button ==
 By utilizing a shortcode, it is possible to insert a Metamask button that enables the addition of new or existing tokens to Metamask. An illustration of this is the "Add Dogecoin" button displayed on the BNB smart chain.
 
-Here is an example shortcode:
+*Here is an example shortcode:*
 
 `[crypto-add-token contract="0xba2ae424d960c26247dd6c32edc70b295c744c43" symbol="DOGE" image="https://s2.coinmarketcap.com/static/img/coins/64x64/74.png" title="Add Dogecoin" class="fl-button fl-is-small" type="ERC20"]`
+
+&nbsp;
+
 
 
 == Add new network button ==
 
 You can use a shortcode to add a Metamask button that enables the addition of a new network to Metamask. An illustration of this is the "Add Arbitrum One Network" button.
 
-Here is an example shortcode:
+*Here is an example shortcode:*
 
 `[crypto-add-network name="Arbitrum One" chainid="42161" currency="ETH" symbol="ETH" rpcurl="https://arb1.arbitrum.io/rpc" explorer="https://explorer.arbitrum.io" title="Add Arbitrum Network" class="fl-button"]`
 
+&nbsp;
 
 == Marketplace of Web3Domain ==
              
