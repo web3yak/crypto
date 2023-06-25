@@ -33,26 +33,25 @@ class Crypto_Admin_Dashboard_Intro
     {
         ob_start();
 ?>
-<div class="changelog section-getting-started">
-    <div class="feature-section">
-        <h2>Blockchain Tools</h2>
-        <div class="wrap">
+        <div class="changelog section-getting-started">
+            <div class="feature-section">
+                <h2>Blockchain Tools</h2>
+                <div class="wrap">
 
-            <div>
-                We are working towards creating a comprehensive set of cryptocurrency tools. Gradually, we will be
-                adding all the major and frequently used tools that will aid in the development of Web3 platforms.
+                    <div>
+                        We are working towards creating a comprehensive set of cryptocurrency tools. Gradually, we will be
+                        adding all the major and frequently used tools that will aid in the development of Web3 platforms.
+                    </div>
+
+                    <br>
+                    <b>Support: </b> <a href="<?php echo esc_url('https://wordpress.org/support/plugin/crypto/'); ?>">Wordpress
+                        Forum</a><br>
+                    <b>Telegram : </b> <a href="<?php echo esc_url('https://t.me/web3yak'); ?>">@Web3Yak</a><br>
+                    <b>Twitter: </b> <a href="<?php echo esc_url('https://twitter.com/web3yak'); ?>">@Web3Yak</a><br>
+                    <b>Documentation: </b> <a href="<?php echo esc_url('https://web3domain.org/studio/docs/introduction/'); ?>">Instruction</a><br>
+                </div>
             </div>
-
-            <br>
-            <b>Support: </b> <a href="<?php echo esc_url('https://wordpress.org/support/plugin/crypto/'); ?>">Wordpress
-                Forum</a><br>
-            <b>Telegram : </b> <a href="<?php echo esc_url('https://t.me/web3yak'); ?>">@Web3Yak</a><br>
-            <b>Twitter: </b> <a href="<?php echo esc_url('https://twitter.com/web3yak'); ?>">@Web3Yak</a><br>
-            <b>Documentation: </b> <a
-                href="<?php echo esc_url('https://w3d.name/docs/wordpress-plugin/introduction/'); ?>">Instruction</a><br>
         </div>
-    </div>
-</div>
 <?php
         $content = ob_get_clean();
         return $content;

@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://w3d.name/
+ * @link              https://web3domain.org/
  * @since             2.9
  * @package           Crypto
  *
  * @wordpress-plugin
  * Plugin Name:       Crypto
- * Plugin URI:        http://w3d.name
+ * Plugin URI:        http://web3domain.org/
  * Description:       Crypto - everyday use tools. 
  * Version:           2.9
  * Author:            ODude
- * Author URI:        https://w3d.name/
+ * Author URI:        https://web3domain.org/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       crypto
